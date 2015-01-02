@@ -1,0 +1,381 @@
+/* CSS Document */
+#contenedor_ingreso {
+	width: 900px;
+	min-height: 544px;
+	height: auto;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #000;
+	clear: both;
+}
+header {
+	padding: 10px;
+}
+.foto_filtro {
+	width: 251px;
+	height: 544px;
+	margin-left: 5px;
+	float: left;
+	background: url(../img/foto-filtro.jpg) no-repeat;
+}
+.banderas {
+	width: 37px;
+	height: 11px;
+	margin-top:10px;
+	margin-right: 15px;
+	float: right;
+}
+.bandera_es {
+	width: 16px;
+	height: 11px;
+	float: left;
+}
+.bandera_in {
+	width: 16px;
+	height: 11px;
+	margin-left: 5px;
+	float: left;
+}
+.bandera_es img {
+	border: 0px;
+}
+.bandera_in img {
+	border: 0px;
+}
+.logo_filtro {
+	width: 139px;
+	height: 177px;
+	margin-top: 15px;
+	margin-left: 260px;
+	float: left;
+}
+.logo_filtro img {
+	border: 0;
+}
+/* FORMULARIO */
+.contacto{
+	font-family: 'Ubuntu', sans-serif;
+    font-size: 0.8em;
+    color: #FFF;
+    width: 480px;
+    float: left;
+    border-radius: 6px;
+    padding: 20px 45px 0px;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+.contacto label{
+	width: 220px;
+	font-family: 'Kaushan Script', cursive;
+	font-size: 1.8em;
+	color: #FFF;
+	text-align: left;
+}
+.contacto select{
+	width: 150px;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.2em;
+	color: #000;
+	margin-left: 15px;
+	margin-top: 8px;
+	height: 30px;
+}
+.contacto select[type='submit'] {
+    padding: 7px 6px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8em;
+    margin: 5px 0 0 5px;
+}
+.contacto div{
+    margin-left: 10px; /* esto los separara un poco */
+    margin-bottom: 15px;
+}
+.contacto input[type='submit'] {
+    width: 215px;
+    height: 33px;
+    padding: 6px 10px;
+    margin-top: 5px;
+    border: 0px;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5em;
+    color:#FFF;
+    background: #EE0202; /* fallback para navegadores que no soporten degradados */
+    background: -moz-linear-gradient(top, #EE0202 0%, #990000 100%);
+    background: -webkit-linear-gradient(top, #EE0202 0%,#990000 100%);
+}
+.contacto input[type='submit']:hover{
+    background: #EE0202;
+    background: -moz-linear-gradient(top, #990000 0%, #EE0202 100%);
+    background: -webkit-linear-gradient(top, #990000 0%,#EE0202 100%);
+}
+.contacto input[type='submit']:active{
+    background: #EE0202;
+    background: -moz-linear-gradient(top, #990000 0%, #EE0202 100%);
+    background: -webkit-linear-gradient(top, #990000 0%,#EE0202 100%);
+}
+.contacto input[type='checkbox'] {
+    padding: 7px 6px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+}
+.aceptar {
+	width: 380px;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	float: left;
+	margin: 0;
+}
+/* FIN FORMULARIO */
+.legales {
+	width: 320px;
+	margin-left: 200px;
+	margin-top: 10px;
+	float: left;
+}
+.terminos {
+	width: 50%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.7em;
+	color: #FFF;
+	text-align: center;
+	float: left;
+}
+.terminos a {
+	color: #FFF;
+	text-decoration: none;
+}
+.terminos a:hover {
+	text-decoration: underline;
+}
+.politicas {
+	width: 50%;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.7em;
+	color: #FFF;
+	text-align: center;
+	float: left;
+}
+.politicas a {
+	color: #FFF;
+	text-decoration: none;
+}
+.politicas a:hover {
+	text-decoration: underline;
+}
+.edad {
+	width: 300px;
+	margin-top: 100px;
+	margin-left: 20px;
+	float: left;
+}
+.edad p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.6em;
+	color: #FFF;
+	text-align: center;
+}
+.edad p span {
+	text-decoration: underline;
+}
+.copy {
+	width: 150px;
+	margin-top: 100px;
+	margin-left: 8px;
+	float: left;
+}
+.copy p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.6em;
+	color: #FFF;
+	text-align: center;
+}
+.calidad {
+	width: 61px;
+	height: 58px;
+	margin-top: 50px;
+	margin-left: 90px;
+	float: left;
+}
+.calidad img {
+	border: 0px;
+}
+
+@media screen and (max-width:900px)
+{
+	#contenedor_ingreso {
+	width:100%;
+	height: auto;
+}
+	.foto_filtro {
+	width: 100%;
+	height: auto;
+}
+	.logo_filtro {
+	width: 100%;
+	height: auto;
+	margin-top: 1.6%;
+	margin-left: 28.8%;
+	float: left;
+}
+	.contacto {
+    width: 52%;
+    float: left;
+    padding: 2% 4.5% 0px;
+    margin-top: 2%;
+    margin-left: 7%;
+}
+	.contacto label{
+	width: 22.2%;
+}
+.contacto select{
+	width: 22.2%;
+	margin-left: 1.6%;
+}
+.contacto select[type='text'] {
+    padding: 0.7% 0.6%;
+    margin: 0.5% 0 0 0.5%;
+}
+.contacto div{
+    margin-left: 1%; /* esto los separara un poco */
+    margin-bottom: 1.5%;
+}
+.contacto input[type='text'] {
+    padding: 0.7% 0.6%;
+    margin: 0.5% 0 0 0.5%;
+}
+.contacto input[type='submit'] {
+    width: 30%;
+    height: 3.6%;
+    padding: 0.8% 1%;
+    margin-top: 0.5%;
+    border: 0%;
+}
+.contacto input[type='checkbox'] {
+    padding: 0.7% 0.6%;
+    margin-top: 1%;
+    margin-right: 0.8%;
+    margin-bottom: 2%;
+}	
+	.aceptar {
+	width: 52.2%;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+}
+	.legales {
+	width: 35.5%;
+	margin-left: 22.2%;
+	margin-top: 1%;
+	float: left;
+}
+	.terminos {
+	width: 50%;
+	font-size: 0.7em;
+}
+	.politicas {
+	width: 50%;
+	font-size: 0.7em;
+	float: left;
+}
+	.edad {
+	width: 38.8%;
+	margin-top: 8.8%;
+	margin-left: 2.2%;
+	float: left;
+}
+	.copy {
+	width: 16.6%;
+	margin-top: 8.8%;
+	margin-left: 2.2%;
+	float: left;
+}
+	.quality {
+	width: 8%;
+	height: 8.6%;
+	border: 0%;
+	float: right;
+	margin-top: 3.3%;
+	margin-right: 1%;
+}
+}
+
+@media screen and (max-width:640px)
+{	
+	.quality {
+	width: 70%;
+	height: auto;
+	border: 0%;
+}
+	.contacto {
+    width: 90%;
+    height: auto;
+    float: left;
+    padding: 2% 4.5% 0px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+	.contacto input[type='submit'] {
+    width: 40%;
+    height: auto;
+    padding: 0.8% 1%;
+    margin-top: 0.5%;
+    border: 0%;
+    float: left;
+}
+	.aceptar {
+	width: 52.2%;
+	font-family: 'Ubuntu', sans-serif;
+	text-align: left;
+	margin-left: 10%;
+	margin-top: 5%;
+	clear: left;
+}
+	.edad {
+	width: 92%;
+	margin-top: 8.8%;
+	margin-left: 8%;
+	float: left;
+}
+	.edad p {
+	text-align: left;
+}
+	.legales {
+	width: 90%;
+	margin-left: 10%;
+	margin-top: 1%;
+	float: left;
+}
+	.terminos {
+	width: 50%;
+	font-size: 0.7em;
+}
+	.politicas {
+	width: 50%;
+	font-size: 0.7em;
+	float: left;
+}
+	.copy {
+	display: none;
+}
+}
+@media screen and (max-width:400px)
+{
+	#contenedor_ingreso {
+	width:100%;
+	height: 100%;
+}
+	.logo_filtro {
+	width: 80%;
+	height: auto;
+	margin-top: 1.6%;
+	margin-left: 28.8%;
+	float: left;
+}		
+	.foto_filtro {
+	display: none;
+}
+}
+

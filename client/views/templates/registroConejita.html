@@ -1,0 +1,61 @@
+<template name="registroConejita">
+    <main id="conejita">
+        <div class="caja_text_conejita">
+        	<h2>Plan Conejita, selecciona tu opción</h2>
+            <div class="ico_plan"><img src="img/ico-plan-conejita.png" width="73" height="73"></div>
+            <p>INCLUYE<br>
+Publicidad - Subir hasta 10 fotos - Chat online<br>
+Ingresos extras (Opción Web Cam) - Opción subir video en HD</p>
+
+			<div class="caja_text_opcion">
+            	<h3>OPCIÓN 1</h3>
+                <p>3 Meses<br>
+				   $300.000</p>
+            </div>
+            
+            <div class="caja_text_opcion">
+            	<h3>OPCIÓN 2</h3>
+                <p>6 Meses<br>
+				   $500.000</p>
+            </div>
+            
+            <div class="caja_text_opcion">
+            	<h3>OPCIÓN 3</h3>
+                <p>1 Año<br>
+				   $1.000.000</p>
+            </div>
+            
+            <div class="otros_servicios"><p>*** Otros servicios no incluidos en el plan ***<br>
+				Fotografía profesional con locación y estudio.<br>
+				Realización de video promocional en HD.<br>
+				Más información <a href="#"><span>AQUÍ</span></a></p></div>
+                
+            
+            <div class="formulario_registro_conejita">
+               <form action="#" id="registro" name="registro" method="post">
+               <label for="plan">Plan seleccionado</label>
+               	<select name="plan">
+            		<OPTION VALUE="3meses">3 Meses</OPTION> 
+						<OPTION VALUE="6meses">6 Meses</OPTION> 
+						<OPTION VALUE="1ano">1 Año</OPTION> 
+            	</select>
+               <label for="nick">Nombre de fantasía</label><input name="nick" type="texto" required placeholder="elige un nombre">
+               <label for="fono">Teléfono</label><input name="fono" type="texto" required placeholder="ingresa tu teléfono">
+               <label for="mail">E-mail</label><input name="mail" type="email" required placeholder="ingresa tu email">
+               <label for="pass">Contraseña</label><input name="pass" type="pass" required placeholder="crea una contraseña">
+               <label for="rpass">Repetir contraseña</label><input name="rpass" type="pass" required placeholder="crea una contraseña">
+               <input name="mayor" type="checkbox" value="mayor"> <span>Soy mayor de 18 años y acepto los términos legales.</span>     
+               <input id="boton" name="enviar" type="submit" value="Crear Cuenta">
+               </form>
+        	</div>
+            
+            <div class="legales_registro_conejitas">
+                <p><a href="#">Política de Privacidad</a></p> <p><a href="#">Términos Legales</a></p><br>
+              <span>*** Sitio para mayores de 18 años ***</span>
+            </div>
+            
+            <div class="boton_conejita"><p><a href="index.html">Volver al inicio</a></p></div>
+            
+        </div>
+    </main>
+</template>

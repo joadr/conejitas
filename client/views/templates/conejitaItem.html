@@ -1,0 +1,20 @@
+<template name="conejitaItem">
+	<div class="conejita_home{{#if par}}2{{else}}1{{/if}}"><img src="{{mainImage.url}}" width="275" height="313" title="{{ name }}">
+    	<div class="caja_tex_conejita_home">
+        	<div class="nombre"><p>Nombre:</p></div>
+            <div class="llama_nombre"><p>{{ name }}</p></div>
+            <div class="pais_home"><img src="/img/chile-home.png"></div>
+
+            <div class="categoria"><p>Categoría:</p></div>
+            <div class="llama_categoria"><p>{{category}}</p></div>
+
+            <div class="valoracion"><p>Valoración:</p></div>
+            <div class="estrellas rateit" data-rateit-value="{{ divide promedio }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+
+            <div class="precio_peso_home"><p>${{price}}</p></div>
+            <div class="precio_dolar_home"><p>US${{usdPrice}}</p></div>
+
+            <div class="vermas"><p><a href="conejita/{{_id}}">ver más</a></p></div>
+        </div>
+    </div>
+</template>

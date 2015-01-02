@@ -1,0 +1,23 @@
+<template name="conejitaItemCategory">
+	<div class="conejita_vip1"><img src="{{mainImage.url}}" width="166" height="189" title="{{name}} {{category}}">
+    	<div class="caja_tex_conejita_vip">
+        	<div class="nombre_vip"><p>Nombre:</p></div>
+            <div class="llama_nombre_vip"><p>{{name}}</p></div>
+            <div class="pais_vip"><img src="/img/chile-home.png"></div>
+
+            <div class="categoria_vip"><p>Categoría:</p></div>
+            <div class="llama_categoria_vip"><p>{{category}}</p></div>
+
+            <div class="valoracion_vip"><p>Valoración:</p></div>
+            <div class="estrellas_vip rateit" data-rateit-value="{{ divide promedio }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+
+            <div class="precio_peso_vip"><p>${{price}}</p></div>
+            <div class="precio_dolar_vip"><p>US${{usdPrice}}</p></div>
+
+            {{#if online}}
+            <div class="ico_off"><img src="/img/ico-on.jpg" title="Online"></div>
+            {{/if}}
+            <div class="vermas_vip"><p><a href="/conejita/{{_id}}">ver más</a></p></div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,22 @@
+<template name="conejitas">
+	<main>
+		<div class="caja_titulo"><p>Conejitas mejor evaluadas</p></div>
+		<div class="caja_conejitas_home">
+			{{# each conejitas }}
+				{{> conejitaItem }}
+			{{/ each }}
+		</div>
+	</main>
+
+	<aside style="position:absolute; display:inline-block">
+    	<div class="caja_titulo_aside"><p>Conejitas con Webcam</p></div>
+
+    	{{#each conejasOnline}}
+        <div class="foto_conejita_webcam">
+        	<a href="/conejita/{{ _id }}"><img src="{{ mainImage.url }}" width="275" height="313" title="Webcam Conejitas"></a>
+        	<div class="video_ico"><img src="img/div-video.png" width="275" height="100"></div>
+        </div>
+        {{/ each}}
+        <div class="banner_home"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></div>
+    </aside>
+</template>

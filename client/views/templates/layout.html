@@ -1,0 +1,125 @@
+<head>
+	<title>Conejitas</title>
+</head>
+<template name="layout">
+	<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Euphoria+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+	<script src="js/AC_RunActiveContent.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/function.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jqFancyTransitions.js"></script>
+	<script src="js/jquery.ez-bg-resize.js"></script>
+	<div id="contenedortotal">
+		<div id="contenedor">
+			<header>
+				<div class="sup_header">
+		            <div class="pais"><p>Conejitas Chile /</p></div>
+		            <div class="ciudad"><p>Santiago</p></div>
+		            <div class="volver_filtro"><p>&laquo; <a href="portada.html">Volver al filtro</a></p></div>
+
+		            <div class="registrate"><p><a href="#">Regístrate</a></p></div>
+		            <div class="ingreso"><p><a href="#">Ingreso usuarios</a></p></div>
+
+		            <div class="flags">
+		                <div class="flag_es"><a href="#"><img src="/img/flag-es.jpg" width="16" height="11"></a></div>
+		                <div class="flag_en"><a href="#"><img src="/img/flag-en.jpg" width="16" height="11"></a></div>
+		            </div>
+		    	</div>
+
+		        <div class="contenido_header">
+		        	<div class="logo"><a href="/"><img src="/img/logo-filtro.png" width="165" height="212" title="Conejitas.com"></a></div>
+
+		            <div class="medallas">
+		            	<p>Escoge tu Conejita</p>
+		            	<div class="medalla_ico"><a href="/categories/conejitas"><img src="/img/medalla-dorada.png" width="70" height="70" title="Conejitas"></a></div>
+		                <div class="medalla_ico2"><a href="/categories/premium"><img src="/img/medalla-plateada.png" width="70" height="70" title="Conejitas"></a></div>
+		                <div class="medalla_ico2"><a href="/categories/vip"><img src="/img/medalla-negra.png" width="70" height="70" title="Conejitas"></a></div>
+		                <div class="medalla_ico3"><a href="/categories/trave"><img src="/img/medalla-trave.png" width="70" height="70" title="Conejitas"></a></div>
+		                <div class="medalla_ico3"><a href="/categories/fantasia"><img src="/img/medalla-fantasia.png" width="70" height="70" title="Conejitas"></a></div>
+		                <div class="medalla_ico3"><a href="/categories/milf"><img src="/img/medalla-milf.png" width="70" height="70" title="Conejitas"></a></div>
+		            </div>
+
+		            <div class="sociales">
+		            	<div class="ico_twitter"><a href="{{ dict 'linkTwitter' '#' }}"><img src="/img/twitter.png" width="28" height="29" title="Twitter"></a></div>
+		                <div class="ico_facebook"><a href="{{ dict 'linkFacebook' '#' }}"><img src="/img/facebook.png" width="28" height="29" title="Facebook"></a></div>
+		                <div class="ico_instagram"><a href="{{ dict 'linkInstagram' '#' }}"><img src="/img/instagram.png" width="28" height="29" title="Instagram"></a></div>
+		            </div>
+
+		        </div>
+		    </header>
+
+		    <nav>
+		    	<ul>
+		        	<li><a href="#">Inicio</a></li>
+		            <li class="amarillo"><a href="/vivo">Conejitas en VIVO</a><!--<img src="/img/ico-chat.png" width="26" height="25" title="Chat">--></li>
+		            <li><a href="#">Ofertas especiales</a></li>
+		            <!-- <li><a href="#">Sex Shop</a></li> -->
+		            <li><a href="#">Concursos</a></li>
+		            <li><a href="#">Aliados</a></li>
+		            <li><a href="#">Contacto</a></li>
+		        </ul>
+		    </nav>
+
+
+		    {{>yield}}
+
+		    <footer>
+		    	<div class="logo_footer"><img src="/img/logo-footer.png" width="84" height="106">
+		        	<div class="quality"><img src="/img/quality.png" width="61" height="58"></div>
+		        </div>
+
+		        <div class="cuadro_text1">
+		        	<div class="tit_footer"><p>Categorías</p></div>
+		            	<ul>
+		                	<li><a href="#">Conejitas VIP</a></li>
+		                    <li><a href="#">Conejitas Premium</a></li>
+		                    <li><a href="#">Conejitas</a></li>
+		                    <li><a href="#">Conejitas Fantasías</a></li>
+		                    <li><a href="#">Conejitas Trave</a></li>
+		                    <li><a href="#">Conejitas Milf</a></li>
+		                </ul>
+		        </div>
+
+		        <div class="cuadro_text1">
+		        	<div class="tit_footer"><p>Servicios</p></div>
+		            	<ul>
+		                	<li><a href="/vivo">Conejitas en VIVO</a></li>
+		                    <li><a href="#">Ofertas Especiales</a></li>
+		                    <!-- <li><a href="#">Sex Shop</a></li> -->
+		                    <li><a href="#">Concursos</a></li>
+		                    <li><a href="#">Aliados</a></li>
+		                </ul>
+		        </div>
+
+		        <div class="cuadro_text1">
+		        	<div class="tit_footer"><p>Información</p></div>
+		            	<ul>
+		                	<li><a href="#">Términos y Condiciones</a></li>
+		                    <li><a href="#">Políticas de Privacidad</a></li>
+		                    <li><a href="#">Contacto</a></li>
+		                    <li><a href="/unirme">Quiero ser conejita</a></li>
+		                </ul>
+		        </div>
+
+		        <div class="registro_footer">
+		        	<div class="silueta"><img src="/img/silueta.png" width="34" height="104"></div>
+		            	<div class="tit_form"><p>Sesión Conejitas</p>
+		                	<div class="form_footer">
+		                    	<form id="header">
+		                          <input type="text" name="usuario" placeholder="nombre de usuario" />
+		                          <input type="password" name="pass" placeholder="pass" />
+		                          <input type="submit" name="boton" value="Entrar" />
+		                       </form>
+
+		                    </div>
+		                </div>
+		        </div>
+
+		        <div class="copy_footer"><p>© Conejitas.com 2014  -  Derechos reservados</p></div>
+		    </footer>
+		</div>
+	</div>
+</template>
