@@ -35,7 +35,7 @@ orion.addEntity('conejitas', {
 		type: String,
 		label: "Medidas"
 	},
-	message: orion.attribute('summernote', {
+	message: orion.attribute('froala', {
         label: 'Mensaje',
         optional: true
     }),
@@ -152,6 +152,6 @@ orion.addEntity('conejitas', {
 		{ data:'weigh', title: 'Peso' },
 		{ data:'measurements', title: 'Medidas' },
 		{ data:'category', title: 'Categoría' },
-        orion.attributeColumn('summernote', 'message', 'Mensaje')
+        orion.attributeColumn('froala', 'message', 'Mensaje')
     ]
 });
