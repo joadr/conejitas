@@ -1,0 +1,14 @@
+<template name="aliados">
+	<main>
+		{{#each aliados}}
+			{{> aliadoItem }}
+		{{/each}}
+	</main>
+</template>
+
+<template name="aliadoItem">
+	<div style="display: inline-block; width:100px; height:100px;">
+		<img src="{{picture.url}}"/>
+		<p>{{name}}</p>
+	</div>
+</template>

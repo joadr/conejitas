@@ -2,7 +2,10 @@ orion.addEntity('aliados', {
 	name: {
 		type: String,
 		label: "Nombre",
-	}
+	},
+	picture: orion.attribute('file', {
+        label: 'Imagen'
+    })
 	/*
 	DrillingCenter - Directorio.
 	*/

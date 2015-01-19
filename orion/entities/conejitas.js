@@ -69,7 +69,7 @@ orion.addEntity('conejitas', {
 	},
 	phone: {
 		type: String,
-		label: "phone"
+		label: "Teléfono"
 	},
 	mainImage: orion.attribute('file', {
         label: 'Imagen'
@@ -79,7 +79,7 @@ orion.addEntity('conejitas', {
         optional: true
     }),
     video: orion.attribute('file', {
-        label: 'video',
+        label: 'Video',
         optional: true
     }),
 	price:{
@@ -141,25 +141,17 @@ orion.addEntity('conejitas', {
 		}
 	}
 }, {
-	sidebarName: 'Conejitas',
-	pluralName: 'Conejitas',
-	singularName: 'Conejita',
-	tableColumns: [
-		{ data:'name', title: 'Nombre' },
+	icon: 'bookmark',
+    sidebarName: 'Conejitas',
+    pluralName: 'Conejitas',
+    singularName: 'Conejita',
+    tableColumns: [
+        { data:'name', title: 'Nombre' },
 		{ data:'age', title: 'Edad' },
 		{ data:'heigh', title: 'Estatura' },
 		{ data:'weigh', title: 'Peso' },
 		{ data:'measurements', title: 'Medidas' },
 		{ data:'category', title: 'Categoría' },
-        //{ data:'title', title: 'Title' },
         orion.attributeColumn('summernote', 'message', 'Mensaje')
     ]
-	/*defaultIndexTableFields: [
-		{key:'name', label: 'Nombre'},
-		{key:'age', label: 'Edad'},
-		{key:'heigh', label: 'Estatura'},
-		{key:'weigh', label: 'Peso'},
-		{key:'measurements', label: 'Medidas'},
-		{key:'category', label: 'Categoría'},
-	]*/
 });

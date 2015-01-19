@@ -72,6 +72,15 @@ Router.map(function() {
             return [orion.subs.subscribe('dictionary'),
             orion.subs.subscribe('entity', 'conejitas')]
         },
-    });    
+    });
+
+    this.route('aliados', {
+        path: '/aliados',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('dictionary'),
+            orion.subs.subscribe('entity', 'aliados')]
+        }
+    });
 
 });
