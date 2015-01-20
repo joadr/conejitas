@@ -4,7 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-orionjs:core@0.4.6
+orionjs:core@0.4.8
 orionjs:styles
 orionjs:froala-editor
 orionjs:file-attribute

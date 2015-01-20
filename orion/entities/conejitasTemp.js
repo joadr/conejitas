@@ -1,4 +1,4 @@
-orion.addEntity('conejitas', {
+orion.addEntity('conejitasTemp', {
 	category: {
 		type: String,
 		label: "Categoría",
@@ -143,12 +143,11 @@ orion.addEntity('conejitas', {
 	CI: orion.attribute('file', {
         label: 'CI/Pasaporte'
     }),
-
 }, {
 	icon: 'bookmark',
-    sidebarName: 'Conejitas',
-    pluralName: 'Conejitas',
-    singularName: 'Conejita',
+    sidebarName: 'Pendientes Aprobación',
+    pluralName: 'Pendientes Aprobación',
+    singularName: 'Pendiente Aprobación',
     tableColumns: [
         { data:'name', title: 'Nombre' },
 		{ data:'age', title: 'Edad' },
