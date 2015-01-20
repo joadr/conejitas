@@ -1,4 +1,4 @@
-orion.addEntity('conejitasTemp', {
+/*orion.addEntity('conejitas', {
 	category: {
 		type: String,
 		label: "Categoría",
@@ -143,11 +143,12 @@ orion.addEntity('conejitasTemp', {
 	CI: orion.attribute('file', {
         label: 'CI/Pasaporte'
     }),
+
 }, {
 	icon: 'bookmark',
-    sidebarName: 'Pendientes Aprobación',
-    pluralName: 'Pendientes Aprobación',
-    singularName: 'Pendiente Aprobación',
+    sidebarName: 'Conejitas',
+    pluralName: 'Conejitas',
+    singularName: 'Conejita',
     tableColumns: [
         { data:'name', title: 'Nombre' },
 		{ data:'age', title: 'Edad' },
@@ -157,4 +158,4 @@ orion.addEntity('conejitasTemp', {
 		{ data:'category', title: 'Categoría' },
         orion.attributeColumn('froala', 'message', 'Mensaje')
     ]
-});
+});*/

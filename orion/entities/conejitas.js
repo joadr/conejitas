@@ -1,4 +1,9 @@
 orion.addEntity('conejitas', {
+	userId: {
+        type: String,
+        label: "Id Usuario",
+        optional: true
+    },
 	category: {
 		type: String,
 		label: "Categoría",

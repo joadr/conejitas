@@ -8,8 +8,8 @@ Router.map(function() {
         orion.subs.subscribe('entity', 'conejitas')]
       },
       data: function() {
-			return {
-				conejitas: function() {
+            return {
+                conejitas: function() {
                     var conejitas = shuffles(orion.entities.conejitas.collection.find({}, {limit:4}).fetch());
                     for(var i = 0; i<conejitas.length; i++) {
                         if((i+1) % 2 == 0){
@@ -20,8 +20,8 @@ Router.map(function() {
                     }
                     return conejitas;
                 }
-			}
-		}
+            }
+        }
     });
 
     this.route('conejita', {
