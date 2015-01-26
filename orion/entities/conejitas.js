@@ -24,9 +24,14 @@ orion.addEntity('conejitas', {
 		type: String,
 		label: "Nombre",
 	},
+	realName: {
+		type: String,
+		label: "Nombre real",
+	},
 	age: {
 		type: Number,
-		label: "Edad"
+		label: "Edad",
+		min: 18
 	},
 	heigh: {
 		type: String,
@@ -130,7 +135,7 @@ orion.addEntity('conejitas', {
 			omit: true
 		}
 	},
-	promedio:{
+	promedio: {
 		type: Number,
 		decimal: true,
 		defaultValue: 0,
@@ -138,7 +143,7 @@ orion.addEntity('conejitas', {
 			omit: true
 		}
 	},
-	online:{
+	online: {
 		type: Boolean,
 		defaultValue: false,
 		autoform: {
@@ -146,9 +151,41 @@ orion.addEntity('conejitas', {
 		}
 	},
 	CI: orion.attribute('file', {
-        label: 'CI/Pasaporte'
+        label: 'Foto CI/Pasaporte'
     }),
-
+    plan: {
+		type: String,
+		label: "Plan",
+		optional: true
+	},
+	opcion: {
+		type: String,
+		label: "opcion",
+		optional: true
+	},
+	fechaInicioPlan: {
+		type: Date,
+		label: "Inicio Plan",
+		optional: true
+	},
+	aproved: {
+		type: Boolean,
+		label: "aprobada",
+		autoform: {
+			omit: true
+		}
+	},
+	email: {
+		type: String,
+		label: "email",
+	},
+	password: {
+		type: String,
+		label: "contraseña",
+		autoform: {
+			omit: true
+		}
+	}
 }, {
 	icon: 'bookmark',
     sidebarName: 'Conejitas',
@@ -161,6 +198,7 @@ orion.addEntity('conejitas', {
 		{ data:'weigh', title: 'Peso' },
 		{ data:'measurements', title: 'Medidas' },
 		{ data:'category', title: 'Categoría' },
+		{ data:'aproved', title: 'Aprobado' },
         orion.attributeColumn('froala', 'message', 'Mensaje')
     ]
 });

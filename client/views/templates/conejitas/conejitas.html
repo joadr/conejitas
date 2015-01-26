@@ -6,6 +6,10 @@
 				{{> conejitaItem }}
 			{{/ each }}
 		</div>
+
+		{{# each categories}}
+			{{>categoriesList}}
+		{{/each}}
 	</main>
 
 	<aside style="position:absolute; display:inline-block">
@@ -19,4 +23,13 @@
         {{/ each}}
         <div class="banner_home"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></div>
     </aside>
+</template>
+
+<template name="categoriesList">
+	<div class="caja_titulo"><p>Conejitas {{name}}</p></div>
+	<div class="caja_conejitas_home">
+		{{# each conejitas }}
+			{{> conejitaItem }}
+		{{/ each }}
+	</div>
 </template>

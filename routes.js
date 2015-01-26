@@ -10,7 +10,7 @@ Router.map(function() {
       data: function() {
             return {
                 conejitas: function() {
-                    var conejitas = shuffles(orion.entities.conejitas.collection.find({}, {limit:4}).fetch());
+                    var conejitas = shuffles(orion.entities.conejitas.collection.find({aproved: true}, {limit:4}).fetch());
                     for(var i = 0; i<conejitas.length; i++) {
                         if((i+1) % 2 == 0){
                             conejitas[i].par = true;
@@ -55,16 +55,6 @@ Router.map(function() {
         }
     });
 
-    this.route('registroConejita', {
-        path: '/unirme',
-        layoutTemplate: 'layout',
-        waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas'),
-            orion.subs.subscribe('entity', 'services')]
-        },
-    });
-
     this.route('vivo', {
         path: '/vivo',
         layoutTemplate: 'layout',
@@ -82,5 +72,35 @@ Router.map(function() {
             orion.subs.subscribe('entity', 'aliados')]
         }
     });
+
+    /**
+    * Procedimiento de Quiero ser conejita
+    */
+    this.route('registroConejita', {
+        path: '/unirme',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('dictionary'),
+            //orion.subs.subscribe('entity', 'conejitas'),
+            orion.subs.subscribe('entity', 'services')]
+        },
+        onAfterRun: function() {
+            document.title = "Quiero ser conejita";
+        }
+    });
+
+    this.route('registro2', {
+        path: '/unirme2',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('dictionary'),
+            orion.subs.subscribe('entity', 'conejitas'),
+            orion.subs.subscribe('entity', 'services')]
+        },
+        onAfterRun: function() {
+            document.title = "Quiero ser conejita";
+        }
+    });
+
 
 });

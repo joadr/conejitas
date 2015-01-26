@@ -31,7 +31,7 @@ Template.conejita.events({
       return alert("Por favor ingrese un número entre 1 y 10.");
     }
     
-    var coneja = orion.entities.conejitas.collection.findOne({_id: this._id});
+    var coneja = orion.entities.conejitas.collection.findOne({_id: this._id, aproved: true});
     if($(e.target).find('[name=code]').val() != coneja.evaluationCode){
       return alert("El código de evaluación no es válido o no corresponde a esta conejita.");
     }

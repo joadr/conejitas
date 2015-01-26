@@ -1,7 +1,7 @@
 Template.categories.helpers({
 	conejitas: function () {
 		//category = orion.entities.categories.collection.findOne({searchable: reemplazartildes(Router.current().params.name.toLowerCase())});
-		conejitas = orion.entities.conejitas.collection.find({category: this.name});
+		conejitas = orion.entities.conejitas.collection.find({category: this.name, aproved: true});
 		return conejitas;
 	}
 });

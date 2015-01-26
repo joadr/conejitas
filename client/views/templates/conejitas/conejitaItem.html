@@ -10,9 +10,13 @@
 
             <!-- <div class="valoracion"><p>Valoración:</p></div>
             <div class="estrellas rateit" data-rateit-value="{{ divide promedio }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div> -->
+            {{#if video}}
+                <div class="valoracion"><p>Tiene Video!</p></div>
+            {{/if}}
 
             <div class="precio_peso_home"><p>${{price}}</p></div>
             <div class="precio_dolar_home"><p>US${{usdPrice}}</p></div>
+            <br>
 
             <div class="vermas"><p><a href="conejita/{{_id}}">ver más</a></p></div>
         </div>

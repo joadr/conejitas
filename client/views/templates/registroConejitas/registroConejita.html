@@ -1,0 +1,135 @@
+<template name="registroConejita">
+    <main id="conejita">
+        <div class="caja_text_conejita">
+        	<h2>Plan Conejita, selecciona tu opción</h2>
+            <div style="text-align:center;">
+              <div class="ico_plan"><input type="radio" name="plan" value="plan1" style="display:none" id="plan1"><label for="plan1"><img src="img/ico-plan-conejita.png" width="73" height="73"></label></div>
+              <div class="ico_plan"><input type="radio" name="plan" value="plan2" style="display:none" id="plan2"><label for="plan2"><img src="img/ico-plan-conejita.png" width="73" height="73"></label></div>
+            </div>
+            <div class="plan1" style="display:none">
+              <p>INCLUYE<br>
+              Subir hasta 10 fotos - Servicio Webcam / Chat Online<br></p>
+
+  			      <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion1" style="display:none" id="opcion1">
+                <label for="opcion1">
+                	<h3>OPCIÓN 1</h3>
+                  <p>2 Semanas<br>
+    				      $50.000</p>
+                  </label>
+              </div>
+              
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion2" style="display:none" id="opcion2">
+                <label for="opcion2">
+                	<h3>OPCIÓN 2</h3>
+                    <p>1 Mes<br>
+    				        $75.000</p>
+                    </label>
+              </div>
+              
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion3" style="display:none" id="opcion3">
+                <label for="opcion3">
+                	<h3>OPCIÓN 3</h3>
+                    <p>3 Meses<br>
+    				        $200.000</p>
+                    </label>
+              </div>
+
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion4" style="display:none" id="opcion4">
+                <label for="opcion4">
+                  <h3>OPCIÓN 4</h3>
+                    <p>6 Meses<br>
+                    $350.000</p>
+                    </label>
+              </div>
+
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion5" style="display:none" id="opcion5">
+                <label for="opcion5">
+                  <h3>OPCIÓN 5</h3>
+                    <p>1 Año<br>
+                    $650.000</p>
+                    </label>
+              </div>
+            </div>
+
+            <div class="plan2" style="display:none">
+              <p>INCLUYE<br>
+              Subir hasta 10 fotos - Chat online - Subida de video promocional -<br>
+              Preferencia en portada - Lanzar ofertas</p>
+              
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion1" style="display:none" id="opcion1">
+                <label for="opcion1">
+                  <h3>OPCIÓN 1</h3>
+                    <p>1 Mes<br>
+                    $100.000</p>
+                    </label>
+              </div>
+              
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion2" style="display:none" id="opcion2">
+                <label for="opcion2">
+                  <h3>OPCIÓN 2</h3>
+                    <p>3 Meses<br>
+                    $250.000</p>
+                    </label>
+              </div>
+
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion3" style="display:none" id="opcion3">
+                <label for="opcion3">
+                  <h3>OPCIÓN 3</h3>
+                    <p>6 Meses<br>
+                    $450.000</p>
+                    </label>
+              </div>
+
+              <div class="caja_text_opcion">
+                <input type="radio" name="opcion" value="opcion4" style="display:none" id="opcion4">
+                <label for="opcion4">
+                  <h3>OPCIÓN 4</h3>
+                    <p>1 Año<br>
+                    $800.000</p>
+                    </label>
+              </div>
+            </div>
+            <div class="otros_servicios"><p>*** Otros servicios no incluidos en el plan ***<br>
+            <table>
+              <tr><td><input type="checkbox" name="fotoPro" id="fotoPro"/></td><td><label for="fotoPro">Fotografía profesional con locación y estudio.</label></td></tr>
+              <tr><td><input type="checkbox" name="videoPro" id="videoPro"/></td><td style="text-align:left;"><label for="videoPro">Realización de video promocional en HD.</label></td></tr>
+            </table>
+				Selecciona si deseas recibir más información</p></div>
+                
+            
+            <div class="formulario_registro_conejita">
+               <form action="#" id="registro" name="registro" method="post">
+               <!-- <label for="plan">Plan seleccionado</label>
+               	<select name="plan">
+            		<OPTION VALUE="3meses">3 Meses</OPTION> 
+						<OPTION VALUE="6meses">6 Meses</OPTION> 
+						<OPTION VALUE="1ano">1 Año</OPTION> 
+            	</select> -->
+               <label for="nick">Nombre de fantasía</label><input name="nick" type="texto" required placeholder="elige un nombre">
+               <label for="fono">Teléfono</label><input name="fono" type="texto" required placeholder="ingresa tu teléfono">
+               <label for="mail">E-mail</label><input name="mail" type="email" required placeholder="ingresa tu email">
+               <label for="pass">Contraseña</label><input name="pass" type="pass" required placeholder="crea una contraseña">
+               <label for="rpass">Repetir contraseña</label><input name="rpass" type="pass" required placeholder="crea una contraseña">
+               <input name="mayor" type="checkbox" value="mayor"> <span>Soy mayor de 18 años y acepto los términos legales.</span>     
+               <input id="boton" name="enviar" type="submit" value="Solicitar registro">
+               </form>
+        	</div>
+            
+            <div class="legales_registro_conejitas">
+                <p><a href="#">Política de Privacidad</a></p> <p><a href="#">Contrato y Términos Legales</a></p><br>
+              <span>*** Sitio para mayores de 18 años ***</span>
+            </div>
+            
+            <div class="boton_conejita"><p><a href="index.html">Volver al inicio</a></p></div>
+            
+        </div>
+    </main>
+</template>

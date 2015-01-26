@@ -1,6 +1,6 @@
 Template.conejita.helpers({
 	conejita: function () {
-		var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id});
+		var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id, aproved:true});
     	conejita.name = conejita.name.toUpperCase();
     	for (index = 0; index < conejita.services.length; ++index) {
     		service = orion.entities.services.collection.findOne({'_id': conejita.services[index]});

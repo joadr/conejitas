@@ -5,12 +5,19 @@
 }
 
 #contenedortotal{
+
 	/* @override
 		http://fonts.googleapis.com/css?family=Kaushan+Script
 		http://fonts.googleapis.com/css?family=Ubuntu
 	*/
 	/*@charset "UTF-8";*/
 	/* CSS Document */
+	
+	.orionFroala, .orionFroala p {
+		text-align: left !important;
+		color: black !important;
+	}
+
 
 	background-image: url(/img/fondo.jpg);
 	width:100%;
@@ -739,7 +746,7 @@
 	   margin-top: 8px;
 		margin-left: 0;
 	}
-	input[type=text], input[type=password] {
+	input[type=text], input[type=password], input[type=number] {
 	   width: 130px;
 	   border: 0px;
 	   padding: 5px;
@@ -1141,6 +1148,12 @@
 		margin-left: 35px;
 		margin-right: 20px;
 	}
+	
+	.caja_text_opcion label{
+		padding:3px;
+		border-radius: 3px;
+	}
+
 	.caja_text_opcion p {
 		font-family: 'Ubuntu', sans-serif;
 		font-size: 1em;
@@ -1174,6 +1187,14 @@
 		color: #DE000B;
 		text-decoration: underline;
 	}
+	.otros_servicios label {
+		font-family: 'Ubuntu', sans-serif;
+		font-size: 0.9em;
+		color: #DE000B;
+		margin: 0;
+		width: auto;
+		margin-top:10px;
+	}
 	.otros_servicios span {
 		font-family: 'Ubuntu', sans-serif;
 		font-size: 1.2em;
@@ -1204,7 +1225,7 @@
 		color: #FFF;
 		text-align: left;
 	}
-	#boton {
+	.btnButton {
 		background:-moz-linear-gradient(#333333 0%,#000000 100%);
 		background:-ms-linear-gradient(#333333 0%,#000000 100%);
 		background:-o-linear-gradient(#333333 0%,#000000 100%);
@@ -1222,7 +1243,7 @@
 		box-shadow:none;
 		border-style: none;
 	}
-	#boton:hover{
+	.btnButton:hover{
 		background:-moz-linear-gradient(#000000 0%,#333333 100%);
 		background:-ms-linear-gradient(#000000 0%,#333333 100%);
 		background:-o-linear-gradient(#000000 0%,#333333 100%);
@@ -1297,6 +1318,9 @@
 		margin-top: 0px;
 		margin-right: auto;
 		margin-left: auto;
+		display: inline-block;
+		padding:10px;
+		border-radius: 5px;
 	}
 	.ico_plan img {
 		border: none;
