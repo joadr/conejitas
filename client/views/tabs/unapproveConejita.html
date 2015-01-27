@@ -1,0 +1,20 @@
+<template name="unapproveConejita">
+	<div class="admin-top-nav">
+		<span class="title">Eliminar conejita "{{ item.name }}"</span>
+	</div>
+	<div class="admin-content">
+		<p>Escríbale un correo a esta conejita especificando por qué no ha sido aceptada</p>
+		<!-- <textarea name="email" rows="8" cols="100"></textarea> -->
+		<input type="hidden" value="{{item.email}}" name="email" />
+		<input type="hidden" value="{{item.realName}}" name="realName" />
+		<input type="hidden" value="{{item.name}}" name="name" />
+		<div class="orionFroala" {{ this.atts }}>
+			<div class="editor"></div>
+		</div>
+		<br>
+		<a href="{{ pathFor 'approveConejita' _id=item._id }}" class="btn btn-default">Cancel</a>
+		{{# quickRemoveButton collection="orion.entities.conejitas.collection" _id=item._id onSuccess=onSuccess class="btn btn-danger" }}
+			Eliminar
+		{{/ quickRemoveButton }}
+	</div>
+</template>

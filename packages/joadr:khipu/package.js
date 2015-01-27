@@ -22,6 +22,8 @@ Package.onUse(function(api) {
   api.addFiles('lib/init.js');
   api.addFiles('lib/methods.js');
   api.addFiles('lib/routes.js');
+/*  api.addFiles('js/atmosphere.min.js');
+  api.addFiles('js/khipu-1.1.js');*/
 });
 
 Package.onTest(function(api) {

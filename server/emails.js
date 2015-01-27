@@ -1,5 +1,8 @@
 Meteor.methods({
   sendEmail: function (to, from, subject, html) {
+    if(from == ""){
+      from = "administrador@clubconejitas.cl";
+    }
     check([to, from, subject, html], [String]);
 
     // Let other method calls from the same client start running,

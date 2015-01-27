@@ -1,17 +1,17 @@
 // Apruebo la conejita
 Template.approveConejita.events({
-	'click #submit-btn-approve': function(event) {
+	'click .approve': function(event) {
 		var conejita = orion.entities.conejitas.collection.findOne(Router.current().params._id);
 		
 		//Router.current().params._id
 	},
-	'click #submit-btn': function() {
-		$("#updateEntityForm").submit();
+	'click .save': function(event) {
+		$("#updateEntityForm2").submit();
 	}
 });
 
 AutoForm.hooks({
-	updateEntityForm: {
+	updateEntityForm2: {
 		onSuccess: function(operation, result, template) {
 			//var name = Router.current().data().entity.name;
 			Router.go('unapprovedConejitas');
@@ -21,6 +21,6 @@ AutoForm.hooks({
 
 Template.approveConejita.helpers({
 	getEntity: function () {
-		return Router.current().data().entity.name;
+		return 'conejitas';
 	}
 });
