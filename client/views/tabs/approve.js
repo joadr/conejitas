@@ -2,8 +2,7 @@
 Template.approveConejita.events({
 	'click .approve': function(event) {
 		var conejita = orion.entities.conejitas.collection.findOne(Router.current().params._id);
-		
-		//Router.current().params._id
+		Meteor.call('approveConejita', conejita);
 	},
 	'click .save': function(event) {
 		$("#updateEntityForm2").submit();

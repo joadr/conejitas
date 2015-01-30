@@ -16,8 +16,3 @@ Template.conejita.helpers({
 		return promedio / 2;
 	}
 });
-
-Template.conejita.rendered = function () {
-	this.$('.rateit').rateit();
-	this.$(".rateit").bind('over', function (event,value) { $(this).attr('title', value); });
-}

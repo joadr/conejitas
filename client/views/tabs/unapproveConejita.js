@@ -35,7 +35,7 @@ Template.unapproveConejita.helpers({
         return function (result) {
             var email = $("input[name=email]").val();
 
-            var html = $('.editor').editable('getHTML', false, true);
+            var html = '<html><body>'+$('.editor').editable('getHTML', false, true)+'</body></html>';
 
             Meteor.call('sendEmail', email, "", 'Club Conejitas - Lamentamos no poder aceptarte', html);
             /*var name = Router.current().data().entity.name;*/
