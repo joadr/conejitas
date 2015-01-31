@@ -22,26 +22,20 @@ Package.onUse(function(api) {
   api.addFiles([
                 'lib/views/pagos.html',
                 'lib/views/pagos.js',
+                'lib/views/khipuReturn.html',
                 'lib/views/khipuCancel.html',
                 'lib/views/khipuButton.html',
                 'lib/views/khipuButton.js',
                 'lib/js/atmosphere-2.1.2.min.js',
                 'lib/js/khipu-1.1.js'
+                'lib/js/khipuLoad.js'
               ], 'client');
 
-  api.addFiles(['joadr:khipu.js',
+  api.addFiles([
                 'lib/init.js',
                 'lib/routes.js']);
 
   api.addFiles(['lib/methods.js', 'lib/sendNotificationUrl.js'], 'server');
 
   api.export('khipu');
-
-  /*api.addFiles('lib/tester.js');*/
-});
-
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('joadr:khipu');
-  api.addFiles('joadr:khipu-tests.js');
 });

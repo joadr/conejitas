@@ -21,18 +21,19 @@ if(Meteor.isServer){
 		},
 
 		// Tell khipu that they're going to receive a payment (with the needed data)
-		khipu_get_new_payment: function(email, bankId, amount, transaction_id){
+		khipu_get_new_payment: function(email, bankId, amount, transaction_id, subject, body){
 
 			transaction_id = typeof transaction_id !== 'undefined' ? transaction_id : Math.random().toString(36).substring(7).toLowerCase();
 
 			// Defaults:
-			var return_url = typeof khipu.config.return_url !== 'undefined' ? khipu.config.return_url : process.env.ROOT_URL+'khipu/return';
-			var cancel_url = typeof khipu.config.cancel_url !== 'undefined' ? khipu.config.cancel_url : process.env.ROOT_URL+'khipu/cancel';
+			var return_url = typeof khipu.config.return_url !== 'undefined' ? khipu.config.return_url : process.env.ROOT_URL+'/khipu/return';
+			var cancel_url = typeof khipu.config.cancel_url !== 'undefined' ? khipu.config.cancel_url : process.env.ROOT_URL+'/khipu/cancel';
+			var picture_url = typeof khipu.config.picture_url !== 'undefined' ? khipu.config.picture_url : '';
 
 			var data = {
 				receiver_id: khipu.config.receiver_id,
-				subject: 'ejemplo de un pago khipu usando meteor',
-				body: 'Este es un pago de pruebas para usar la biblioteca khipu meteor',
+				subject: subject,
+				body: body,
 				amount: amount,
 				payer_email: email,
 				bank_id: 'Bawdf',
@@ -42,7 +43,7 @@ if(Meteor.isServer){
 				notify_url: '',
 				return_url: return_url,
 				cancel_url: cancel_url,
-				picture_url: '',
+				picture_url: picture_url,
 			}
 
 			var response = Meteor.call('khipu_do_call_json', 'createPaymentURL', data);
@@ -58,15 +59,15 @@ if(Meteor.isServer){
 
 				var payment = khipu.payments.insert(data);
 
-				var respuesta = {
+				var respuesta = [{
 					"id": data.khipu_id,
 					"bill-id": data.bill_id,
 					"url": data.url,
 					"manual_url": response['manual-url'],
 					"mobile_url": response['mobile-url'],
-					//"ready-for-terminal": response['ready-for-terminal']
-					"ready-for-terminal": true
-				}
+					"ready-for-terminal": response['ready-for-terminal']
+					//"ready-for-terminal": true
+				}, {transaction_id: transaction_id}];
 				return respuesta;
 			} else {
 				return false;
@@ -81,12 +82,14 @@ if(Meteor.isServer){
 			};
 
 			var response = Meteor.call('khipu_do_call_json', 'getPaymentNotification', newData);
+			response = JSON.parse(response);
 
 			if(response.notification_token != newData.notification_token || response.receiver_id != newData.receiver_id){
 				return false;
 			}
 
 			var transaction = khipu.payments.findOne({transaction_id: response.transaction_id});
+
 
 			if(transaction.amount == response.amount){
 				khipu.payments.update(transaction._id, { $set: {payed: true} });
@@ -96,9 +99,9 @@ if(Meteor.isServer){
 			}
 		},
 
-		update_payment_notification_url: function(url){
+		update_payment_notification_url: function(){
 
-			url = typeof url !== 'undefined' ? url : process.env.ROOT_URL+'khipu/receive/';
+			var url = typeof khipu.config.notify_url !== 'undefined' ? khipu.config.notify_url : process.env.ROOT_URL+'/khipu/receive/';
 
 			var data = {
 				receiver_id: khipu.config.receiver_id,
@@ -127,6 +130,7 @@ if(Meteor.isServer){
 
 			this.unblock();
 			// We call the ...
+
 			try{
 				var result = HTTP.call('POST', khipu.config.url+url, 
 					{data: data});
@@ -149,6 +153,12 @@ if(Meteor.isServer){
 		}
 	});
 }
+
+khipu_get_new_payment = function( email, bank_id, amount, subject, body, transaction_id ){
+	var result = Meteor.call('khipu_get_new_payment', email, bank_id, amount, transaction_id, subject, body);
+	khipuLoad(result[0]);
+	return result[1];
+};
 
 Meteor.publish('khipuPayments', function(){
 	return khipu.payments.find();
