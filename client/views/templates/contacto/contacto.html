@@ -1,0 +1,20 @@
+<template name="contacto">
+    <main id="conejita">
+      <div class="caja_text_conejita">
+        <h2>Contáctanos</h2>
+        Nombre: <input type="text" name="name" /><br>
+        Su correo email: <input type="email" name="email" /><br>
+        Asunto: <input type="text" name="subject" /><br>
+        Mensaje: <textarea name="message"></textarea><br><br>
+        <div class="otros_servicios">
+        Quiero recibir más información sobre:
+        <table>
+          <tr><td><input type="checkbox" name="fotoPro" id="fotoPro"></td><td><label for="fotoPro">Fotografía profesional con locación y estudio.</label></td></tr>
+          <tr><td><input type="checkbox" name="videoPro" id="videoPro"></td><td style="text-align:left;"><label for="videoPro">Realización de video promocional en HD.</label></td></tr>
+        </table>
+        </div>
+        <button class="contactoEnviar">Enviar</button><br>
+        <p class="message"></p>
+      </div>
+    </main>
+</template>

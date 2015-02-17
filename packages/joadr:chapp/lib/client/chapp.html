@@ -1,0 +1,83 @@
+<template name="chapp_form">
+    <div id="chat_chapp">
+        <div id="chat" class="clearfix">
+            <div id="header-chat" class="clearfix">
+
+                <div class="col-lg-4">
+                    <div style="padding-left: 2em;">
+                        <i class="icon-chat"></i>
+                        <span class="title1">Chat</span> <span class="title2">Club Conejitas</span><br>
+                        <span class="txt-nombre">Nombre Conejita</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div id="contadorminuto" class="btn-club">00:00:00</div>
+
+                    <div style="float: left;display: inline-block;margin-left: 1em;"><i class="icon-webcam"></i><a class="fancybox btn btn-club" href="condiciones.html">HABLAR EN PRIVADO</a></div>
+
+                </div>
+
+                <div class="col-lg-3"><a class="btn btn-club" href="/vivo">VOLVER</a></div>
+
+            </div>
+            <form id="chapp-form">
+
+                <div id="main-chat" class="col-lg-9">
+                    <div class="main-content-chat">
+                        <div id="video" class="activo">
+                            {{>webcam}}
+                        </div>
+
+
+                        <ol class="conversacion" id="chapp_text">
+                            {{#each chapp}}
+                                {{>chapp_item}}
+                            {{/each}}
+                        </ol>
+
+                        <div class="content-txt-chat" id="chapp-input-div">
+                            <textarea class="txt-chat" name="conversacion" rows="3" id="chapp-input"></textarea>
+                            <div class="content-btn-chat"><button id="chapp-button" type="submit" class="btn-chat">Enviar</button></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+            <div id="aside-chat" class="col-lg-3">
+                <div class="aside-content-chat">
+                    <h3>Usuarios</h3>
+                    <ol class="lista-chat">
+                        {{#if roomusers}}
+                            {{#each roomusers}}
+                                <li><a href="#" >{{state.username}}</a></li>
+                            {{/each}}
+                        {{/if}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- fin chat -->
+</template>
+
+<template name="chapp_item">
+    {{#if chatMaster}}
+    <li class="admin">
+        <h4>{{formatDate chatDate}} / {{chatUserName}}:</h4>
+        <p> {{chatText}}</p>
+    </li>
+    {{else}}
+    <li class="user">
+        <h4>{{formatDate chatDate}} / {{chatUserName}}:</h4>
+        <p> {{chatText}}</p>
+    </li>
+    {{/if}}
+</template>
+
+<template name="webcam">
+    <video class="video" width="300" height="225" autoplay style="background:#000;" src="">Sorry, Web RTC is not available in your browser</video>
+    <div class="out" style="display:none">La conejita se desconectó.</div>
+</template>

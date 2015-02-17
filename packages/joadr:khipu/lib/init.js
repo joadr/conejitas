@@ -6,3 +6,5 @@ khipu.config = {
 }
 
 khipu.payments = new Mongo.Collection("khipuPayments");
+
+khipu.logs = new Mongo.Collection("khipuLogs");

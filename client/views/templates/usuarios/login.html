@@ -1,0 +1,13 @@
+<template name="loginUsuarios">
+		<div class="message">
+		{{#if message}}
+			{{ message }}
+		{{/if}}
+		</div>
+
+	<form method="POST" class="loginUsuarios">
+		Email: <input type="email" name="email"/><br>
+		Contraseña: <input type="password" name="password" /><br>
+		<input type="submit" value="Iniciar Sesión" />
+	</form>
+</template>

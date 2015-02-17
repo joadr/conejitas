@@ -1,0 +1,19 @@
+<template name="pagoConejitas">
+	{{#if pagado}}
+		Estimada conejita, la cuenta que trató de solicitar ya se encuentra en proceso de verificación o ya se encuentra pagada.
+	{{else}}
+		{{#if puedePagar}}
+			<div class="formulario">
+				Estimada conejita, el monto a pagar por su cuenta es de ${{abono}}<br>
+				Por favor complete los siguientes datos:
+				<form method="POST">
+					{{banks}}
+					<button type="submit" class="pagar">Proceder al pago</button>
+				</form>
+			</div>
+			<div class="khbutton" style="text-align:center"></div>
+		{{else}}
+			Estimada conejita, por diversas condiciones usted no puede pagar o , si considera que se trata de un error, contacte al administrador.
+		{{/if}}
+	{{/if}}
+</template>

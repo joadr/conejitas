@@ -17,11 +17,15 @@
 
     	{{#each conejasOnline}}
         <div class="foto_conejita_webcam">
-        	<a href="/conejita/{{ _id }}"><img src="{{ mainImage.url }}" width="275" height="313" title="Webcam Conejitas"></a>
-        	<div class="video_ico"><img src="img/div-video.png" width="275" height="100"></div>
+        	<a href="/chat/public/{{ _id }}"><img src="{{ mainImage.url }}" width="275" height="313" title="Webcam Conejitas">
+        	<div class="video_ico"><img src="img/div-video.png" width="275" height="100"></div></a>
         </div>
         {{/ each}}
-        <div class="banner_home"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></div>
+        {{#if currentUser}}
+        <div class="banner_home"><a href="/usuarios/album"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></a></div>
+        {{ else }}
+        <div class="banner_home"><a href="/usuarios/login"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></a></div>
+        {{/if}}
     </aside>
 </template>
 

@@ -1,11 +1,12 @@
 // función para aprobar conejitas
 Meteor.methods({
   approveConejita: function (conejita) {
+    transaction_id = Meteor.call('generarPago', conejita._id);
     Meteor.call('sendEmail',
             'joaquin.diaz@ies.cl',
             'joaquin.diaz@ies.cl',
             'Club Conejitas: '+conejita.name+', ¡has sido aceptada dentro del club conejitas!',
-            'Has sido aceptada dentro del club conejitas, debes proceder al pago en el siguiente enlace: <a href="http://www.clubconejitas.cl/admin/e/conejitas/'+idConejita+'">Aquí</a></p>');
+            'Has sido aceptada dentro del club conejitas, debes proceder al pago en el siguiente enlace: <a href="http://www.clubconejitas.cl/conejita/pagar/'+idConejita+'/'+transaction_id+'">Aquí</a></p>');
   },
   primerPago: function(conejita){
     var userId = Accounts.createUser({

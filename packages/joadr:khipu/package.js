@@ -26,14 +26,16 @@ Package.onUse(function(api) {
                 'lib/views/khipuCancel.html',
                 'lib/views/khipuButton.html',
                 'lib/views/khipuButton.js',
+                'lib/views/banks.html',
+                'lib/views/banks.js',
                 'lib/js/atmosphere-2.1.2.min.js',
                 'lib/js/khipu-1.1.js'
-                'lib/js/khipuLoad.js'
               ], 'client');
 
   api.addFiles([
                 'lib/init.js',
-                'lib/routes.js']);
+                'lib/routes.js',
+                'lib/khipuLoad.js']);
 
   api.addFiles(['lib/methods.js', 'lib/sendNotificationUrl.js'], 'server');
 

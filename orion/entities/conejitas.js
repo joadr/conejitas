@@ -171,20 +171,67 @@ orion.addEntity('conejitas', {
 	aproved: {
 		type: Boolean,
 		label: "aprobada",
-		autoform: {
-			omit: true
-		}
+		optional: true
 	},
 	email: {
 		type: String,
 		label: "email",
+		optional: true,
 	},
 	password: {
 		type: String,
 		label: "contraseña",
+		optional: true,
 		autoform: {
 			omit: true
 		}
+	},
+	bornCountry: {
+		type: String,
+		label: "País natal",
+		autoform: {
+	      type: "select",
+	      options: function () {
+	      	var countries = orion.entities.countries.collection.find().map(function(country, indice) {
+				country.label = country.name;
+				country.value = country._id;
+      			return country;
+    		})
+    		return countries;
+	        //return orion.entities.services.collection.find()
+	      }
+	    }
+	},
+	workCountry: {
+		type: String,
+		label: "País trabajo",
+		autoform: {
+	      type: "select",
+	      options: function () {
+	      	var countries = orion.entities.countries.collection.find({enabled: true}).map(function(country, indice) {
+				country.label = country.name;
+				country.value = country._id;
+      			return country;
+    		})
+    		return countries;
+	      }
+	    }
+	},
+	workCity: {
+		type: String,
+		label: "Ciudad trabajo",
+		autoform: {
+	      type: "select",
+	      options: function () {
+	      	var categories = orion.entities.categories.collection.find().map(function(category, indice) {
+				category.label = category.name;
+				category.value = category.name;
+      			return category;
+    		})
+    		return categories;
+	        //return orion.entities.services.collection.find()
+	      }
+	    }
 	}
 }, {
 	icon: 'bookmark',
