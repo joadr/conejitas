@@ -1,5 +1,26 @@
 Router.map(function() {
 
+    this.route('filtro', {
+      path: '/filtro',
+      waitOn: function() {
+        return [orion.subs.subscribe('dictionary'),
+        orion.subs.subscribe('entity', 'countries'),
+        orion.subs.subscribe('entity', 'cities')]
+      },
+      data: function() {
+            return {
+                countries: function() {
+                    var countries = orion.entities.countries.collection.find({enabled: true}).fetch();
+                    return countries;
+                },
+                cities: function(){
+                    var cities = orion.entities.cities.collection.find({enabled: true}).fetch();
+                    return cities;
+                }
+            }
+        }
+    });
+
     this.route('conejitas', {
       path: '/',
       layoutTemplate: 'layout',
@@ -83,9 +104,6 @@ Router.map(function() {
             return [orion.subs.subscribe('dictionary'),
             //orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services')]
-        },
-        onAfterRun: function() {
-            document.title = "Quiero ser conejita";
         }
     });
 
@@ -96,9 +114,6 @@ Router.map(function() {
             return [orion.subs.subscribe('dictionary'),
             orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services')]
-        },
-        onAfterRun: function() {
-            document.title = "Quiero ser conejita";
         }
     });
 
@@ -112,9 +127,6 @@ Router.map(function() {
             return [orion.subs.subscribe('dictionary'),
             orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'khipuPayments')]
-        },
-        onAfterRun: function() {
-            document.title = "Quiero ser conejita";
         }
     });
 
@@ -126,9 +138,6 @@ Router.map(function() {
         layoutTemplate: 'layout',
         waitOn: function() {
             return [orion.subs.subscribe('dictionary')]
-        },
-        onAfterRun: function() {
-            document.title = "Regístro usuarios";
         }
     });
 
@@ -198,26 +207,6 @@ Router.map(function() {
             Session.set('chapp-username', Meteor.user().username);
             Session.set('chapp-docid', conejita._id);
 
-            /** Video related **/
-            // crear instancia de usuario
-            /*var peer = new Peer(Meteor.userId(), {key: '2eflxenknki3haor'});
-
-            // Llamamos a la conejita
-            var conn = peer.connect(conejita._id);
-
-            peer.on('call', function(call) {
-                call.answer(null);
-                call.on('stream', function(remoteStream) {
-                  // Show stream in some <video> element.
-                  $('.video').prop('src', URL.createObjectURL(remoteStream));
-                });
-            });*/
-            /*var call = peer.call(conejita._id, null);
-            call.on('stream', function(remoteStream) {
-                // Show stream in some <video> element.
-                $('.video').prop('src', URL.createObjectURL(remoteStream));
-            });*/
-
             this.next();
         },
         onAfterAction: function(){
@@ -232,30 +221,10 @@ Router.map(function() {
                 }
 
                 if (count == 0){
-                    $('.webcam').find('video').hide();
-                    $('.out').show();
+                    $('.video').hide();
+                    //$('.out').show();
                 } else {
-                    if($('.out').is(":visible")){
-                        setTimeout(
-                            function() {
-                                var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id, online: true});
-                                var peer = new Peer(Meteor.userId(), {key: '2eflxenknki3haor', debug:true});
-                                // Llamamos a la conejita
-                                var conn = peer.connect(conejita._id);
-
-                                peer.on('call', function(call) {
-                                    call.answer(null);
-                                    call.on('stream', function(remoteStream) {
-                                      // Show stream in some <video> element.
-                                      $('.video').prop('src', URL.createObjectURL(remoteStream));
-                                      $('.out').hide();
-                                      $('.webcam').find('video').show();
-                                    });
-                                });
-                            }
-                        , 5000);
-                        
-                    }
+                    $('.video').show();
                 }
 
             });
@@ -297,31 +266,6 @@ Router.map(function() {
             Session.set('chapp-docid', conejita._id);
             Session.set('chapp-master', conejita.name);
 
-            // video related
-            /*var peer = new Peer(conejita._id, {key: '2eflxenknki3haor'});
-            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-            navigator.getUserMedia({video: true}, function(stream) {
-                $('.video').prop('src', URL.createObjectURL(stream));
-                window.localStream = stream;
-            }, function(err) {
-                console.log('Failed to get local stream' ,err);
-            });
-
-            peer.on('connection', function(conn) {
-                conn.on( 'open', function() {
-                    var call = peer.call(conn.peer, window.localStream);
-                });
-            });*/
-
-            /*navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-            peer.on('call', function(call) {
-              navigator.getUserMedia({video: true}, function(stream) {
-                call.answer(stream); // Answer the call with an A/V stream.
-                $('.video').prop('src', URL.createObjectURL(stream));
-              }, function(err) {
-                console.log('Failed to get local stream' ,err);
-              });
-            });*/
             this.next();
         },
         data: function(){

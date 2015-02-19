@@ -2,7 +2,7 @@
 orion.admin.addSidebarTab({
     routeName: 'unapprovedConejitas',
     navbarTitle: 'Conejitas sin aprobar',
-    icon: 'folder',
+    icon: 'file-text',
     permission: 'conejitas.approve'
 });
 

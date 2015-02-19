@@ -7,19 +7,13 @@ Template.publicChatConejitas.rendered = function () {
     navigator.getUserMedia({video: true}, function(stream) {
         $('.video').prop('src', URL.createObjectURL(stream));
         window.localStream = stream;
+
+        Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).observe({
+            added: function(item) {
+                peer.call(item.userId, window.localStream);  
+            }
+        });
     }, function(err) {
         console.log('Failed to get local stream' ,err);
-    });
-
-    peer.on('connection', function(conn) {
-        conn.on( 'open', function() {
-            var call = peer.call(conn.peer, window.localStream);
-        });
-    });
-
-    ItemCollection.find({created_at : {$gt: some_current_time}}).observe({
-        added: function(item) {
-        // Alert code
-        }
     });
 };

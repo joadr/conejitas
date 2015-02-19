@@ -4,16 +4,19 @@ orion.addEntity('countries', {
 		label: "Nombre",
 	},
 	picture: orion.attribute('file', {
-        label: 'Imagen'
+        label: 'Imagen',
+        optional: true
     }),
     enabled: {
     	type: Boolean,
-    	label: "Habilitado"
+    	label: "Habilitado",
+    	optional: true
     }
 }, {
-	sidebarName: 'Aliados',
-	pluralName: 'Aliados',
-	singularName: 'Aliado',
+	icon: 'flag-checkered',
+	sidebarName: 'Países',
+	pluralName: 'Países',
+	singularName: 'País',
 	tableColumns: [
 		{ data:'name', title: 'Nombre' },
 		{ data:'enabled', title: 'Habilidado' }

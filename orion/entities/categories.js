@@ -19,6 +19,7 @@ orion.addEntity('categories', {
 		}
 	}
 }, {
+	icon: 'folder',
 	sidebarName: 'Categorías',
 	pluralName: 'Categorías',
 	singularName: 'Categoría',

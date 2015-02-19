@@ -1,0 +1,43 @@
+<template name="filtro">
+	<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<script src="js/jquery.ez-bg-resize.js"></script>
+	<div id="contenedortotal">
+		<div id="contenedor_ingreso">
+	        <div class="foto_filtro"><img src="img/foto-filtro.jpg" width="251" height="544"></div>
+	        <div class="banderas">
+	        	<div class="bandera_es"><a href="#"><img src="img/flag-es.jpg" width="16" height="11"></a></div>
+	            <div class="bandera_in"><a href="#"><img src="img/flag-en.jpg" width="16" height="11"></a></div>
+	        </div>
+	        <div class="logo_filtro"><a href="index.html"><img src="img/logo-filtro.png" width="165" height="212" title="Conejitas.com"></a></div>
+	        
+	        <form class='contacto'>
+	            <div><label>Selecciona un país:</label>
+	            	<select name="pais" class="paiss">
+	            		<OPTION VALUE=" "> </OPTION> 
+	            		{{#each countries}}
+	                		<OPTION VALUE="{{_id}}">{{name}}</OPTION> 
+	                	{{/each}}
+	                </select></div>
+	                
+	            <div><label>Selecciona una ciudad:</label>
+	            	 	<select name="ciudad">
+	            	 		<OPTION VALUE=" "> </OPTION> 
+	                	</select></div>
+	                    
+	            <div align="center"><input type='submit' value='INGRESAR'></div>
+	            
+	            <div class="aceptar"><input type="checkbox" name="aceptar" value="aceptar">Acepto los términos y condiciones</div>
+	        </form>
+	    	
+	        <div class="legales">
+	        	<div class="terminos"><a href="terminos-y-condiciones.html" target="_blank">Términos y condiciones</a></div>
+	            <div class="politicas"><a href="politica-de-privacidad.html" target="_blank">Políticas de privacidad</a></div>
+	        </div>
+	        
+	        <!--<div class="copy"><p>© Conejitas.com 2014</p></div>-->
+	        <div class="edad"><p>*** Este sitio es <span>sólo para mayores de 18 años</span> ***</p></div>
+	        <!--<div class="calidad"><img src="img/quality.png" width="61" height="58"></div>-->
+	    </div>
+    </div>
+</template>

@@ -2,8 +2,6 @@ Template.publicChat.rendered = function () {
 
 	var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id, online: true});
 	var peer = new Peer(Meteor.userId(), {key: '2eflxenknki3haor', debug:true});
-  // Llamamos a la conejita
-  var conn = peer.connect(conejita._id);
 
   peer.on('call', function(call) {
       call.answer(null);
@@ -12,4 +10,5 @@ Template.publicChat.rendered = function () {
         $('.video').prop('src', URL.createObjectURL(remoteStream));
       });
   });
+
 };

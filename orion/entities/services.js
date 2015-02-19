@@ -4,14 +4,11 @@ orion.addEntity('services', {
 		label: "Nombre",
 	}
 }, {
+	icon: 'gear',
 	sidebarName: 'Servicios',
 	pluralName: 'Servicios',
 	singularName: 'Servicio',
 	tableColumns: [
-		{ data:'name', title: 'Nombre' },
-		
+		{ data:'name', title: 'Nombre' },	
     ]
-	/*defaultIndexTableFields: [
-		{key:'name', label: 'Nombre'},
-	]*/
 });
