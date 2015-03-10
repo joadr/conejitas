@@ -13,9 +13,9 @@
 		<div id="contenedor">
 			<header>
 				<div class="sup_header">
-		            <div class="pais"><p>Conejitas Chile /</p></div>
-		            <div class="ciudad"><p>Santiago</p></div>
-		            <div class="volver_filtro"><p>&laquo; <a href="portada.html">Volver al filtro</a></p></div>
+		            <div class="pais"><p>Conejitas {{country}} /</p></div>
+		            <div class="ciudad"><p>{{city}}</p></div>
+		            <div class="volver_filtro"><p>&laquo; <a href="/filtro">Volver al filtro</a></p></div>
 		            {{#if currentUser}}
 		            	<div class="registrate" style="width: auto;"><p>Bienvenido {{currentUser.username}}</p></div>
 		            	<div class="ingreso"><p><a class="logout">Cerrar sesion</a></p></div>
@@ -76,12 +76,12 @@
 		        <div class="cuadro_text1">
 		        	<div class="tit_footer"><p>Categorías</p></div>
 		            	<ul>
-		                	<li><a href="#">Conejitas VIP</a></li>
-		                    <li><a href="#">Conejitas Premium</a></li>
-		                    <li><a href="#">Conejitas</a></li>
-		                    <li><a href="#">Conejitas Fantasías</a></li>
-		                    <li><a href="#">Conejitas Trave</a></li>
-		                    <li><a href="#">Conejitas Milf</a></li>
+		                	<li><a href="/categories/VIP">Conejitas VIP</a></li>
+		                    <li><a href="/categories/Premium">Conejitas Premium</a></li>
+		                    <li><a href="/categories/conejitas">Conejitas</a></li>
+		                    <li><a href="/categories/Fantasia">Conejitas Fantasías</a></li>
+		                    <li><a href="/categories/Trave">Conejitas Trave</a></li>
+		                    <li><a href="/categories/Milf">Conejitas Milf</a></li>
 		                </ul>
 		        </div>
 
@@ -92,7 +92,7 @@
 		                    <li><a href="#">Ofertas Especiales</a></li>
 		                    <!-- <li><a href="#">Sex Shop</a></li> -->
 		                    <!-- <li><a href="#">Concursos</a></li> -->
-		                    <li><a href="#">Aliados</a></li>
+		                    <li><a href="/aliados">Aliados</a></li>
 		                </ul>
 		        </div>
 

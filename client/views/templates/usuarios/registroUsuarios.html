@@ -1,9 +1,25 @@
 <template name="registroUsuarios">
-	<div class="message"></div>
-	<form method="POST" class="formulario">
-		Email: <input type="email" name="email" /><br>
-		Seudónimo: <input type="text" name="nick" /><br>
-		Contraseña: <input type="password" name="password" /><br>
-		<input type="submit" value="registrarme"/>
-	</form>
+	<main id="control">
+		<div class="caja_titulo_control">
+	      <p>Regístrate</p>
+	    </div>
+	    <div class="caja_control">
+	        <div class="contenido_control">
+	        	<div class="caja_cont_registrate">
+	            	<div class="titulo_registrate"><p>Bienvenido! Crea tu registro</p></div>
+	            		<div class="message"></div>
+	                   <form action="#" id="registro" name="registro" method="post">
+	                       <label for="nick">E-mail:</label><input name="email" type="email" required placeholder="Introduce tu email">
+	                       <label for="nick">Nick:</label><input name="nick" type="text" required placeholder="Elige un nombre">
+	                       <label for="pass">Contraseña:</label><input name="pass" type="pass" required placeholder="Crea una contraseña">
+	                       <label for="rpass">Repetir contraseña:</label><input name="rpass" type="pass" required placeholder="Crea una contraseña">
+	                       
+	                       <input name="mayor" type="checkbox" value="mayor" id="mayor"> <label for="mayor"><span>Soy mayor de 18 años y acepto los términos legales.</span></label>     
+	                       <input id="boton" name="enviar" type="submit" value="Registratme">
+	                   </form>
+	            </div>
+	        </div>
+	        
+	    </div>
+	</main>
 </template>

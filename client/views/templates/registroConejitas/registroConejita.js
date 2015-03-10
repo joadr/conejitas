@@ -1,9 +1,8 @@
 Template.registroConejita.rendered = function () {
-	this.$("input[name=plan]").on('click', function(){
-		
+	$("input[name=plan]").on('click', function(){
 		// cambiamos estados radio button
-		$("input[name=plan]").parent().css("background-color", "none");
-		$(this).parent().css("background-color", "rgb(239, 42, 42)");
+		$("input[name=plan]").parent().removeClass('ico_plan_selected');
+		$(this).parent().addClass("ico_plan_selected");
 
 		// cambiamos textos.
 		$(".plan1, .plan2").hide();
@@ -15,8 +14,8 @@ Template.registroConejita.rendered = function () {
 	this.$(".caja_text_opcion label").on('click', function(){
 		
 		// cambiamos estados radio button
-		$("input[name=opcion]").parent().find("label").css("background-color", "none");
-		$(this).css("background-color", "rgb(239, 42, 42)");
+		$("input[name=opcion]").parent().find("label").removeClass('ico_plan_selected');
+		$(this).addClass("ico_plan_selected");
 
 	});
 	
@@ -25,6 +24,7 @@ Template.registroConejita.rendered = function () {
 Template.registroConejita.events({
   'submit form': function(e) {
     e.preventDefault();
+    Session.set("datos", null);
 
     if($(e.target).find('[name=pass]').val() != $(e.target).find('[name=rpass]').val()){
     	return alert("Las contraseñas no coinciden.");
@@ -34,8 +34,8 @@ Template.registroConejita.events({
     var video = $('[name=videoPro]').prop('checked');
 
     var conejita = {
-		plan: $(e.target).find('[name=plan]').val(),
-		opcion: $(e.target).find('[name=opcion]').val(),
+		plan: $('input[name=plan]:checked').val(),
+		opcion: $('input[name=opcion]:checked').val(),
 		foto: foto,
 		video: video,
 		nombre: $(e.target).find('[name=nick]').val(),

@@ -1,6 +1,6 @@
 Template.vivo.helpers({
 	conejitas: function () {
-		var conejitas = orion.entities.conejitas.collection.find({online: true, aproved: true}).fetch();
+		var conejitas = orion.entities.conejitas.collection.find({online: true, aproved: true, workCity: Session.get("city")}).fetch();
     	
 		return conejitas;
 	},

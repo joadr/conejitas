@@ -2,7 +2,11 @@
 	<main id="conejita">
         <div class="caja_text_conejita">
         	<h2>Rellena tus datos</h2>
-        	{{> quickForm collection="orion.entities.conejitas.collection" id="createConejitaForm" type="insert" fields="realName, category, age, bornCountry, workCountry, workCity, heigh, weigh, measurements, message, services, schedule, place, sector, mainImage, images, video, price, usdPrice, carPark, conscierge, piercing, tatoo, preservative, CI, evaluationCode, promedio, online" buttonContent="Enviar a revisión" buttonClasses="btnButton" type="submitCreateConejita" }}
+        	{{#if video}}
+        		{{> quickForm collection="orion.entities.conejitas.collection" id="createConejitaForm" fields="realName, category, age, bornCountry, workCountry, workCity, heigh, weigh, measurements, message, services, schedule, place, sector, mainImage, image2, image3, image4, image5, image6, image7, image8, image9, image10, video, price, usdPrice, carPark, conscierge, piercing, tatoo, preservative, CI, evaluationCode, promedio, online" buttonContent="Enviar a revisión" buttonClasses="btnButton submit" }}
+        	{{else}}
+        		{{> quickForm collection="orion.entities.conejitas.collection" id="createConejitaForm" fields="realName, category, age, bornCountry, workCountry, workCity, heigh, weigh, measurements, message, services, schedule, place, sector, mainImage, image2, image3, image4, image5, image6, image7, image8, image9, image10, price, usdPrice, carPark, conscierge, piercing, tatoo, preservative, CI, evaluationCode, promedio, online" buttonContent="Enviar a revisión" buttonClasses="btnButton submit" }}
+        	{{/if}}
         </div>
     </main>
 </template>

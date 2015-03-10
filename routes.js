@@ -12,10 +12,6 @@ Router.map(function() {
                 countries: function() {
                     var countries = orion.entities.countries.collection.find({enabled: true}).fetch();
                     return countries;
-                },
-                cities: function(){
-                    var cities = orion.entities.cities.collection.find({enabled: true}).fetch();
-                    return cities;
                 }
             }
         }
@@ -24,6 +20,13 @@ Router.map(function() {
     this.route('conejitas', {
       path: '/',
       layoutTemplate: 'layout',
+      onBeforeAction: function() {
+        if(Session.get("city") == undefined){
+            Router.go("/filtro");
+        } else {
+            this.next();
+        }
+      },
       waitOn: function() {
         return [orion.subs.subscribe('dictionary'),
         orion.subs.subscribe('entity', 'conejitas')]
@@ -31,7 +34,7 @@ Router.map(function() {
       data: function() {
             return {
                 conejitas: function() {
-                    var conejitas = shuffles(orion.entities.conejitas.collection.find({aproved: true}, {limit:4}).fetch());
+                    var conejitas = shuffles(orion.entities.conejitas.collection.find({aproved: true, workCity: Session.get("city")}, {limit:4}).fetch());
                     for(var i = 0; i<conejitas.length; i++) {
                         if((i+1) % 2 == 0){
                             conejitas[i].par = true;
@@ -113,7 +116,10 @@ Router.map(function() {
         waitOn: function() {
             return [orion.subs.subscribe('dictionary'),
             orion.subs.subscribe('entity', 'conejitas'),
-            orion.subs.subscribe('entity', 'services')]
+            orion.subs.subscribe('entity', 'services'),
+            orion.subs.subscribe('entity', 'categories'),
+            orion.subs.subscribe('entity', 'countries'),
+            orion.subs.subscribe('entity', 'cities')]
         }
     });
 

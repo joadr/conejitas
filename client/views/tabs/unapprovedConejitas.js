@@ -12,7 +12,7 @@ Template.unapprovedConejitas.helpers({
 		return orion.entities.conejitas.table;
 	},
 	selector: function(){
-		return { aproved: null };
+		return { $or: [{aproved: null}, {aproved: false}] };
 	}
 });
 

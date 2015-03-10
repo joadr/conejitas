@@ -82,12 +82,48 @@ orion.addEntity('conejitas', {
 		label: "Teléfono"
 	},
 	mainImage: orion.attribute('file', {
-        label: 'Imagen'
+        label: 'Foto Portada'
     }),
-    images: orion.arrayOfAttribute('file', {
-        label: 'Imagen',
+    image2: orion.attribute('file', {
+        label: 'Imagen 2',
         optional: true
     }),
+    image3: orion.attribute('file', {
+        label: 'Imagen 3',
+        optional: true
+    }),
+    image4: orion.attribute('file', {
+        label: 'Imagen 4',
+        optional: true
+    }),
+    image5: orion.attribute('file', {
+        label: 'Imagen 5',
+        optional: true
+    }),
+    image6: orion.attribute('file', {
+        label: 'Imagen 6',
+        optional: true
+    }),
+    image7: orion.attribute('file', {
+        label: 'Imagen 7',
+        optional: true
+    }),
+    image8: orion.attribute('file', {
+        label: 'Imagen 8',
+        optional: true
+    }),
+    image9: orion.attribute('file', {
+        label: 'Imagen 9',
+        optional: true
+    }),
+    image10: orion.attribute('file', {
+        label: 'Imagen 10',
+        optional: true
+    }),
+    /*images: orion.arrayOfAttribute('file', {
+        label: 'Imagen',
+        optional: true
+    }),*/
     video: orion.attribute('file', {
         label: 'Video',
         optional: true
@@ -223,12 +259,12 @@ orion.addEntity('conejitas', {
 		autoform: {
 	      type: "select",
 	      options: function () {
-	      	var categories = orion.entities.categories.collection.find().map(function(category, indice) {
-				category.label = category.name;
-				category.value = category.name;
-      			return category;
+	      	var cities = orion.entities.cities.collection.find({enabled: true}).map(function(city, indice) {
+				city.label = city.name;
+				city.value = city._id;
+      			return city;
     		})
-    		return categories;
+    		return cities;
 	        //return orion.entities.services.collection.find()
 	      }
 	    }

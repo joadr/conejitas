@@ -4,10 +4,21 @@
 			{{ message }}
 		{{/if}}
 		</div>
-
-	<form method="POST" class="loginUsuarios">
-		Email: <input type="email" name="email"/><br>
-		Contraseña: <input type="password" name="password" /><br>
-		<input type="submit" value="Iniciar Sesión" />
-	</form>
+		<main id="control">
+        	<div class="caja_titulo_control">
+              <p>Inicio sesión</p>
+            </div>
+            <div class="caja_control">
+                <div class="contenido_control">
+                	<div class="caja_cont_registrate">
+                    	<div class="titulo_registrate"><p>Bienvenido!</p></div>
+                           <form method="POST" class="loginUsuarios" id="registro" name="registro">
+                               <label for="nick">E-mail:</label><input name="email" type="email" >
+                               <label for="pass">Contraseña</label><input name="password" type="password" >    
+                               <input id="boton" name="enviar" type="submit" value="Ingresar">
+                           </form>
+                    </div>
+                </div>
+            </div>
+        </main>
 </template>

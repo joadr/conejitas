@@ -1,0 +1,4 @@
+orion.admin = {
+	sidebarTabs: [],
+	userActions: [],
+};

@@ -14,12 +14,14 @@
 
 	<aside style="position:absolute; display:inline-block">
     	<div class="caja_titulo_aside"><p>Conejitas con Webcam</p></div>
-
     	{{#each conejasOnline}}
-        <div class="foto_conejita_webcam">
-        	<a href="/chat/public/{{ _id }}"><img src="{{ mainImage.url }}" width="275" height="313" title="Webcam Conejitas">
-        	<div class="video_ico"><img src="img/div-video.png" width="275" height="100"></div></a>
-        </div>
+	        <div class="foto_conejita_webcam">
+	        	<a href="/chat/public/{{ _id }}"><img src="{{ mainImage.url }}" width="275" height="313" title="Webcam Conejitas">
+	        	<div class="video_ico"><img src="img/div-video.png" width="275" height="100"></div></a>
+	        </div>
+        {{ else }}
+	        <img src="img/conejitasnoonline.jpg" class="noonline" style="" />
+	    	<img src="img/conejitasnoonline2.jpg" class="noonline" style="" />
         {{/ each}}
         {{#if currentUser}}
         <div class="banner_home"><a href="/usuarios/album"><img src="img/banner-album.jpg" width="275" height="173" title="Álbum de Conejitas"></a></div>
