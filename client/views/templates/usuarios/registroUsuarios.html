@@ -14,7 +14,8 @@
 	                       <label for="pass">Contraseña:</label><input name="password" type="pass" required placeholder="Crea una contraseña">
 	                       <label for="rpass">Repetir contraseña:</label><input name="rpass" type="pass" required placeholder="Crea una contraseña">
 	                       
-	                       <input name="mayor" type="checkbox" value="mayor" id="mayor"> <label for="mayor"><span>Soy mayor de 18 años y acepto los términos legales.</span></label>     
+	                       <input name="mayor" type="checkbox" value="mayor" id="mayor"> <label for="mayor"><span>Soy mayor de 18 años y acepto los términos legales.</span></label>
+                           {{> reCAPTCHA}}
 	                       <input id="boton" name="enviar" type="submit" value="Registratme">
 	                   </form>
 	            </div>

@@ -8,7 +8,10 @@ Template.registroUsuarios.events({
 			password: $("input[name=password]").val()
 		};
 
-		Meteor.call('registrarUsuario', data, function(error, result){
+        //get the captcha data
+        var recaptchaResponse = grecaptcha.getResponse();
+
+		Meteor.call('registrarUsuario', data, recaptchaResponse, function(error, result){
 			if(error){
 				$('.message').html(error.reason);
 			} else {

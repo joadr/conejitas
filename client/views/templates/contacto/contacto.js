@@ -31,11 +31,3 @@ Template.contacto.events({
     	});
 	}
 });
-
-Template.contacto.rendered = function(){
-    Meteor.startup(function() {
-        reCAPTCHA.config({
-            publickey: '6LcYvwQTAAAAALW71LQbLUi3ohN0pOzpeejPBpqN'
-        });
-    });
-};

@@ -24,13 +24,13 @@ Router.map(function() {
     this.route('conejitas', {
       path: '/',
       layoutTemplate: 'layout',
-      /*onBeforeAction: function() {
+      onBeforeAction: function() {
         if(Session.get("city") == undefined){
             Router.go("/filtro");
         } else {
             this.next();
         }
-      },*/
+      },
       waitOn: function() {
         return [orion.subs.subscribe('entity', 'conejitas')]
       },
@@ -58,7 +58,7 @@ Router.map(function() {
             return [orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services'),
             Meteor.subscribe('evaluations')]
-        },
+        }
     });
 
     this.route('categories', {
@@ -365,6 +365,29 @@ Router.map(function() {
         unload: function(){
             window.localStream.stop();
             Meteor.call('offlineConejita', this.params._id);
+        }
+    });
+
+    /**
+     * Panel de control Conejitas
+     */
+    this.route('panelConejitas', {
+        path: '/panelConejitas',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('entity', 'conejitas'), orion.subs.subscribe('entity', 'cities'), orion.subs.subscribe('entity', 'countries')]
+        },
+        onBeforeAction: function() {
+            if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
+                Router.go('conejitas');
+            } else {
+                this.next();
+            }
+        },
+        data : function(){
+            return {
+                conejita: orion.entities.conejitas.collection.findOne({userId: Meteor.userId()})
+            }
         }
     });
 
