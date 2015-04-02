@@ -1,0 +1,68 @@
+<template name="conejitaMobile">
+    {{# with conejita}}
+        <main>
+
+            <div class="caja_perfil">
+                <div class="foto_perfil1"><img src="{{mainImage.url}}" width="135" height="153" border="0"></div>
+                <div class="caja_textos_perfil">
+                    <div class="bandera_pais"><img src="{{countryPhoto}}" width="20" height="20" title="{{countryName}}"></div>
+                    <h2>{{name}}</h2>
+                    <p>Conejita {{category}}</p>
+                    <p>{{phone}}</p>
+                    <!--<div class="caja_votacion_perfil">
+                        <div class="caja_votacion_text"><p>Votación:</p></div>
+                        <div class="caja_votacion_img"><img src="img/estrellas3.png" width="88" height="15" title="Nota: 3 de 5"></div>
+                    </div>-->
+                    <div class="caja_precios_perfil"><h2>${{price}} / US${{usdPrice}}</h2></div>
+                </div>
+
+                <div class="tit_galeria"><p>GALERÍA DE FOTOS</p></div>
+
+                {{#each images}}
+                <div class="conejita_galeria">
+                    <div class="foto_conejita_galeria"><a href="{{this}}"><img src="{{this}}" width="90" height="90" border="0"></a></div>
+                </div>
+                {{/each}}
+
+                <div class="tit_informacion">
+                    <p>INFORMACIÓN</p>
+                </div>
+
+                <div class="caja_datos">
+                    <div class="dato">
+                        <p>Edad:</p>
+                        <p>Altura:</p>
+                        <p>Peso:</p>
+                        <p>Medidas:</p>
+                        <p>Servicios:</p>
+                        <p>Horario:</p>
+                        <p>Lugar:</p>
+                        <p>Sector:</p>
+                    </div>
+
+                    <div class="trae_dato_edad"><p>{{age}}</p></div>
+                    <div class="trae_dato_altura"><p>{{heigh}} mts.</p></div>
+                    <div class="trae_dato_peso"><p>{{weigh}} kgs.</p></div>
+                    <div class="trae_dato_medidas"><p>{{measurements}}</p></div>
+                    <div class="trae_dato_servicios"><p>{{#each services}} {{this}}, {{/each}}</p></div>
+                    <div class="trae_dato_horario"><p>{{schedule}}</p></div>
+                    <div class="trae_dato_lugar"><p>{{place}}</p></div>
+                    <div class="trae_dato_sector"><p>{{sector}}</p></div>
+
+                </div>
+
+                <div class="tit_informacion">
+                    <p>PERFIL</p>
+                </div>
+
+                <div class="text_perfil">
+                    <p>{{{message}}}</p>
+                </div>
+
+                <div class="btn_volver"><p><a href="{{categoryLink}}">Volver a la Categoría</a></p></div>
+
+            </div>
+
+        </main>
+    {{/with}}
+</template>

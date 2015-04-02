@@ -1,0 +1,12 @@
+<template name="indexMobile">
+    <main>
+        {{# each categories}}
+            <div class="categoria1"><a href="/mobile/categories/{{searchable}}">
+                <div class="foto_categoria"><img src="{{image.url}}" width="50" height="50" border="0"></div>
+                <p>{{name}}</p>
+                <div class="flecha"><img src="/img/flecha-right.png" width="25" height="39" border="0"></div></a>
+            </div>
+        {{/each}}
+
+    </main>
+</template>

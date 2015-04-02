@@ -6,7 +6,7 @@ Template.conejitas.helpers({
 
 	categories: function(){
 		categories = orion.entities.categories.collection.find().map(function(category, indice){
-			category.conejitas = orion.entities.conejitas.collection.find({category: category.name, aproved:true, workCity: Session.get("city")}).fetch();
+			category.conejitas = orion.entities.conejitas.collection.find({category: category.name, aproved:true, workCity: Session.get("city")},{sort: {promedio: -1}}).fetch();
 			/*if (category.conejitas.length == 0){
 				return;
 			}*/

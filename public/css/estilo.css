@@ -1,10 +1,10 @@
-/* @override
+/* @override 
 	http://fonts.googleapis.com/css?family=Kaushan+Script
 	http://fonts.googleapis.com/css?family=Ubuntu
 */
 @charset "UTF-8";
 /* CSS Document */
-* {
+* { 
 margin:0px;
 padding:0px;
 font-weight:normal;
@@ -158,7 +158,7 @@ form#header {
 	width: 55px;
 	height: 18px;
 }
-input#registro {
+input#registro { 
    width: 50px;
    height: 15px;
    border: 0px;
@@ -729,17 +729,17 @@ footer {
 	padding-left: 10px;
 }
 /* estilos form */
-.form_footer {
+.form_footer { 
    width: 160px;
    float: left;
    margin-top: 8px;
 	margin-left: 0;
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password] { 
    width: 130px;
    border: 0px;
    padding: 5px;
-   font-size: 12px;
+   font-size: 12px; 
    margin-bottom: 8px;
    margin-left: 8px;
    font-family: 'Ubuntu', sans-serif;
@@ -748,7 +748,7 @@ input[type=text], input[type=password] {
    -webkit-border-radius:5px;
    border-radius:5px;
 }
-input[type=submit], form a {
+input[type=submit], form a { 
    width: 80px;
    border: 0px;
    background: #333;
@@ -760,19 +760,19 @@ input[type=submit], form a {
    -moz-border-radius:5px;
    -webkit-border-radius:5px;
    border-radius:5px;
-}
-input[type=submit]:hover, form a:hover {
-   background-color: #404040;
+} 
+input[type=submit]:hover, form a:hover { 
+   background-color: #404040; 
    color: #FFF;
    cursor: pointer;
 }
-.form_footer .required {
-   font-weight:bold;
-   color: #FF9900;
+.form_footer .required { 
+   font-weight:bold; 
+   color: #FF9900;     
 }
 .failure, #success {
    color: #6EA070;
-   display:none;
+   display:none; 
 }
 /* fin estilos form */
 /* *** FIN ESTILOS FOOTER *** */
@@ -1051,8 +1051,8 @@ main#usuario {
 	margin-top: 20px;
 	padding: 20px;
 	background:-moz-linear-gradient(#EE0202 0%,#990000 100%);
-	background:-ms-linear-gradient(#EE0202 0%,#990000 100%);
-	background:-o-linear-gradient(#EE0202 0%,#990000 100%);
+	background:-ms-linear-gradient(#EE0202 0%,#990000 100%); 
+	background:-o-linear-gradient(#EE0202 0%,#990000 100%); 
 	background:-webkit-linear-gradient(#EE0202 0%,#990000 100%);
 	background:linear-gradient(#EE0202 0%,#990000 100%);
 }
@@ -1117,8 +1117,8 @@ main#conejita {
 	margin-top: 10px;
 	padding: 10px;
 	background:-moz-linear-gradient(#EE0202 0%,#990000 100%);
-	background:-ms-linear-gradient(#EE0202 0%,#990000 100%);
-	background:-o-linear-gradient(#EE0202 0%,#990000 100%);
+	background:-ms-linear-gradient(#EE0202 0%,#990000 100%); 
+	background:-o-linear-gradient(#EE0202 0%,#990000 100%); 
 	background:-webkit-linear-gradient(#EE0202 0%,#990000 100%);
 	background:linear-gradient(#EE0202 0%,#990000 100%);
 }
@@ -1149,7 +1149,6 @@ main#conejita {
 .otros_servicios {
 	width: 380px;
 	height: auto;
-	background-color: #FFF;
 	border-radius:5px;
 	float: left;
 	padding: 5px;
@@ -1158,7 +1157,7 @@ main#conejita {
 .otros_servicios p {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 0.7em;
-	color: #DE000B;
+	color: #fff;
 	text-align: center;
 	margin: 0;
 }
@@ -1177,6 +1176,62 @@ main#conejita {
 	text-align: center;
 	margin: 0;
 }
+.caja_contrato {
+	width: 100%;
+	height: auto;
+	clear: left;
+	margin-top: 15px;
+	overflow: hidden;
+}
+.text_contrato1 {
+	width: 100%;
+	height: 60px;
+	clear: left;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	float: left;
+}
+.text_contrato1 p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.7em;
+	color: #fff;
+	text-align: left;
+	margin: 0;
+}
+.text_contrato2 {
+	width: 97%;
+	height: 80px;
+	clear: left;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+	background-color: #fff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+}
+.text_contrato2 p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.7em;
+	color: #000;
+	text-align: left;
+	margin: 0;
+}
+
+.titulo_contrato {
+	width: 100%;
+	height: 25px;
+	margin-bottom: 10px;
+	float: left;
+}
+.titulo_contrato p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-align: center;
+	margin: 0;
+}
+
 /* FORMULARIO REGISTRO CONEJITA */
 .formulario_registro_conejita {
 	width: 350px;
@@ -1202,8 +1257,8 @@ label {
 }
 #boton {
 	background:-moz-linear-gradient(#333333 0%,#000000 100%);
-	background:-ms-linear-gradient(#333333 0%,#000000 100%);
-	background:-o-linear-gradient(#333333 0%,#000000 100%);
+	background:-ms-linear-gradient(#333333 0%,#000000 100%); 
+	background:-o-linear-gradient(#333333 0%,#000000 100%); 
 	background:-webkit-linear-gradient(#333333 0%,#000000 100%);
 	background:linear-gradient(#333333 0%,#000000 100%);
 	width:100px;
@@ -1220,8 +1275,8 @@ label {
 }
 #boton:hover{
 	background:-moz-linear-gradient(#000000 0%,#333333 100%);
-	background:-ms-linear-gradient(#000000 0%,#333333 100%);
-	background:-o-linear-gradient(#000000 0%,#333333 100%);
+	background:-ms-linear-gradient(#000000 0%,#333333 100%); 
+	background:-o-linear-gradient(#000000 0%,#333333 100%); 
 	background:-webkit-linear-gradient(#000000 0%,#333333 100%);
 	background:linear-gradient(#000000 0%,#333333 100%);
 	cursor: pointer;
@@ -1236,20 +1291,20 @@ label {
 	margin-top: 0;
 	margin-bottom: 4px;
 }
-input[type=texto], input[type=pass], input[type=email]{
+input[type=text], input[type=password], input[type=email]{
    width: 150px;
    border: 0px;
-   font-size: 12px;
+   font-size: 12px; 
    margin-bottom: 3px;
    margin-left: 15px;
    padding: 3px;
    font-family: 'Ubuntu', sans-serif;
    color: #666;
 }
-input[type=checkbox] {
+input[type=checkbox] { 
    width: 15px;
    border: 0px;
-   font-size: 12px;
+   font-size: 12px; 
    margin-top: 13px;
    margin-bottom: 3px;
    margin-left: 20px;
@@ -1747,12 +1802,12 @@ main {
 }
 @media screen and (max-width:640px)
 {
-
+	
 
 }
 @media screen and (max-width:400px)
 {
-
+	
 /* *** MAIN *** */
 main {
 	width: 55.7%;

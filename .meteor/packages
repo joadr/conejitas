@@ -4,8 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-orionjs:core
-orionjs:styles
+orionjs:bootstrap
 orionjs:froala-editor
 orionjs:file-attribute
 orionjs:filesystem
@@ -23,3 +22,4 @@ joadr:khipu
 joadr:chapp
 tmeasday:presence
 mrt:fancybox
+ayue:recaptcha

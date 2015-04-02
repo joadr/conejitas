@@ -1,15 +1,29 @@
 <template name="categories">
 	<main id="vip">
-		<div class="caja_titulo_vip">
-	    	<div class="medalla_titulo"><img src="{{category.image.link}}" width="22" height="22"></div>
+    {{#if name}}
+        <div class="caja_titulo_vip">
+	    	<div class="medalla_titulo"><img src="{{category.image.url}}" width="22" height="22"></div>
 	    	<p>{{name}}</p>
 	    </div>
+    {{ else }}
+        <div class="caja_titulo_control">
+            <p>Estamos trabajando en este contenido</p>
+        </div>
+    {{/if}}
 
 	    <div class="caja_conejitas_vip">
 			{{ #each conejitas }}
 			    {{ > conejitaItemCategory }}
-			    {{ else }}
-			    Muy pronto...
+                {{ else }}
+                <div class="caja_control">
+                    <div class="contenido_control">
+                        <div class="caja_cont_proximo">
+                            <div class="titulo_proximo"><p>PRÓXIMAMENTE</p></div>
+                            <div class="logo_proximo"><img src="/img/logo-proxima.png"></div>
+
+                        </div>
+                    </div>
+                </div>
 			{{ /each }}
 	    </div>
 	</main>

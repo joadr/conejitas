@@ -1,0 +1,404 @@
+<template name="test">
+    <main id="conejita" class="test">
+        <div class="caja_text_conejita">
+            <h2>Rellena tus datos</h2>
+
+
+            <form id="createConejitaForm" name="createConejitaForm" novalidate=
+                    "novalidate">
+                <div class="form-group">
+                    <label class="control-label">Nombre real</label> <input class=
+                                                                                    "form-control" data-schema-key="realName" name="realName"
+                                                                            required="" type="text"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Categoría</label> <select class=
+                                                                                   "form-control" data-schema-key="category" name="category"
+                                                                           required="">
+                    <option value="">
+                        (Select One)
+                    </option>
+
+                    <option value="jojoo">
+                        jojoo
+                    </option>
+
+                    <option value="VIP">
+                        VIP
+                    </option>
+                </select> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Edad</label> <input class=
+                                                                             "form-control" data-schema-key="age" min="18" name="age"
+                                                                     required="" type="number"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">País natal</label> <select class=
+                                                                                    "form-control" data-schema-key="bornCountry" name="bornCountry"
+                                                                            required="">
+                    <option value="">
+                        (Select One)
+                    </option>
+
+                    <option value="HwRG5FjqxH9Ndcdzt">
+                        Chile
+                    </option>
+                </select> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">País trabajo</label>
+                    <select class="form-control" data-schema-key="workCountry"
+                            name="workCountry" required="">
+                        <option value="">
+                            (Select One)
+                        </option>
+
+                        <option value="HwRG5FjqxH9Ndcdzt">
+                            Chile
+                        </option>
+                    </select> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Ciudad trabajo</label>
+                    <select class="form-control" data-schema-key="workCity" name=
+                            "workCity" required="">
+                        <option value="">
+                            (Select One)
+                        </option>
+
+                        <option value="hJe4Bq9CwmQ37Moo2">
+                            Santiago
+                        </option>
+                    </select> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Altura</label> <input class=
+                                                                               "form-control" data-schema-key="heigh" name="heigh" required=""
+                                                                       type="text"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Peso</label> <input class=
+                                                                             "form-control" data-schema-key="weigh" name="weigh" required=""
+                                                                     type="number"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Medidas</label> <input class=
+                                                                                "form-control" data-schema-key="measurements" name=
+                                                                                "measurements" required="" type="text"> <span class=
+                                                                                                                                      "help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Mensaje</label>
+
+                    <!-- editor mensajes -->
+                    <div class="orionFroala" data-schema-key="message">
+                        <div class="editor froala-box"><div class="froala-editor f-basic" style="z-index: 2000;"><div class="bttn-wrapper" id="bttn-wrapper-1"><button type="button" class="fr-bttn" title="Bold" data-cmd="bold"><i class="fa fa-bold"></i></button><button type="button" class="fr-bttn" title="Italic" data-cmd="italic"><i class="fa fa-italic"></i></button><button type="button" class="fr-bttn" title="Underline" data-cmd="underline"><i class="fa fa-underline"></i></button><button type="button" class="fr-bttn" title="Strikethrough" data-cmd="strikeThrough"><i class="fa fa-strikethrough"></i></button><div class="fr-bttn fr-dropdown "><button type="button" data-name="fontSize" class="fr-trigger" title="Font Size"><i class="fa fa-text-height"></i></button><ul class="fr-dropdown-menu f-font-sizes"><li data-cmd="fontSize" data-val="11px"><a href="#"><span>11px</span></a></li><li data-cmd="fontSize" data-val="12px"><a href="#"><span>12px</span></a></li><li data-cmd="fontSize" data-val="13px"><a href="#"><span>13px</span></a></li><li data-cmd="fontSize" data-val="14px"><a href="#"><span>14px</span></a></li><li data-cmd="fontSize" data-val="15px"><a href="#"><span>15px</span></a></li><li data-cmd="fontSize" data-val="16px"><a href="#"><span>16px</span></a></li><li data-cmd="fontSize" data-val="17px"><a href="#"><span>17px</span></a></li><li data-cmd="fontSize" data-val="18px"><a href="#"><span>18px</span></a></li><li data-cmd="fontSize" data-val="19px"><a href="#"><span>19px</span></a></li><li data-cmd="fontSize" data-val="20px"><a href="#"><span>20px</span></a></li><li data-cmd="fontSize" data-val="21px"><a href="#"><span>21px</span></a></li><li data-cmd="fontSize" data-val="22px"><a href="#"><span>22px</span></a></li><li data-cmd="fontSize" data-val="23px"><a href="#"><span>23px</span></a></li><li data-cmd="fontSize" data-val="24px"><a href="#"><span>24px</span></a></li><li data-cmd="fontSize" data-val="25px"><a href="#"><span>25px</span></a></li><li data-cmd="fontSize" data-val="26px"><a href="#"><span>26px</span></a></li><li data-cmd="fontSize" data-val="27px"><a href="#"><span>27px</span></a></li><li data-cmd="fontSize" data-val="28px"><a href="#"><span>28px</span></a></li><li data-cmd="fontSize" data-val="29px"><a href="#"><span>29px</span></a></li><li data-cmd="fontSize" data-val="30px"><a href="#"><span>30px</span></a></li><li data-cmd="fontSize" data-val="31px"><a href="#"><span>31px</span></a></li><li data-cmd="fontSize" data-val="32px"><a href="#"><span>32px</span></a></li><li data-cmd="fontSize" data-val="33px"><a href="#"><span>33px</span></a></li><li data-cmd="fontSize" data-val="34px"><a href="#"><span>34px</span></a></li><li data-cmd="fontSize" data-val="35px"><a href="#"><span>35px</span></a></li><li data-cmd="fontSize" data-val="36px"><a href="#"><span>36px</span></a></li><li data-cmd="fontSize" data-val="37px"><a href="#"><span>37px</span></a></li><li data-cmd="fontSize" data-val="38px"><a href="#"><span>38px</span></a></li><li data-cmd="fontSize" data-val="39px"><a href="#"><span>39px</span></a></li><li data-cmd="fontSize" data-val="40px"><a href="#"><span>40px</span></a></li><li data-cmd="fontSize" data-val="41px"><a href="#"><span>41px</span></a></li><li data-cmd="fontSize" data-val="42px"><a href="#"><span>42px</span></a></li><li data-cmd="fontSize" data-val="43px"><a href="#"><span>43px</span></a></li><li data-cmd="fontSize" data-val="44px"><a href="#"><span>44px</span></a></li><li data-cmd="fontSize" data-val="45px"><a href="#"><span>45px</span></a></li><li data-cmd="fontSize" data-val="46px"><a href="#"><span>46px</span></a></li><li data-cmd="fontSize" data-val="47px"><a href="#"><span>47px</span></a></li><li data-cmd="fontSize" data-val="48px"><a href="#"><span>48px</span></a></li><li data-cmd="fontSize" data-val="49px"><a href="#"><span>49px</span></a></li><li data-cmd="fontSize" data-val="50px"><a href="#"><span>50px</span></a></li><li data-cmd="fontSize" data-val="51px"><a href="#"><span>51px</span></a></li><li data-cmd="fontSize" data-val="52px"><a href="#"><span>52px</span></a></li></ul></div><div class="fr-bttn fr-dropdown fr-family"><button type="button" data-name="fontFamily" class="fr-trigger" title="Font Family"><i class="fa fa-font"></i></button><ul class="fr-dropdown-menu"><li data-cmd="fontFamily" data-val="Arial,Helvetica"><a href="#" data-text="true" title="Arial, Helvetica" style="font-family: Arial,Helvetica;">Arial, Helvetica</a></li><li data-cmd="fontFamily" data-val="Courier,Courier New"><a href="#" data-text="true" title="Courier, Courier New" style="font-family: Courier,Courier New;">Courier, Courier New</a></li><li data-cmd="fontFamily" data-val="Georgia"><a href="#" data-text="true" title="Georgia" style="font-family: Georgia;">Georgia</a></li><li data-cmd="fontFamily" data-val="Times New Roman,Times"><a href="#" data-text="true" title="Times New Roman,Times" style="font-family: Times New Roman,Times;">Times New Roman,Times</a></li><li data-cmd="fontFamily" data-val="Trebuchet MS"><a href="#" data-text="true" title="Trebuchet MS" style="font-family: Trebuchet MS;">Trebuchet MS</a></li><li data-cmd="fontFamily" data-val="Verdana, Geneva"><a href="#" data-text="true" title="Verdana,Geneva" style="font-family: Verdana, Geneva;">Verdana,Geneva</a></li></ul></div><div class="fr-bttn fr-dropdown fr-color-picker"><button type="button" data-name="color" class="fr-trigger" title="Color"><i class="fa fa-tint"></i></button><div class="fr-dropdown-menu"><div><button type="button" class="fr-color-bttn" data-val="#61BD6D" data-cmd="color" data-param="backColor" style="background: #61BD6D;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#1ABC9C" data-cmd="color" data-param="backColor" style="background: #1ABC9C;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#54ACD2" data-cmd="color" data-param="backColor" style="background: #54ACD2;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#2C82C9" data-cmd="color" data-param="backColor" style="background: #2C82C9;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#9365B8" data-cmd="color" data-param="backColor" style="background: #9365B8;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#475577" data-cmd="color" data-param="backColor" style="background: #475577;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#CCCCCC" data-cmd="color" data-param="backColor" style="background: #CCCCCC;">&nbsp;</button><hr><button type="button" class="fr-color-bttn" data-val="#41A85F" data-cmd="color" data-param="backColor" style="background: #41A85F;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#00A885" data-cmd="color" data-param="backColor" style="background: #00A885;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#3D8EB9" data-cmd="color" data-param="backColor" style="background: #3D8EB9;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#2969B0" data-cmd="color" data-param="backColor" style="background: #2969B0;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#553982" data-cmd="color" data-param="backColor" style="background: #553982;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#28324E" data-cmd="color" data-param="backColor" style="background: #28324E;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#000000" data-cmd="color" data-param="backColor" style="background: #000000;">&nbsp;</button><hr><button type="button" class="fr-color-bttn" data-val="#F7DA64" data-cmd="color" data-param="backColor" style="background: #F7DA64;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#FBA026" data-cmd="color" data-param="backColor" style="background: #FBA026;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#EB6B56" data-cmd="color" data-param="backColor" style="background: #EB6B56;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#E25041" data-cmd="color" data-param="backColor" style="background: #E25041;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#A38F84" data-cmd="color" data-param="backColor" style="background: #A38F84;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#EFEFEF" data-cmd="color" data-param="backColor" style="background: #EFEFEF;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#FFFFFF" data-cmd="color" data-param="backColor" style="background: #FFFFFF;">&nbsp;</button><hr><button type="button" class="fr-color-bttn" data-val="#FAC51C" data-cmd="color" data-param="backColor" style="background: #FAC51C;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#F37934" data-cmd="color" data-param="backColor" style="background: #F37934;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#D14841" data-cmd="color" data-param="backColor" style="background: #D14841;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#B8312F" data-cmd="color" data-param="backColor" style="background: #B8312F;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#7C706B" data-cmd="color" data-param="backColor" style="background: #7C706B;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#D1D5D8" data-cmd="color" data-param="backColor" style="background: #D1D5D8;">&nbsp;</button><button type="button" class="fr-color-bttn" data-val="#123456" data-cmd="color" data-param="backColor" style="background: #FFF;"><i class="fa fa-eraser"></i></button><hr></div><p><span class="fr-choose-color active" data-text="true" data-param="backColor">Background</span> <span class="fr-choose-color" data-text="true" data-param="foreColor">Text</span></p></div></div><span class="f-sep"></span><div class="fr-bttn fr-dropdown "><button type="button" data-name="formatBlock" class="fr-trigger" title="Format Block"><i class="fa fa-paragraph"></i></button><ul class="fr-dropdown-menu"><li data-cmd="formatBlock" data-val="n"><a href="#" data-text="true" class="format-n" title="Normal">Normal</a></li><li data-cmd="formatBlock" data-val="blockquote"><a href="#" data-text="true" class="format-blockquote" title="Quote">Quote</a></li><li data-cmd="formatBlock" data-val="pre"><a href="#" data-text="true" class="format-pre" title="Code">Code</a></li><li data-cmd="formatBlock" data-val="h1"><a href="#" data-text="true" class="format-h1" title="Heading 1">Heading 1</a></li><li data-cmd="formatBlock" data-val="h2"><a href="#" data-text="true" class="format-h2" title="Heading 2">Heading 2</a></li><li data-cmd="formatBlock" data-val="h3"><a href="#" data-text="true" class="format-h3" title="Heading 3">Heading 3</a></li><li data-cmd="formatBlock" data-val="h4"><a href="#" data-text="true" class="format-h4" title="Heading 4">Heading 4</a></li><li data-cmd="formatBlock" data-val="h5"><a href="#" data-text="true" class="format-h5" title="Heading 5">Heading 5</a></li><li data-cmd="formatBlock" data-val="h6"><a href="#" data-text="true" class="format-h6" title="Heading 6">Heading 6</a></li></ul></div><div class="fr-bttn fr-dropdown "><button type="button" data-name="blockStyle" class="fr-trigger" title="Block Style"><i class="fa fa-magic"></i></button><ul class="fr-dropdown-menu fr-block-style"></ul></div><div class="fr-bttn fr-dropdown "><button type="button" data-name="align" class="fr-trigger" title="Alignment"><i class="fa fa-align-left"></i></button><ul class="fr-dropdown-menu f-align"><li data-cmd="align" data-val="justifyLeft" title="Align Left"><a href="#"><i class="fa fa-align-left"></i></a></li><li data-cmd="align" data-val="justifyCenter" title="Align Center"><a href="#"><i class="fa fa-align-center"></i></a></li><li data-cmd="align" data-val="justifyRight" title="Align Right"><a href="#"><i class="fa fa-align-right"></i></a></li><li data-cmd="align" data-val="justifyFull" title="Justify"><a href="#"><i class="fa fa-align-justify"></i></a></li></ul></div><button type="button" class="fr-bttn" title="Numbered List" data-cmd="insertOrderedList"><i class="fa fa-list-ol"></i></button><button type="button" class="fr-bttn" title="Bulleted List" data-cmd="insertUnorderedList"><i class="fa fa-list-ul"></i></button><button type="button" class="fr-bttn" title="Indent Less" data-cmd="outdent"><i class="fa fa-dedent"></i></button><button type="button" class="fr-bttn" title="Indent More" data-cmd="indent"><i class="fa fa-indent"></i></button><span class="f-sep"></span><button type="button" class="fr-bttn" title="Insert Link" data-cmd="createLink"><i class="fa fa-link"></i></button><button type="button" class="fr-bttn" title="Insert Image" data-cmd="insertImage"><i class="fa fa-picture-o"></i></button><button type="button" class="fr-bttn" title="Insert Video" data-cmd="insertVideo"><i class="fa fa-video-camera"></i></button><div class="fr-bttn fr-dropdown fr-table"><button type="button" data-name="table" class="fr-trigger" title="Table"><i class="fa fa-table"></i></button><ul class="fr-dropdown-menu fr-table"><li> <a href="#"><span data-text="true">Insert table</span> <i class="fa fa-chevron-right"></i></a><div class="select-table"> <div class="fr-t-info">1 x 1</div><span class="fr-bttn  hover" data-cmd="table" data-val="1" data-param="1" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="2" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="3" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="4" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="5" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="1" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="2" data-param="1" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="2" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="3" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="4" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="5" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="2" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="3" data-param="1" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="2" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="3" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="4" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="5" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="3" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="4" data-param="1" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="2" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="3" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="4" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="5" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="4" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="5" data-param="1" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="2" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="3" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="4" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="5" style="display: inline-block;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="5" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="6" data-param="1" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="2" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="3" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="4" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="5" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="6" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="7" data-param="1" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="2" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="3" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="4" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="5" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="7" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="8" data-param="1" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="2" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="3" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="4" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="5" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="8" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="9" data-param="1" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="2" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="3" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="4" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="5" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="9" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div><span class="fr-bttn " data-cmd="table" data-val="10" data-param="1" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="2" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="3" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="4" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="5" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="6" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="7" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="8" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="9" style="display: none;"><span></span></span><span class="fr-bttn " data-cmd="table" data-val="10" data-param="10" style="display: none;"><span></span></span><div class="new-line"></div></div> </li><li><a href="#"><span data-text="true">Cell</span> <i class="fa fa-chevron-right"></i></a> <ul> <li data-cmd="table" data-val="insertCellBefore"><a href="#" data-text="true">Insert cell before</a></li><li data-cmd="table" data-val="insertCellAfter"><a href="#" data-text="true">Insert cell after</a></li><li data-cmd="table" data-val="deleteCell"><a href="#" data-text="true">Delete cell</a></li><li data-cmd="table" data-val="mergeCells"><a href="#" data-text="true">Merge cells</a></li><li data-cmd="table" data-val="splitHorizontal"><a href="#" data-text="true">Horizontal split</a></li><li data-cmd="table" data-val="splitVertical"><a href="#" data-text="true">Vertical split</a></li></ul></li><li><a href="#"><span data-text="true">Row</span> <i class="fa fa-chevron-right"></i></a> <ul><li data-cmd="table" data-val="insertRowAbove"><a href="#" data-text="true">Insert row above</a></li><li data-cmd="table" data-val="insertRowBelow"><a href="#" data-text="true">Insert row below</a></li><li data-cmd="table" data-val="deleteRow"><a href="#" data-text="true">Delete row</a></li></ul></li><li><a href="#"><span data-text="true">Column</span> <i class="fa fa-chevron-right"></i></a> <ul> <li data-cmd="table" data-val="insertColumnBefore"><a href="#" data-text="true">Insert column before</a></li> <li data-cmd="table" data-val="insertColumnAfter"><a href="#" data-text="true">Insert column after</a></li> <li data-cmd="table" data-val="deleteColumn"><a href="#" data-text="true">Delete column</a></li> </ul></li><li data-cmd="table" data-val="deleteTable"><a href="#" data-text="true">Delete table</a></li></ul></div><button type="button" class="fr-bttn" title="Undo" data-cmd="undo"><i class="fa fa-undo"></i></button><button type="button" class="fr-bttn" title="Redo" data-cmd="redo"><i class="fa fa-repeat"></i></button><button type="button" class="fr-bttn" title="Show HTML" data-cmd="html"><i class="fa fa-code"></i></button></div></div><div class="froala-wrapper f-basic" data-chars="0"><div contenteditable="true" class="froala-element not-msie f-basic f-placeholder" style="outline: 0px;" spellcheck="false"><p><br></p></div><span class="fr-placeholder" unselectable="on"></span></div></div>
+                    </div>
+                    <!-- Fin editor texto mensaje -->
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Servicios</label>
+
+                    <div class="af-checkbox-group" data-schema-key="services">
+                        <div class="checkbox">
+                            <label><input name="services" type="checkbox" value=
+                                    "2DEhDy5JXCFaGucsB"> de todo</label>
+                        </div>
+
+
+                        <div class="checkbox">
+                            <label><input name="services" type="checkbox" value=
+                                    "2qc74emtPcM34A5Ta"> Americana</label>
+                        </div>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Horario</label> <input class=
+                                                                                "form-control" data-schema-key="schedule" name="schedule"
+                                                                        required="" type="text"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Lugar</label> <input class=
+                                                                              "form-control" data-schema-key="place" name="place" required=""
+                                                                      type="text"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Sector</label> <input class=
+                                                                               "form-control" data-schema-key="sector" name="sector" required=
+                                                                               "" type="text"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Foto Portada</label>
+
+                    <div class="fileUpload" data-schema-key="mainImage">
+                        <div class="preview">
+                            <p><img src=
+                                            "https://armatubicicleta.s3.amazonaws.com/orionjs/R8G79WRAEu2g47TzS.jpg">
+                            </p>
+                        </div>
+                        <button class="btn btn-danger btn-remove btn-xs" type=
+                                "button">Remove</button>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 2</label>
+
+                    <div class="fileUpload" data-schema-key="image2">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 3</label>
+
+                    <div class="fileUpload" data-schema-key="image3">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 4</label>
+
+                    <div class="fileUpload" data-schema-key="image4">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 5</label>
+
+                    <div class="fileUpload" data-schema-key="image5">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 6</label>
+
+                    <div class="fileUpload" data-schema-key="image6">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 7</label>
+
+                    <div class="fileUpload" data-schema-key="image7">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 8</label>
+
+                    <div class="fileUpload" data-schema-key="image8">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 9</label>
+
+                    <div class="fileUpload" data-schema-key="image9">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Imagen 10</label>
+
+                    <div class="fileUpload" data-schema-key="image10">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Precio</label> <input class=
+                                                                               "form-control" data-schema-key="price" name="price" required=""
+                                                                       type="number"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">USD-Precio</label> <input class=
+                                                                                   "form-control" data-schema-key="usdPrice" name="usdPrice"
+                                                                           required="" type="number"> <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input data-schema-key="carPark" name="carPark"
+                                      type="checkbox" value=""> Estacionamiento</label>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input data-schema-key="conscierge" name=
+                                "conscierge" type="checkbox" value=""> Conserje</label>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input data-schema-key="piercing" name="piercing"
+                                      type="checkbox" value=""> Piercing</label>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input data-schema-key="tatoo" name="tatoo" type=
+                                "checkbox" value=""> Tatuaje</label>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label><input data-schema-key="preservative" name=
+                                "preservative" type="checkbox" value="">
+                            Preservativo</label>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">Foto CI/Pasaporte</label>
+
+                    <div class="fileUpload" data-schema-key="CI">
+                            <span class="btn btn-default btn-file btn-xs">Choose a File
+                            <input type="file"></span>
+                    </div>
+                    <span class="help-block"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <button class="btnButton submit" type="submit">Enviar a
+                        revisión</button>
+                </div>
+            </form>
+            <div class="contrato_conejita">
+
+                <div class="caja_contrato">
+                    <div class="titulo_contrato"><p>CONTRATO DE PUBLICIDAD <br> (www.clubconejitas.com)</p></div>
+                    <div class="text_contrato1"><p>Comparece: "CLUB CONEJITAS", integrado  y representado por toda y cada una de las personas que individualmente suscriben  el presente contrato, en el presente caso por NOMBRE REAL CONEJITA y la agencia de publicidad que se Indica a continuación en OBJETO DEL CONTRATO,  exponen que han convenido en celebrar el siguiente contrato de publicidad.</p>
+                    </div>
+                    <div class="text_contrato2">
+                        <p>1. Objeto del contrato.<br>
+                            "Club Conejitas" contrata los servicios de la agencia de publicidad "Cortez & Cortez", para que confeccione una página web en donde los o las integrantes del club puedan publicitar su perfil  e imágenes dentro del país, y contar con el servicio de chat y web cam online, además la creación, administración y mantenimiento de plataformas para video conferencia de los miembros del club  con las personas que deseen contactarlas.
+                            La página web será creada conforme a los parámetros que indique el cliente y con la asesoría web,  técnica en cuanto a publicidad, diseño de la página que debe proporcionar el publicista.<br>
+                            LA PLATAFORMA O PAGINA WEB Club Conejitas ofrece distintas categorías a las que puede acceder el oferente publicitario a libre elección de acuerdo a lo que estimen conveniente.<br>
+                            Una vez suscrito el contrato cualquier modificación, de la naturaleza que sea, deberá estar previamente aprobada por el publicista. En consecuencia, queda prohibido al cliente realizar  modificaciones por su cuenta a la página o su perfil.<br>
+                            Todo el contenido de la página web es de exclusiva responsabilidad de "Club Conejitas", el publicista sólo es responsable de la creación artística, el  mantenimiento, su actualización y perfeccionamiento de la misma  conforme a las directrices de "Club Conejitas".<br>
+                            No obstante lo anterior, la creación artística e intelectual del trabajo publicitario, como la página web creada es propiedad intelectual de la agencia de publicidad.<br>
+                            Las inserciones semanales, mensuales o anuales se renovarán automáticamente, conforme a la tarifa y modalidad que elija el socio o la socia integrante del Club Conejitas, a no ser que exista comunicación del cliente con un mes de antelación, manifestando la intención de no renovación.<br>
+                            2. Características de la inserción publicitaria. <br>
+                            Las características de la inserción publicitaria serán las que el cliente seleccione del anexo denominado anexo de tarifas
+                            3. Obligaciones del publicista.<br>
+                            El publicista insertará la publicidad entregada por el cliente.<br>
+                            Se compromete a publicar el anuncio publicitario con las características descritas, en los términos acordados en el anexo  y a lo largo de la duración de la relación contractual.<br>
+                            Los anuncios o imágenes son de exclusiva responsabilidad de "Club Conejitas" o del cliente que lo publicita.<br>
+                            4. Obligaciones del cliente.<br>
+                            Se compromete a realizar el pago de las cantidades que correspondan según lo establecido en la disposición relativa a las condiciones económicas.<br>
+                            Se obliga a proporcionar en tiempo y forma el anuncio publicitario que desea incluir en la web; en el formato concreto especificado.<br>
+                            Garantizar al publicista que toda la información proporcionada es fidedigna, especialmente en cuanto a la mayoría de edad. Si así no lo hiciere el publicista puede iniciar acciones legales en por el delito de falsedad previsto y sancionado en el Código Penal chileno.<br>
+                            Garantizar al publicista que la elaboración de la publicidad se ajusta a la normativa relativa a publicidad, servicios de la sociedad de la información, consumidores y usuarios, derecho de competencia; así como cualquier otra normativa que pudiera ser aplicable.<br>
+                            El cliente se obliga a indemnizar al publicista por todos aquellos daños y perjuicios que pudiera causar la inserción del anuncio conforme a lo dispuesto en el presente contrato o la anulación del mismo.<br>
+                            5. Precio.<br>
+                            La prestación de servicio de inserción de publicidad contratado está sujeta a las tarifas de publicidad y descuentos vigentes, que se indican en el anexo correspondiente relativo a tarifas salvo otro tipo de acuerdo que será reflejado como anexo al presente contrato. <br>
+                            6. Secreto y protección de datos.<br>
+                            Las partes se obligan a mantener absoluto secreto sobre toda la información confidencial existente durante la vigencia del contrato y la finalización del mismo. Se entenderá por información confidencial toda aquella información, principal o accesoria, intercambiada por las partes para llevar a cabo el presente contrato. El socio o la socia del Club Conejitas se obliga a proporcionarle al publicista copia de su identificación legal, cédula de identidad y documentos que se le requieran vía online, con declaración Expresa de que corresponden a su persona y que son absolutamente veraces
+                            Las partes declaran conocer y cumplir expresamente la legislación sobre protección de datos, comprometiéndose a tratar los datos obtenidos del desarrollo del presente proyecto de acuerdo con dicha normativa.<br>
+                            7. Propiedad intelectual.<br>
+                            Todo el material entregado por parte del cliente incluyendo fotos, slogans, videos, etcétera; serán de propiedad del publicista, y es material protegido por las normas de propiedad intelectual e industrial, quedando prohibido su uso y reproducción por parte del cliente para cualquier fin distinto al regulado en el presente contrato, así como por cualquier otro tercero. El cliente se responsabiliza de cualquier tipo de reclamación que pudiera mediar por parte de terceros alegando un derecho de propiedad intelectual o industrial respecto al contenido del anuncio publicitario.<br>
+                            8. Responsabilidad.<br>
+                            El publicista será, exclusivamente, responsable en los casos de no cumplir con la prestación del servicio, plazo y forma estipulados en el presente contrato.
+                            El publicista no será responsable en ningún caso de otro tipo de daños, de cualquier naturaleza o clase, que pudieran derivarse de la inserción del material publicitario en sus soportes informativos, incumplimientos o retrasos debidos a causas de fuerza mayor, o que estén fuera de su control.<br>
+                            9. Prohibiciones.<br>
+                            Queda prohibido a cualquier integrante del Club Conejitas suplantar la identidad por una persona distinta a la que se publicitada, bajo sanción de anular por este solo hecho el contrato, obligándose a la persona infractora a indemnizar al publicista y siendo retirada inmediatamente de la publicidad, sin devolución de dinero y sin perjuicio de las sanciones penales a que haya lugar. <br>
+                            10.- Opciones.<br>
+                            El club podrá encargar al publicista la creación, organización y desarrollo de diversos tipos de eventos como concursos, directos o vía online entre los o las integrantes del club, estableciendo condiciones de participación, tipo de concurso, condicione de competencia, forma de acceder a premios monto y naturaleza de los mismos.
+                        </p>
+                    </div>
+                </div>
+                <form action="#" id="registro" name="registro" method="post">
+                    <input name="mayor" type="checkbox" value="mayor">
+                    <span>Leí y acepto el contrato.</span>
+                    <input id="boton" name="enviar" type="submit" value="Siguiente">
+                </form>
+            </div>
+        </div>
+    </main>
+</template>

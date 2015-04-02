@@ -1,0 +1,18 @@
+<template name="categoryMobile">
+    <main>
+        <div class="titulo_categoria">
+            <p>Categoría: Conejitas {{name}}</p>
+        </div>
+        <div class="caja_pag_categ">
+            {{#each conejitas}}
+                <div class="conejita_categoria"><a href="/mobile/conejita/{{_id}}">
+                    <div class="foto_conejita_categ"><img src="{{mainImage.url}}" width="90" height="90" border="0"></div>
+                    <p>{{name}}</p>
+                </a></div>
+                {{else}}
+                Muy pronto...
+            {{/each}}}
+        </div>
+
+    </main>
+</template>

@@ -1,0 +1,796 @@
+/* @override 
+	http://fonts.googleapis.com/css?family=Kaushan+Script
+	http://fonts.googleapis.com/css?family=Ubuntu
+*/
+@charset "UTF-8";
+/* CSS Document */
+* { 
+margin:0px;
+padding:0px;
+font-weight:normal;
+}
+h1 {
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFF;
+	font-size: 1.5em;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+h2 {
+	font-family: 'Ubuntu', sans-serif;
+	color: #FED000;
+	font-size: 1.2em;
+	font-weight: 500;
+	text-align: left;
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+h3 {
+	font-family: 'Ubuntu', sans-serif;
+	color: #FFF;
+	font-size: 1.1em;
+	text-align: center;
+	margin-bottom: 2px;
+}
+h4 {
+	font-family: 'Ubuntu', sans-serif;
+	color: #FF0000;
+	font-size: 0.9em;
+	text-align: left;
+	margin-bottom: 2px;
+}
+html {
+    /*Si tu página tiene un fondo negro...*/
+    background-color: #000;
+}
+body {
+	background-image: url(../images/fondo.jpg);
+	/* display: none;*/
+}
+/* PORTADA FILTRO */
+.caja_filtro {
+	width: 96%;
+	float: left;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 25px;
+}
+.caja_filtro p {
+	font-family: 'Ubuntu';
+	font-weight: 300;
+	font-size: 0.7em;
+	color: #FFF;
+	text-align: justify;
+}
+/* FORMULARIO */
+.contacto{
+	font-family: 'Ubuntu', sans-serif;
+    font-size: 0.8em;
+    color: #FFF;
+    width: 280px;
+    float: left;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-left: 20px;
+	padding-top: 8px;
+}
+.contacto label{
+	width: 220px;
+	font-family: 'Playball';
+	font-size: 1.8em;
+	color: #FFF;
+	text-align: left;
+}
+.contacto select{
+	width: 150px;
+	font-family: 'Ubuntu';
+	font-size: 1em;
+	font-weight: 400;
+	color: #000;
+	margin-left: 15px;
+	margin-top: 3px;
+	height: 20px;
+}
+.contacto div{ /* esto los separara un poco */
+    margin-bottom: 15px;
+	padding-left: 35px;
+}
+.contacto input[type='submit'] {
+    width: 140px;
+    height: 33px;
+    margin: 5px 0 0 20px;
+    border: 0px;
+    border-radius: 5px;
+    font-family: 'Playball';
+    font-size: 1.6em;
+    font-weight: 300;
+    color:#FFF;
+    background: #EE0202; /* fallback para navegadores que no soporten degradados */
+    background: -moz-linear-gradient(top, #EE0202 0%, #990000 100%);
+    background: -webkit-linear-gradient(top, #EE0202 0%,#990000 100%);
+	padding: 1px 10px 6px;
+}
+.contacto input[type='submit']:hover{
+    background: #EE0202;
+    background: -moz-linear-gradient(top, #990000 0%, #EE0202 100%);
+    background: -webkit-linear-gradient(top, #990000 0%,#EE0202 100%);
+}
+.contacto input[type='submit']:active{
+    background: #EE0202;
+    background: -moz-linear-gradient(top, #990000 0%, #EE0202 100%);
+    background: -webkit-linear-gradient(top, #990000 0%,#EE0202 100%);
+}
+.contacto input[type='checkbox'] {
+    padding: 7px 6px;
+    margin-top: 10px;
+    margin-right: 8px;
+    margin-bottom: 0px;
+}
+.aceptar {
+	width: 260px;
+	font-family: 'Ubuntu';
+	font-size: 0.8em;
+	font-weight: 400;
+	text-align: left;
+	float: left;
+	margin: 10px 0 0;
+}
+/* FIN FORMULARIO */
+/* FIN PORTADA FILTRO */
+
+/* ***ESTILOS PARA PORTADA PRINCIPAL*** */
+#contenedor-m {
+	width: 100%;
+	min-width: 320px;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #000;
+}
+/* ***HEADER*** */
+header {
+	width: 100%;
+	height: 209px;
+	padding: 0;
+	margin: 0;
+}
+.superior {
+	width: 100%;
+	height: 33px;
+	background: url(../images/fondo-superior.jpg) repeat-x;
+}
+.superior p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.8em;
+	color: #FFF;
+	text-align: left;
+	margin-left: 15px;
+	padding-top: 10px;
+}
+/* 
+.flags {
+	height: 20px;
+	float: right;
+	margin-top: 8px;
+	width: 45px;
+	margin-right: 10px;
+}
+.flag_es {
+	width: 16px;
+	height: 11px;
+	float: left;
+}
+.flag_es img {
+	border: 0;
+}
+.flag_en {
+	width: 16px;
+	height: 11px;
+	float: left;
+	margin-left: 8px;
+}
+.flag_en img {
+	border: 0;
+}
+*/
+.header-m {
+	width: 100%;
+	height: 176px;
+	background: url(../images/fondo-header.jpg) repeat-x;
+}
+.logo {
+	width: 100px;
+	height: 127px;
+	margin-top: 15px;
+	margin-left: 110px;
+	float: left;
+}
+.logo img {
+	border: 0;
+}
+.sociales {
+	width: 100px;
+	height: 30px;
+	margin-left: 20px;
+	float: left;
+	padding: 0;
+	margin-top: 110px;
+}
+.ico_twitter {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+	float: left;
+}
+.ico_twitter img {
+	border: 0;
+}
+.ico_facebook {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+	float: left;
+}
+.ico_facebook img {
+	border: 0;
+}
+.ico_instagram {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+.ico_instagram img {
+	border: 0;
+}
+/* *** FIN HEADER *** */
+/* *** MAIN *** */
+main {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.categoria1 {
+	width: 100%;
+	height: 60px;
+	float: left;
+	background: url(../images/fondo-categoria.jpg) repeat-x;
+}
+.foto_categoria {
+	width: 50px;
+	height: 50px;
+	margin-left: 8px;
+	margin-top: 5px;
+	float: left;
+	margin-right: 15px;
+}
+.categoria1 p {
+	margin-top: 14px;
+	font-family: 'Playball';
+	font-size: 1.7em;
+	font-weight: 300;
+	color: #FFF;
+	text-align: left;
+	float: left;
+}
+.categoria1 p a {
+	color: #FFF;
+	text-decoration: none;
+}
+.categoria1 p a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.flecha {
+	width: 25px;
+	height: 39px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 11px;
+}
+.caja_terminos {
+	width: 94%;
+	float: left;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-bottom: 25px;
+}
+.caja_terminos p {
+	font-family: 'Ubuntu';
+	font-weight: 300;
+	font-size: 0.7em;
+	color: #FFF;
+	text-align: justify;
+}
+.titulo_categoria {
+	width: 100%;
+	height: 33px;
+	background: url(../images/fondo-superior.jpg) repeat-x;
+	margin-bottom: 7px;
+}
+.titulo_categoria p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1em;
+	color: #FFF;
+	text-align: left;
+	margin-left: 15px;
+	padding-top: 7px;
+}
+.caja_pag_categ {
+	width: 98%;
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 25px;
+}
+.conejita_categoria {
+	width: 90px;
+	height: 109px;
+	float: left;
+	margin: 0 8px 10px 6px;
+}
+.conejita_categoria p {
+	font-family: 'Ubuntu';
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: center;
+}
+.foto_conejita_categ {
+	width: 90px;
+	height: 90px;
+	float: left;
+	padding: 0;
+	margin-bottom: 2px;
+}
+.foto_conejita_categ img {
+	border: 0;
+}
+.caja_perfil {
+	width: 98%;
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 25px;
+}
+.foto_perfil1 {
+	width: 135px;
+	height: 153px;
+	margin-bottom: 10px;
+	float: left;
+	clear: left;
+}
+.caja_textos_perfil {
+	width: 170px;
+	margin-top: 30px;
+	margin-left: 8px;
+	float: left;
+	margin-bottom: 10px;
+}
+.caja_textos_perfil p {
+	font-family: 'Ubuntu';
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.bandera_pais {
+	margin-left: 9px;
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 1px;
+}
+.bandera_pais img {
+	border: 0;
+}
+.caja_precios_perfil {
+	width: 165px;
+	margin-top: 10px;
+	float: left;
+}
+.caja_precios_perfil p {
+	font-family: 'Ubuntu';
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.caja_votacion_perfil {
+	width: 165px;
+	margin-top: 7px;
+	float: left;
+}
+.caja_votacion_text {
+	width: 70px;
+	float: left;
+}
+.caja_votacion_img {
+	width: 90px;
+	float: left;
+	padding-top: 3px;
+}
+.tit_galeria {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 8px;
+	margin-bottom: 10px;
+}
+.tit_galeria p {
+	font-family: 'Ubuntu';
+	font-weight: 500;
+	font-size: 1.1em;
+	color: #FFF;
+	text-align: left;
+	margin-left: 70px;
+}
+.conejita_galeria {
+	width: 90px;
+	height: 90px;
+	float: left;
+	margin: 0 8px 4px 6px;
+}
+.foto_conejita_galeria {
+	width: 90px;
+	height: 90px;
+	float: left;
+	padding: 0;
+	margin-bottom: 2px;
+}
+.foto_conejita_galeria img {
+	border: 0;
+}
+.tit_informacion {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-top: 8px;
+	margin-bottom: 10px;
+}
+.tit_informacion p {
+	font-family: 'Ubuntu';
+	font-weight: 500;
+	font-size: 1.1em;
+	color: #FED000;
+	text-align: left;
+	margin-left: 5px;
+}
+.caja_datos {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-bottom: 10px;
+}
+.dato {
+	width: 70px;
+	float: left;
+	clear: both;
+	margin-bottom: 10px;
+}
+.dato p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+	margin-left: 5px;
+	margin-bottom: 2px;
+}
+.caja_trae_dato {
+	width: 120px;
+	float: left;
+	margin-bottom: 10px;
+}
+.trae_dato_edad {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_edad p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_altura {
+	width: 70%;
+	margin-bottom: 2px;
+	float: left;
+}
+.trae_dato_altura p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_peso {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_peso p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_medidas {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_medidas p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_servicios {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_servicios p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_horario {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_horario p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_lugar {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_lugar p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.trae_dato_sector {
+	width: 70%;
+	float: left;
+	margin-bottom: 2px;
+}
+.trae_dato_sector p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+}
+.text_perfil {
+	width: 97%;
+	float: left;
+	background-color: #FFF;
+	padding: 5px;
+	margin-left: 3px;
+}
+.text_perfil p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #333;
+	text-align: justify;
+}
+.btn_volver {
+	width: 170px;
+	height: 27px;
+	background-image: url(../images/fondo-boton-volver.jpg);
+	float: left;
+	margin-left: 5px;
+	margin-top: 20px;
+}
+.btn_volver p {
+	font-family: 'Playball';
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #FFF;
+	text-align: center;
+	margin-top: 1px;
+}
+.btn_volver p a {
+	color: #FFF;
+	text-decoration: none;
+}
+.btn_volver p a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+/* estilos form */
+.caja_contacto {
+	width: 300px;
+	margin-left: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	float: left;
+}
+.caja_contacto span {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+	float: left;
+	margin-top: 4px;
+	margin-bottom: 5px;
+	clear: left;
+}
+.caja_contacto span.coment {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.caja_contacto p {
+	font-family: 'Ubuntu';
+	font-weight: 400;
+	font-size: 0.9em;
+	color: #FFF;
+	text-align: left;
+	margin-bottom: 10px;
+}
+form#formulario {
+	width: 300px;
+}
+input[type=text] { 
+   width: 180px;
+   border: 0px;
+   padding: 5px;
+   font-size: 12px; 
+   margin-bottom: 3px;
+   font-family: 'Ubuntu', sans-serif;
+   color: #666;
+	float: right;
+	margin-right: 35px;
+}
+input[type=email] { 
+   width: 180px;
+   border: 0px;
+   padding: 5px;
+   font-size: 12px; 
+   margin-bottom: 3px;
+   font-family: 'Ubuntu', sans-serif;
+   color: #666;
+	float: right;
+	margin-right: 35px;
+}
+textarea[name=comentarios] { 
+   width: 180px;
+   border: 0px;
+   padding: 5px;
+   font-size: 12px; 
+   font-family: 'Ubuntu', sans-serif;
+   color: #666;
+   float: right;
+   margin-top: 3px;
+   margin-right: 35px;
+	height: 50px;
+}
+input[type=submit], form a { 
+   width: 70px;
+   border: 0px;
+   background: #FF0000;
+   padding: 4px;
+   font-family: 'Ubuntu', sans-serif;
+   font-size: 14px;
+   color: #FFF;
+   margin-left: 75px;
+   float: left;
+   margin-top: 20px;
+} 
+input[type=submit]:hover, form a:hover { 
+   background-color: #CC0000; 
+   color: #FFF;
+   cursor: pointer;
+}
+.form_footer .required { 
+   font-weight:bold; 
+   color: #FF9900;     
+}
+.failure, #success {
+   color: #6EA070;
+   display:none; 
+}
+/* fin estilos form */
+.copy_footer {
+	width: 250px;
+	height: auto;
+	margin-top: 20px;
+	float: left;
+	margin-left: 60px;
+	clear: left;
+}
+.copy_footer p {
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 0.6em;
+	color: #FFF;
+	text-align: left;
+}
+footer {
+	width: 100%;
+	height: 201px;
+	background: url(../images/fondo-footer.jpg) repeat-x;
+	clear: both;
+}
+.cuadro_text1 {
+	width: 185px;
+	margin-top: 20px;
+	margin-left: 70px;
+	float: left;
+}
+.cuadro_text1 ul {
+	width: 140px;
+	margin-top: 7px;
+	float: right;
+}
+.cuadro_text1 ul li {
+	text-align: left;
+	color: #FFF;
+	text-decoration: none;
+	list-style-type: none;
+	display: block;
+	margin-left: 0px;
+	margin-bottom: 5px;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+	font-size: 0.8em;
+}
+.cuadro_text1 ul li a {
+	color: #FFF;
+	text-decoration: none;
+}
+.cuadro_text1 ul li a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+.tit_footer {
+	width: 140px;
+	float: left;
+	text-align: center;
+	font-family: 'Euphoria Script', cursive;
+	font-size: 1.5em;
+	color: #FFF;
+	margin-left: 3px;
+}
+.tit_footer p {
+	margin-top: 0px;
+	font-family: 'Playball';
+	font-size: 1em;
+	font-weight: 300;
+	color: #FFF;
+	text-align: left;
+}
+.silueta {
+	width: 34px;
+	height: 104px;
+	margin-top: 2px;
+	float: left;
+}

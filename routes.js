@@ -1,10 +1,14 @@
 Router.map(function() {
 
+    this.route('test', {
+        path: '/test',
+        layoutTemplate: 'layout'
+    });
+
     this.route('filtro', {
       path: '/filtro',
       waitOn: function() {
-        return [orion.subs.subscribe('dictionary'),
-        orion.subs.subscribe('entity', 'countries'),
+        return [orion.subs.subscribe('entity', 'countries'),
         orion.subs.subscribe('entity', 'cities')]
       },
       data: function() {
@@ -20,16 +24,15 @@ Router.map(function() {
     this.route('conejitas', {
       path: '/',
       layoutTemplate: 'layout',
-      onBeforeAction: function() {
+      /*onBeforeAction: function() {
         if(Session.get("city") == undefined){
             Router.go("/filtro");
         } else {
             this.next();
         }
-      },
+      },*/
       waitOn: function() {
-        return [orion.subs.subscribe('dictionary'),
-        orion.subs.subscribe('entity', 'conejitas')]
+        return [orion.subs.subscribe('entity', 'conejitas')]
       },
       data: function() {
             return {
@@ -52,8 +55,7 @@ Router.map(function() {
         path: '/conejita/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas'),
+            return [orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services'),
             Meteor.subscribe('evaluations')]
         },
@@ -63,8 +65,7 @@ Router.map(function() {
         path: '/categories/:name',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas')]
+            return [orion.subs.subscribe('entity', 'conejitas')]
         },
         data: function() {
             category = orion.entities.categories.collection.findOne({searchable: reemplazartildes(this.params.name.toLowerCase())});
@@ -83,8 +84,7 @@ Router.map(function() {
         path: '/vivo',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas')]
+            return [orion.subs.subscribe('entity', 'conejitas')]
         },
     });
 
@@ -104,8 +104,7 @@ Router.map(function() {
         path: '/unirme',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            //orion.subs.subscribe('entity', 'conejitas'),
+            return [//orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services')]
         }
     });
@@ -114,8 +113,7 @@ Router.map(function() {
         path: '/unirme2',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas'),
+            return [orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'services'),
             orion.subs.subscribe('entity', 'categories'),
             orion.subs.subscribe('entity', 'countries'),
@@ -130,8 +128,7 @@ Router.map(function() {
         path: '/conejita/pagar/:_id/:transaction_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'conejitas'),
+            return [orion.subs.subscribe('entity', 'conejitas'),
             orion.subs.subscribe('entity', 'khipuPayments')]
         }
     });
@@ -141,10 +138,7 @@ Router.map(function() {
     */
     this.route('registroUsuarios', {
         path: '/usuarios/registrarme',
-        layoutTemplate: 'layout',
-        waitOn: function() {
-            return [orion.subs.subscribe('dictionary')]
-        }
+        layoutTemplate: 'layout'
     });
 
     /**
@@ -153,9 +147,6 @@ Router.map(function() {
     this.route('loginUsuarios', {
         path: '/usuarios/login',
         layoutTemplate: 'layout',
-        waitOn: function() {
-            return [orion.subs.subscribe('dictionary')]
-        },
         onAfterRun: function() {
             document.title = "Regístro usuarios";
         }
@@ -168,7 +159,7 @@ Router.map(function() {
         path: '/usuarios/album',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'), Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas')]
+            return [Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas')]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
@@ -184,10 +175,7 @@ Router.map(function() {
     */
     this.route('contacto', {
         path: '/contacto',
-        layoutTemplate: 'layout',
-        waitOn: function() {
-            return orion.subs.subscribe('dictionary')
-        }
+        layoutTemplate: 'layout'
     });
 
     /**
@@ -197,7 +185,7 @@ Router.map(function() {
         path: '/chat/public/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'), orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
@@ -242,6 +230,61 @@ Router.map(function() {
         }
     });
 
+    this.route('privateChat', {
+        path: '/chat/private/:_id',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+        },
+        onBeforeAction: function() {
+            if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
+                Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
+            }
+
+            var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id, online: true});
+            if(!conejita){
+                Router.go('conejitas');
+            }
+
+            /** Chat related **/
+            Session.set('chapp-username', Meteor.user().username);
+            Session.set('chapp-docid', Meteor.userId() + conejita._id);
+            /*Tracker.autorun(function () {
+                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
+                if(personas.length > 2){
+                    Router.go('publicChat', {_id: this.params._id});
+                }
+            }*/
+
+            this.next();
+        },
+        onAfterAction: function(){
+            Tracker.autorun(function () {
+                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
+                var conejita  = orion.entities.conejitas.collection.findOne({_id: Session.get('chapp-docid')});
+                var count = 0;
+                for(var i = 0; i<personas.length; i++) {
+                    if(personas[i].userId == conejita.userId){
+                        count++;
+                    }
+                }
+
+                if (count == 0){
+                    $('.video').hide();
+                    //$('.out').show();
+                } else {
+                    $('.video').show();
+                }
+
+            });
+        },
+        data: function(){
+            return {
+                roomusers: Presences.find({ "state.currentRoomId": Session.get('chapp-docid')})
+            }
+        }
+    });
+
     /**
     * Chat for conejitas
     */
@@ -249,7 +292,7 @@ Router.map(function() {
         path: '/chat/conejitas/public/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'), orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
         },
         onBeforeAction: function() {
             /*if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
@@ -285,6 +328,45 @@ Router.map(function() {
         }
     });
 
+    this.route('privateChatConejitas', {
+        path: '/chat/conejitas/private/:_id/:_uid',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+        },
+        onBeforeAction: function() {
+            /*if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
+             return Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
+             }*/
+
+            var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id});
+            if(!conejita){
+                return Router.go('conejitas');
+            }
+
+            /*if(conejita.userId != Meteor.userId()){
+             return router.go('conejitas');
+             }*/
+
+            Meteor.call('onlineConejita', conejita._id);
+
+            // chat related
+            Session.set('chapp-username', conejita.name);
+            Session.set('chapp-docid', this.params._uid+conejita._id);
+            Session.set('chapp-master', conejita.name);
+
+            this.next();
+        },
+        data: function(){
+            return {
+                roomusers: Presences.find({ "state.currentRoomId": Session.get('chapp-docid')})
+            }
+        },
+        unload: function(){
+            window.localStream.stop();
+            Meteor.call('offlineConejita', this.params._id);
+        }
+    });
 
 });
 

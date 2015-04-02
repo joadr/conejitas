@@ -1,0 +1,29 @@
+<template name="filtroMobile">
+    <main>
+        <div class="caja_filtro">
+            <!--<h1>Política de Privacidad</h1>
+            <p>Lorem ipsum dolor sit amet</p>-->
+
+            <form class='contacto'>
+                <div><label>Selecciona un país:</label>
+                    <select name="pais" class="paiss">
+                        <OPTION VALUE=" "> </OPTION>
+                        {{#each countries}}
+                            <OPTION VALUE="{{_id}}">{{name}}</OPTION>
+                        {{/each}}
+                    </select></div>
+
+                <div><label>Selecciona una ciudad:</label>
+                    <select name="ciudad">
+                        <OPTION VALUE=" "> </OPTION>
+                    </select></div>
+
+                <div align="left"><input type='submit' value='Descubre'></div>
+
+                <div class="aceptar"><input type="checkbox" name="aceptar" value="aceptar" required>Acepto los términos y condiciones</div>
+            </form>
+
+        </div>
+
+    </main>
+</template>

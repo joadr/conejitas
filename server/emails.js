@@ -1,7 +1,8 @@
 Meteor.methods({
   sendEmail: function (to, from, subject, html) {
     if(from == ""){
-      from = "administrador@clubconejitas.cl";
+      //from = "administrador@clubconejitas.cl";
+      orion.dictionary.get('adminEmail', 'joaquin.diaz@ies.cl');
     }
     check([to, from, subject, html], [String]);
 

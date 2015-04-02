@@ -1,0 +1,93 @@
+<template name="layoutMobile">
+    <link rel="stylesheet" href="/css/m-estilo.css" />
+    <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Euphoria+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <!--<script src="/js/AC_RunActiveContent.js"></script>-->
+<!--    <script src="js/jquery-1.4.1.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>-->
+    <!--<script src="/js/function.js"></script>-->
+    <!--<script src="js/jquery.js"></script>-->
+    <!--<script src="/js/jqFancyTransitions.js"></script>-->
+    <!--<script src="/js/jquery.ez-bg-resize.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").ezBgResize({
+                img : "img/fondo.jpg"
+            });
+        });
+    </script>-->
+    <!--<script>
+        $(document).ready(function(){
+            var altura = $("nav").offset().top;
+
+            $(window).scroll(function(){
+
+                if($(window).scrollTop() >= altura){
+
+                    $("nav").css("margin-top","-275px");
+                    $("nav").css("position","fixed");
+
+                }else{
+
+                    $("nav").css("margin-top","0px");
+                    $("nav").css("position","static");
+
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            $("body").css("display", "none");
+            $("body").fadeIn(3000);
+
+            $("a.transition").click(function(event){
+                event.preventDefault();
+                linkDestino = this.href;
+                $("body").fadeOut(2000, redireccionarPag);
+            });
+
+            function redireccionarPag() {
+                window.location = linkDestino;
+            }
+        });
+    </script>-->
+    <div id="contenedor-m">
+        <header>
+            <div class="superior">
+                <p>Conejitas {{country}} / {{city}}</p>
+                <!--<div class="flags">
+                    <div class="flag_es"><a href="#"><img src="img/flag-es.jpg" width="16" height="11"></a></div>
+                <div class="flag_en"><a href="#"><img src="img/flag-en.jpg" width="16" height="11"></a></div>
+              </div>-->
+            </div>
+
+            <div class="header-m">
+                <div class="logo"><a href="/mobile"><img src="/images/logo.png" width="100" height="127" title="Conejitas.com"></a></div>
+                <!--<div class="sociales">
+                       <div class="ico_twitter"><a href="#"><img src="img/twitter.png" width="28" height="29" title="Twitter"></a></div>
+                    <div class="ico_facebook"><a href="#"><img src="img/facebook.png" width="28" height="29" title="Facebook"></a></div>
+                    <div class="ico_instagram"><a href="#"><img src="img/instagram.png" width="28" height="29" title="Instagram"></a></div>
+                </div>-->
+
+            </div>
+        </header>
+        {{> yield }}
+        <footer>
+            <div class="cuadro_text1">
+                <div class="silueta"><img src="/images/silueta.png" width="34" height="104"></div>
+                <div class="tit_footer"><p>Información</p></div>
+                <ul>
+                    <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
+                    <li><a href="politica-de-privacidad.html">Políticas de Privacidad</a></li>
+                    <li><a href="/mobile/contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="copy_footer"><p>© Conejitas.com 2014  -  Derechos reservados</p></div>
+        </footer>
+    </div>
+</template>

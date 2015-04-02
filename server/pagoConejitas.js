@@ -7,40 +7,40 @@ Meteor.methods({
 		    case "plan1":
 		        switch(conejita.opcion){
 		        	case "opcion1":
-		        		pago = 50.000;
+		        		pago = orion.dictionary.get('plan1opcion1', '50000');
 		        		break;
 		        	case "opcion2":
-		        		pago = 75.000;
+		        		pago = orion.dictionary.get('plan1opcion2', '75000');
 		        		break;
 		        	case "opcion3":
-		        		pago = 200.000;
+		        		pago = orion.dictionary.get('plan1opcion3', '200000');
 		        		break;
 		        	case "opcion4":
-		        		pago = 350.000;
+		        		pago = orion.dictionary.get('plan1opcion4', '350000');
 		        		break;
 		        	case "opcion5":
-		        		pago = 650.000;
+		        		pago = orion.dictionary.get('plan1opcion5', '650000');
 		        		break;
 		        }
 		        break;
 		    case "plan2":
 		        switch(conejita.opcion){
 		        	case "opcion1":
-		        		pago = 100.000;
+		        		pago = orion.dictionary.get('plan2opcion1', '100000');
 		        		break;
 		        	case "opcion2":
-		        		pago = 250.000;
+		        		pago = orion.dictionary.get('plan2opcion2', '250000');
 		        		break;
 		        	case "opcion3":
-		        		pago = 450.000;
+		        		pago = orion.dictionary.get('plan2opcion3', '450000');
 		        		break;
 		        	case "opcion4":
-		        		pago = 800.000;	
+		        		pago = orion.dictionary.get('plan2opcion4', '800000');
 		        		break;
 		        }
 		        break;
 		    default:
-		        pago = 50.000;
+		        pago = orion.dictionary.get('plan1opcion1', '50000');
 		        break;
 		}
 		return pago;

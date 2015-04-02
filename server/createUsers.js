@@ -1,5 +1,5 @@
 Meteor.methods({
-	registrarUsuario: function (data) {
+    registrarUsuario: function (data) {
 		try {
 			var userId = Accounts.createUser({
 			  email: data.email,
