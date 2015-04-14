@@ -1,252 +1,251 @@
 <template name="conejita">
+    <link rel="stylesheet" href="/css/estilo-perfil.css" />
 {{# with conejita}}
-        <div class="contenedor" id="conejita">
-                <center>
-                        <div class="superior">
-                                <div class="llama_nombre_perfil">
-                                        <p>{{name}}</p>
-                                </div>
-                                <div class="llama_flag_perfil"><a href="registro-usuario.html"><img src="/img/flag-chile-perfil.png" width="23" height="23" title="Chile"></a></div>
-                                <div class="llama_pais_perfil">
-                                        <p>Chile</p>
-                                </div>
-                                <div class="categoria_perfil">
-                                        <p>Categoría:</p>
-                                </div>
-                                <div class="llama_categoria_perfil">
-                                        <p>{{category}}</p>
-                                </div>
-                                <div class="valoracion_perfil">
-                                        <p>Valoración:</p>
-                                </div>
-                                <!-- <div class="llama_estrellas_perfil rateit" data-rateit-value="{{ divide promedio }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
-                                <div class="puntuacion_perfil">
-                                        <p>Puntuación:</p>
-                                </div> -->
-                                <div class="llama_puntuacion_perfil">
-                                        <p>{{ promedio }} </p>
-                                </div>
-                        </div>
-                        <article id="datos">
-                                <div class="titulo_datos">
-                                        <p>PERFIL CONEJITA</p>
-                                </div>
-                                <div class="item_info">
-                                        <h2>Información</h2>
-                                        <div class="info_edad">
-                                                <p>Edad:</p>
-                                        </div>
-                                        <div class="llama_info_edad">
-                                                <p>{{age}} años</p>
-                                        </div>
-                                        <div class="info_altura">
-                                                <p>Altura:</p>
-                                        </div>
-                                        <div class="llama_info_altura">
-                                                <p>{{heigh}} mts.</p>
-                                        </div>
-                                        <div class="info_peso">
-                                                <p>Peso:</p>
-                                        </div>
-                                        <div class="llama_info_peso">
-                                                <p>{{weigh}} kgs.</p>
-                                        </div>
-                                        <div class="info_medidas">
-                                                <p>Medidas:</p>
-                                        </div>
-                                        <div class="llama_info_medidas">
-                                                <p>{{measurements}}</p>
-                                        </div>
-                                </div>
-                                <div class="item_mensaje">
-                                        <h2>Mensaje</h2>
-                                        <div class="caja_mensaje">
-                                                <p>{{{message}}}</p>
-                                        </div>
-                                </div>
-                                <div class="item_servicio">
-                                        <h2>Servicios</h2>
-                                        {{ #each services }}
-                                        <div class="llama_servicio1">
-                                                <p>{{this}}</p>
-                                        </div>
-                                        {{ /each}}
-                                </div>
-                                <div class="item_otros">
-                                        <h2>Otros Datos</h2>
-                                        <div class="otros_horario">
-                                                <p>Horario:</p>
-                                        </div>
-                                        <div class="llama_otros_horario">
-                                                <p>{{schedule}}</p>
-                                        </div>
-                                        <div class="otros_lugar">
-                                                <p>Lugar:</p>
-                                        </div>
-                                        <div class="llama_otros_lugar">
-                                                <p>{{place}}</p>
-                                        </div>
-                                        <div class="otros_sector">
-                                                <p>Sector:</p>
-                                        </div>
-                                        <div class="llama_otros_sector">
-                                                <p>{{sector}}</p>
-                                        </div>
-                                        <div class="otros_fono">
-                                                <p>Teléfono:</p>
-                                        </div>
-                                        <div class="llama_otros_fono">
-                                                <p>{{phone}}</p>
-                                        </div>
-                                </div>
-                                <div class="item_precios">
-                                        <div class="precio_peso_perfil">
-                                                <p>${{price}}</p>
-                                        </div>
-                                        <div class="precio_dolar_perfil">
-                                                <p>US${{usdPrice}}</p>
-                                        </div>
-                                        <div class="detalle_precios">
-                                                <p>Valores por hora.</p>
-                                        </div>
-                                </div>
-                        </article>
-                        <article id="galeria">
-                                <div class="titulo_galeria">
-                                        <p>PORTAFOLIO</p>
-                                </div>
-                                <!--GALERÍA-->
-                                <div class="galeria">
-                                        <div class="galeria_img1">
-                                                <img src="{{mainImage.url}}" width="341" height="366" id="contenedorGaleria"/>
-                                        </div><div class="galeria_img_a">
-                                                <img src="/img/galeria/conejita-vip1-341x366-2.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
-                                        </div><div class="galeria_img_b">
-                                                <img src="/img/galeria/conejita-vip1-341x366-3.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
-                                        </div><div class="galeria_img_c">
-                                                <img src="/img/galeria/conejita-vip1-341x366-4.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
-                                        </div><div class="galeria_img_d">
-                                                <img src="/img/galeria/conejita-vip1-341x366-1.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
-                                        </div></div>
-                                <!--GALERÍA-->
-                                {{#if video}}
-                                <div class="caja_video">
-                                        <div class="ico_video"><img src="/img/ico-video-perfil.png" width="23" height="23"></div>
-                                        <div class="llama_nombre_video">
-                                                <p>{{name}}</p>
-                                        </div>
-                                        <div class="text_video_perfil">
-                                                <p>tiene un video, míralo <a href="#">AQUÍ</a></p>
-                                        </div>
-                                </div>
-                                {{/if}}
-                                {{#if online}}
-                                <div class="caja_online">
-                                        <div class="llama_nombre_online">
-                                                <p>{{name}}</p>
-                                        </div>
-                                        <div class="text_online_perfil">
-                                                <p>está ONLINE... Accede <a href="/chat/public/{{ _id }}">AQUÍ</a></p>
-                                        </div>
-                                </div>
-                                {{/if}}
-                        </article>
-                        <article id="evalua">
-                                <div class="titulo_evalua">
-                                        <p>EVALUACIÓN</p>
-                                </div>
-                                <!--INICIO FORM-->
-                                <div class="formulario_perfil">
-                                        <form action="#" id="contacto" name="contacto" method="post">
-                                                <label for="limpieza">Limpieza</label><input name="cleaning" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="acogedor">Acogedor</label><input name="cozy" type="text" required placeholder="1-10">
-                                                <br>
-                                                <h2>Presencia</h2>
-                                                <label for="vestimenta">Vestimenta</label><input name="clothing" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="busto">Busto</label><input name="bust" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="cola">Cola</label><input name="rear" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="piel">Piel</label><input name="skin" type="text" required placeholder="1-10">
-                                                <br>
-                                                <h2>Servicios</h2>
-                                                <label for="besos">Besos</label><input name="kisses" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="sexooral">Sexo Oral</label><input name="oralSex" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="sexoanal">Sexo Anal</label><input name="analSex" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="americana">Americana</label><input name="american" type="text" required placeholder="1-10"><br>
-                                                <br>
-                                                <label for="americana">Fotos vs Realidad</label><input name="photosVsReality" type="text" required placeholder="1-10">
-                                                <br>
-                                                <label for="americana">Ingresa código</label><input name="code" type="text" required placeholder="">
-                                                <br>
-                                                <input id="boton" name="enviar" type="submit" value="Evaluar">
-                                        </form>
-                                        <h2>Lugar</h2>
-                                        <label for="estacionamiento">Estacionamiento</label>
-                                        <label>
-                                        {{#if carPark}}
-                                        <input checked="true" type="radio" name="estacionamiento" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input type="radio" disabled="disabled" name="estacionamiento" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{else}}
-                                        <input type="radio" disabled="disabled" name="estacionamiento" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input checked="true" type="radio" name="estacionamiento" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{/if}}
-                                        </label>
-                                        <br>
-                                        <label for="conserje">Conserje</label>
-                                        <label>
-                                        {{#if conscierge}}
-                                        <input checked="true" type="radio" name="conserje" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input type="radio" disabled="disabled" name="conserje" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{else}}
-                                        <input type="radio" disabled="disabled" name="conserje" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input checked="true" type="radio" name="conserje" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{/if}}
-                                        </label>
-                                        <br>
-                                        <label for="piercing">Piercing</label>
-                                        <label>
-                                        {{#if piercing}}
-                                        <input checked="true" type="radio" name="piercing" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input type="radio" disabled="disabled" name="piercing" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{else}}
-                                        <input type="radio" disabled="disabled" name="piercing" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input checked="true" type="radio" name="piercing" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{/if}}
-                                        </label>
-                                        <br>
-                                        <label for="tatuaje">Tatuaje</label>
-                                        <label>
-                                        {{#if tatoo}}
-                                        <input checked="true" type="radio" name="tatoo" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input type="radio" disabled="disabled" name="tatoo" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{else}}
-                                        <input type="radio" disabled="disabled" name="tatoo" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input checked="true" type="radio" name="tatoo" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{/if}}
-                                        </label>
-                                        <br>
-                                        <label for="preservativo">Preservativo</label>
-                                        <label>
-                                        {{#if preservative}}
-                                        <input checked="true" type="radio" name="preservative" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input type="radio" disabled="disabled" name="preservative" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{else}}
-                                        <input type="radio" disabled="disabled" name="preservative" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
-                                        <input checked="true" type="radio" name="preservative" style="margin-left:6px; margin-right:3px; width:10px;"/> No
-                                        {{/if}}
-                                        </label>
-                                        <br>
-                                </div>
-                                <!--FIN FORM-->
-                        </article>
-                </center>
+    <div class="contenedor" id="conejita">
+        <div class="superior">
+                <div class="llama_nombre_perfil">
+                        <p>{{name}}</p>
+                </div>
+                <div class="llama_flag_perfil"><a href="registro-usuario.html"><img src="/img/flag-chile-perfil.png" width="23" height="23" title="Chile"></a></div>
+                <div class="llama_pais_perfil">
+                        <p>Chile</p>
+                </div>
+                <div class="categoria_perfil">
+                        <p>Categoría:</p>
+                </div>
+                <div class="llama_categoria_perfil">
+                        <p>{{category}}</p>
+                </div>
+                <div class="valoracion_perfil">
+                        <p>Valoración:</p>
+                </div>
+                <!-- <div class="llama_estrellas_perfil rateit" data-rateit-value="{{ divide promedio }}" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+                <div class="puntuacion_perfil">
+                        <p>Puntuación:</p>
+                </div> -->
+                <div class="llama_puntuacion_perfil">
+                        <p>{{ promedio }} </p>
+                </div>
         </div>
+        <article id="datos">
+                <div class="titulo_datos">
+                        <p>PERFIL CONEJITA</p>
+                </div>
+                <div class="item_info">
+                        <h2>Información</h2>
+                        <div class="info_edad">
+                                <p>Edad:</p>
+                        </div>
+                        <div class="llama_info_edad">
+                                <p>{{age}} años</p>
+                        </div>
+                        <div class="info_altura">
+                                <p>Altura:</p>
+                        </div>
+                        <div class="llama_info_altura">
+                                <p>{{heigh}} mts.</p>
+                        </div>
+                        <div class="info_peso">
+                                <p>Peso:</p>
+                        </div>
+                        <div class="llama_info_peso">
+                                <p>{{weigh}} kgs.</p>
+                        </div>
+                        <div class="info_medidas">
+                                <p>Medidas:</p>
+                        </div>
+                        <div class="llama_info_medidas">
+                                <p>{{measurements}}</p>
+                        </div>
+                </div>
+                <div class="item_mensaje">
+                        <h2>Mensaje</h2>
+                        <div class="caja_mensaje">
+                                <p>{{{message}}}</p>
+                        </div>
+                </div>
+                <div class="item_servicio">
+                        <h2>Servicios</h2>
+                        {{ #each services }}
+                        <div class="llama_servicio1">
+                                <p>{{this}}</p>
+                        </div>
+                        {{ /each}}
+                </div>
+                <div class="item_otros">
+                        <h2>Otros Datos</h2>
+                        <div class="otros_horario">
+                                <p>Horario:</p>
+                        </div>
+                        <div class="llama_otros_horario">
+                                <p>{{schedule}}</p>
+                        </div>
+                        <div class="otros_lugar">
+                                <p>Lugar:</p>
+                        </div>
+                        <div class="llama_otros_lugar">
+                                <p>{{place}}</p>
+                        </div>
+                        <div class="otros_sector">
+                                <p>Sector:</p>
+                        </div>
+                        <div class="llama_otros_sector">
+                                <p>{{sector}}</p>
+                        </div>
+                        <div class="otros_fono">
+                                <p>Teléfono:</p>
+                        </div>
+                        <div class="llama_otros_fono">
+                                <p>{{phone}}</p>
+                        </div>
+                </div>
+                <div class="item_precios">
+                        <div class="precio_peso_perfil">
+                                <p>${{price}}</p>
+                        </div>
+                        <div class="precio_dolar_perfil">
+                                <p>US${{usdPrice}}</p>
+                        </div>
+                        <div class="detalle_precios">
+                                <p>Valores por hora.</p>
+                        </div>
+                </div>
+        </article>
+        <article id="galeria">
+                <div class="titulo_galeria">
+                        <p>PORTAFOLIO</p>
+                </div>
+                <!--GALERÍA-->
+                <div class="galeria">
+                        <div class="galeria_img1">
+                                <img src="{{mainImage.url}}" width="341" height="366" id="contenedorGaleria"/>
+                        </div><div class="galeria_img_a">
+                                <img src="/img/galeria/conejita-vip1-341x366-2.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
+                        </div><div class="galeria_img_b">
+                                <img src="/img/galeria/conejita-vip1-341x366-3.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
+                        </div><div class="galeria_img_c">
+                                <img src="/img/galeria/conejita-vip1-341x366-4.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
+                        </div><div class="galeria_img_d">
+                                <img src="/img/galeria/conejita-vip1-341x366-1.jpg" width="80" height="85" onclick="cargarGaleria($(this).attr('src'));"/>
+                        </div></div>
+                <!--GALERÍA-->
+                {{#if video}}
+                <div class="caja_video">
+                        <div class="ico_video"><img src="/img/ico-video-perfil.png" width="23" height="23"></div>
+                        <div class="llama_nombre_video">
+                                <p>{{name}}</p>
+                        </div>
+                        <div class="text_video_perfil">
+                                <p>tiene un video, míralo <a href="#">AQUÍ</a></p>
+                        </div>
+                </div>
+                {{/if}}
+                {{#if online}}
+                <div class="caja_online">
+                        <div class="llama_nombre_online">
+                                <p>{{name}}</p>
+                        </div>
+                        <div class="text_online_perfil">
+                                <p>está ONLINE... Accede <a href="/chat/public/{{ _id }}">AQUÍ</a></p>
+                        </div>
+                </div>
+                {{/if}}
+        </article>
+        <article id="evalua">
+                <div class="titulo_evalua">
+                        <p>EVALUACIÓN</p>
+                </div>
+                <!--INICIO FORM-->
+                <div class="formulario_perfil">
+                        <form action="#" id="contacto" name="contacto" method="post">
+                                <label for="limpieza">Limpieza</label><input name="cleaning" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="acogedor">Acogedor</label><input name="cozy" type="text" required placeholder="1-10">
+                                <br>
+                                <h2>Presencia</h2>
+                                <label for="vestimenta">Vestimenta</label><input name="clothing" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="busto">Busto</label><input name="bust" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="cola">Cola</label><input name="rear" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="piel">Piel</label><input name="skin" type="text" required placeholder="1-10">
+                                <br>
+                                <h2>Servicios</h2>
+                                <label for="besos">Besos</label><input name="kisses" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="sexooral">Sexo Oral</label><input name="oralSex" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="sexoanal">Sexo Anal</label><input name="analSex" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="americana">Americana</label><input name="american" type="text" required placeholder="1-10"><br>
+                                <br>
+                                <label for="americana">Fotos vs Realidad</label><input name="photosVsReality" type="text" required placeholder="1-10">
+                                <br>
+                                <label for="americana">Ingresa código</label><input name="code" type="text" required placeholder="">
+                                <br>
+                                <input id="boton" name="enviar" type="submit" value="Evaluar">
+                        </form>
+                        <h2>Lugar</h2>
+                        <label for="estacionamiento">Estacionamiento</label>
+                        <label>
+                        {{#if carPark}}
+                        <input checked="true" type="radio" name="estacionamiento" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input type="radio" disabled="disabled" name="estacionamiento" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{else}}
+                        <input type="radio" disabled="disabled" name="estacionamiento" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input checked="true" type="radio" name="estacionamiento" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{/if}}
+                        </label>
+                        <br>
+                        <label for="conserje">Conserje</label>
+                        <label>
+                        {{#if conscierge}}
+                        <input checked="true" type="radio" name="conserje" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input type="radio" disabled="disabled" name="conserje" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{else}}
+                        <input type="radio" disabled="disabled" name="conserje" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input checked="true" type="radio" name="conserje" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{/if}}
+                        </label>
+                        <br>
+                        <label for="piercing">Piercing</label>
+                        <label>
+                        {{#if piercing}}
+                        <input checked="true" type="radio" name="piercing" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input type="radio" disabled="disabled" name="piercing" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{else}}
+                        <input type="radio" disabled="disabled" name="piercing" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input checked="true" type="radio" name="piercing" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{/if}}
+                        </label>
+                        <br>
+                        <label for="tatuaje">Tatuaje</label>
+                        <label>
+                        {{#if tatoo}}
+                        <input checked="true" type="radio" name="tatoo" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input type="radio" disabled="disabled" name="tatoo" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{else}}
+                        <input type="radio" disabled="disabled" name="tatoo" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input checked="true" type="radio" name="tatoo" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{/if}}
+                        </label>
+                        <br>
+                        <label for="preservativo">Preservativo</label>
+                        <label>
+                        {{#if preservative}}
+                        <input checked="true" type="radio" name="preservative" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input type="radio" disabled="disabled" name="preservative" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{else}}
+                        <input type="radio" disabled="disabled" name="preservative" style="margin-left:12px; margin-right:3px; width:10px;" /> Sí
+                        <input checked="true" type="radio" name="preservative" style="margin-left:6px; margin-right:3px; width:10px;"/> No
+                        {{/if}}
+                        </label>
+                        <br>
+                </div>
+                <!--FIN FORM-->
+        </article>
+    </div>
 
 {{/ with }}
 </template>

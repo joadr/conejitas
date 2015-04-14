@@ -1,14 +1,3 @@
-/* @override 
-	http://fonts.googleapis.com/css?family=Kaushan+Script
-	http://fonts.googleapis.com/css?family=Ubuntu
-*/
-@charset "UTF-8";
-/* CSS Document */
-* {
-    margin:0px;
-    padding:0px;
-    font-weight:normal;
-}
 .caja_control {
     width: 100%;
     height: auto;
@@ -1408,6 +1397,115 @@ article#categoria {
     color: #fff;
     text-decoration: underline;
 }
+/*ESTILOS NUEVOS*/
+input#name {
+    width: 170px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+.caja_city {
+    width: 100%;
+    height: 25px;
+    clear: both;
+}
+input#medidas {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#horarios {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#lugar {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#sector {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#telefono {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#pesos {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
+input#dolares {
+    width: 80px;
+    height: 20px;
+    border-radius:0px;
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    float: left;
+}
 
-
-
+/*ESTILOS PARA INPUT FILE*/
+/*se cambia width a 170px*/
+.caja_cambia_fotos {
+    width: 170px;
+    height: auto;
+    margin-bottom: 20px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+/* se achica tamaño de letra */
+.caja_cambia_fotos p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.8em;
+    color: #fff;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+/* nueva regla */
+input#archivo {
+    width: auto;
+    max-width: 120px;
+    margin-left: 27px;
+    margin-bottom: 2px;
+}
+/* se modifican márgenes */
+.formatos {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+/* se achica tamaño de letra */
+.formatos p {
+    font-family: 'Ubuntu';
+    font-size: 0.5em;
+    color: #fff;
+    text-align: center;
+}

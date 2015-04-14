@@ -1,0 +1,21 @@
+<template name="approvePrices">
+    {{#with conejita}}
+    <div class="adminFilesCreate">
+        <div class="admin-top-nav">
+            <span class="title">Aprobar oferta conejita: {{ name }}</span>
+        </div>
+        <div class="admin-content clearfix">
+            <div class="row">
+                <div class="col-md-6"><strong>Precio anterior</strong></div><div class="col-md-6"><em>{{price}}</em></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><strong>Precio nuevo</strong></div><div class="col-md-6"><em>{{tempPrice}}</em></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6"><strong>Fecha caducidad</strong></div><div class="col-md-6"><em>{{offerEnd}}</em></div>
+            </div>
+            <button class="btn btn-primary" id="aprobar">Aprobar</button><button class="btn btn-danger" id="desaprobar">Desaprobar</button>
+        </div>
+    </div>
+    {{/with}}
+</template>

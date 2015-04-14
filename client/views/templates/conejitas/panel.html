@@ -1,19 +1,20 @@
 <template name="panelConejitas">
     <main id="control">
+        {{#with conejita}}
         <div class="caja_titulo_control"><p>Panel de Control</p></div>
         <div class="caja_control">
-            <div class="tit_bienvenida"><p>Bienvenida Camila Yamilet</p></div>
-            <div class="ver_perfil"><p><a href="#">Ver mi perfil</a></p></div>
-            <div class="cerrar_perfil"><p><a href="#">Cerrar sesión</a></p></div>
+            <div class="tit_bienvenida"><p>Bienvenida {{name}}</p></div>
+            <div class="ver_perfil"><p><a href="/conejita/{{_id}}">Ver mi perfil</a></p></div>
+            <div class="cerrar_perfil"><p><a href="/logout">Cerrar sesión</a></p></div>
             <div class="contenido_control">
                 <div class="caja_control1">
                     <div class="caja_valora">
                         <div class="caja_puntua"><p>Puntuación</p></div>
-                        <div class="caja_puntua_traedato"><p>6.5</p></div>
+                        <div class="caja_puntua_traedato"><p>{{promedio}}</p></div>
                     </div>
                     <div class="caja_valora">
                         <div class="caja_puntua"><p>Nº Evaluaciones</p></div>
-                        <div class="caja_puntua_traedato"><p>8</p></div>
+                        <div class="caja_puntua_traedato"><p>{{cantidadEvaluaciones}}</p></div>
                     </div>
                     <div class="caja_valora">
                         <div class="caja_puntua"><p>Valoración</p></div>
@@ -24,13 +25,13 @@
                 <div class="caja_control2">
                     <div class="caja_valora">
                         <div class="caja_codigo"><p>Tu código conejita es:</p></div>
-                        <div class="caja_codigo_traedato"><p>XLMT</p></div>
+                        <div class="caja_codigo_traedato"><p>{{evaluationCode}}</p></div>
                         <div class="text_codigo"><p>Entrega este código a tus clientes para que puedan calificarte.</p></div>
                     </div>
                     <div class="prende_camara">
-                        <div class="ico_camara_control"><img src="img/ico-cam-control.png" width="33" height="41"></div>
+                        <div class="ico_camara_control"><img src="/img/ico-cam-control.png" width="33" height="41"></div>
                         <div class="cont_boton">
-                            <div class="btn_camara"><p><a href="#">Activa sesión de cámara</a></p></div>
+                            <div class="btn_camara"><p><a href="/chat/conejitas/public/{{_id}}">Activa sesión de cámara</a></p></div>
                         </div>
                     </div>
                 </div>
@@ -41,15 +42,15 @@
                     <div class="caja_valora">
                         <div class="caja_puntua"><p>Nombre</p></div>
                         <div class="caja_nombre_traedato">
-                            <p>Camila Yamilet Troncoso</p></div>
-                        <div class="btn_edita"><p><a href="#">Editar</a></p></div>
+                            <p>{{name}}</p></div>
+                        <!--<div class="btn_edita"><p><a href="#">Editar</a></p></div>-->
                     </div>
                     <div class="caja_valora">
                         <div class="caja_puntua"><p>Ciudad</p></div>
                         <SELECT NAME="ciudad" SIZE="1">
-                            <OPTION VALUE="r">Santiago</OPTION>
-                            <OPTION VALUE="g">La Serena</OPTION>
-                            <OPTION VALUE="b">Concepción</OPTION>
+                            {{#each ciudades}}
+                                <OPTION selected="{{ciudadesSelected}}" value="{{_id}}">{{name}}</OPTION>
+                            {{/each}}
                         </SELECT>
                     </div>
                 </div>
@@ -73,25 +74,31 @@
 
             <div class="contenido_control">
                 <div class="caja_fotos">
-                    <div class="foto_control"><img src="img/conejita-control.jpg" width="155" height="177"></div>
+                    <div class="foto_control"><img src="{{mainImage.url}}" width="155" height="177"></div>
                     <div class="caja_cambia_fotos">
-                        <div class="btn_foto1"><p><a href="#">Cambia Portada</a></p></div>
-                        <div class="btn_foto2"><p><a href="#">Cambia Foto 2</a></p></div>
-                        <div class="btn_foto1"><p><a href="#">Cambia Foto 3</a></p></div>
-                        <div class="btn_foto2"><p><a href="#">Cambia Foto 4</a></p></div>
-                        <div class="btn_foto1"><p><a href="#">Cambia Foto 5</a></p></div>
-                        <div class="btn_foto2"><p><a href="#">Cambia Foto 6</a></p></div>
-                        <div class="btn_foto1"><p><a href="#">Cambia Foto 7</a></p></div>
-                        <div class="btn_foto2"><p><a href="#">Cambia Foto 8</a></p></div>
-                        <div class="btn_foto1"><p><a href="#">Cambia Foto 9</a></p></div>
-                        <div class="btn_foto2"><p><a href="#">Cambia Foto 10</a></p></div>
-                        <div class="formatos"><p>Formatos de imágenes<br>
-                            JPG - PNG</p>
+                        <p>Sube tus fotos</p>
+                        <div class="formatos">
+                            <p>Formatos de imágenes<br>
+                                JPG - PNG</p>
                         </div>
-                        <div class="btn_video"><p><a href="#">Sube tu video</a></p></div>
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" />
+
+                        {{#if video}}
+                        <p>Sube tu video</p>
                         <div class="formatos"><p>Formatos de video<br>
                             MP4 - AVI</p>
+                            <input type="file" id="archivo" />
                         </div>
+                        {{/if}}
                     </div>
                 </div>
 
@@ -101,33 +108,33 @@
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Edad:</p></div>
                             <SELECT NAME="edad" SIZE="1" style="width:85px;">
-                                <OPTION VALUE="r">23</OPTION>
-                                <OPTION VALUE="g">24</OPTION>
-                                <OPTION VALUE="b">25</OPTION>
+                                {{#each ages}}
+                                    <OPTION selected="{{agesSelected}}" VALUE="{{this}}">{{this}}</OPTION>
+                                {{/each}}
                             </SELECT>
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Altura:</p></div>
                             <SELECT NAME="edad" SIZE="1" style="width:85px;">
-                                <OPTION VALUE="r">1.65 mts.</OPTION>
-                                <OPTION VALUE="g">1.66 mts.</OPTION>
-                                <OPTION VALUE="b">1.67 mts.</OPTION>
+                                {{#each alturas}}
+                                    <OPTION selected="{{alturasSelected}}" VALUE="{{this}}">{{this}} mts.</OPTION>
+                                {{/each}}
                             </SELECT>
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Peso:</p></div>
                             <SELECT NAME="edad" SIZE="1" style="width:85px;">
-                                <OPTION VALUE="r">54 Kg.</OPTION>
-                                <OPTION VALUE="g">55 Kg.</OPTION>
-                                <OPTION VALUE="b">56 Kg.</OPTION>
+                                {{#each pesos}}
+                                    <OPTION selected="{{pesosSelected}}" VALUE="{{this}}}">{{this}} Kg.</OPTION>
+                                {{/each}}
                             </SELECT>
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Medidas:</p></div>
-                            <div class="caja_item_medidas"><p>90 - 60 - 90</p></div>
+                            <input id="medidas" type="text" placeholder="tus medidas" value="{{measurements}}">
                         </div>
                     </div>
 
@@ -135,22 +142,22 @@
                         <div class="tit_info"><p>Edita otros datos</p></div>
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Horario:</p></div>
-                            <div class="caja_item_medidas"><p>Lun/Dom</p></div>
+                            <input id="horarios" type="text" placeholder="horarios" value="{{schedule}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Lugar:</p></div>
-                            <div class="caja_item_medidas"><p>Depto.</p></div>
+                            <input id="lugar" type="text" placeholder="lugar" value="{{place}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Sector:</p></div>
-                            <div class="caja_item_medidas"><p>Providencia</p></div>
+                            <input id="sector" type="text" placeholder="sector" value="{{sector}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Teléfono:</p></div>
-                            <div class="caja_item_medidas"><p>+56 98763454</p></div>
+                            <input id="telefono" type="text" placeholder="teléfono" value="{{phone}}">
                         </div>
                     </div>
 
@@ -158,17 +165,21 @@
                         <div class="tit_info"><p>Edita valores</p></div>
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Pesos CLP</p></div>
-                            <div class="caja_item_medidas"><p>$60.000</p></div>
+                            <input id="pesos" type="text" placeholder="$" value="{{price}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Dólares</p></div>
-                            <div class="caja_item_medidas"><p>US$150</p></div>
+                            <input id="dolares" type="text" placeholder="USD" value="{{usdPrice}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Categoría</p></div>
-                            <div class="caja_item_medidas"><p>Fantasía</p></div>
+                            <select name="edad" size="1" style="width:85px;">
+                                {{#each categories}}
+                                    <OPTION selected="{{categoriaSelected}}" VALUE="{{this.name}}">{{this.name}}</OPTION>
+                                {{/each}}
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -181,17 +192,17 @@
                             <div class="tit_info_gris"><p>Configura tus valores para la oferta</p></div>
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Pesos CLP</p></div>
-                                <div class="caja_item_medidas"><p>$40.000</p></div>
+                                <input id="pesos" type="text" placeholder="$">
                             </div>
 
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Dólares</p></div>
-                                <div class="caja_item_medidas"><p>US$100</p></div>
+                                <input id="pesos" type="text" placeholder="USD">
                             </div>
 
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Fin oferta</p></div>
-                                <div class="caja_item_medidas"><p>Fecha</p></div>
+                                <input id="pesos" type="date" placeholder="fecha">
                             </div>
 
                             <div class="caja_mensajes_oferta">
@@ -207,81 +218,28 @@
                 <div class="caja_info">
                     <div class="info1">
                         <div class="tit_info"><p>Edita Servicios</p></div>
+                        {{#each services}}
                         <div class="contenedor_item">
                             <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
+                                <input name="servicios[]" checked="{{isChecked}}" type="checkbox" value="{{_id}}" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
                             </div>
-                            <div class="servicio_item"><p>Normales</p></div>
+                            <div class="servicio_item"><p>{{name}}</p></div>
                         </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Bailes sensuales</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Cuadros plásticos</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Masajes</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Despedidas</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Fantasías</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Parejas</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Americana</p></div>
-                        </div>
-
-                        <div class="contenedor_item">
-                            <div class="caja_input">
-                                <input name="" type="checkbox" value="" style="margin-top:3px;margin-left:0px;width:15px;height:15px;">
-                            </div>
-                            <div class="servicio_item"><p>Servicio completo</p></div>
-                        </div>
+                        {{/each}}
                     </div>
 
                     <div class="info4">
                         <div class="tit_info"><p>Mensaje al Cliente</p></div>
-                        <textarea name="mensaje" cols="" rows="" style="width:100%;height:120px;"></textarea>
+                        <textarea name="mensaje" cols="" rows="" style="width:100%;height:120px;">{{message}}</textarea>
 
                         <div class="caja_mensajes">
-                            <div class="btn_envia"><p><a href="#">Enviar solicitud</a></p></div>
+                            <div class="btn_envia" id="enviar"><p><a href="#">Enviar solicitud</a></p></div>
                             <div class="btn_envia"><p><a href="#">Dudas y Consultas</a></p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{/with}}
     </main>
 </template>

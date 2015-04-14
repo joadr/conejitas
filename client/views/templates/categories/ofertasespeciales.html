@@ -1,0 +1,23 @@
+<template name="ofertasEspeciales">
+    <main id="vip">
+        <div class="caja_titulo_control">
+            <p>Ofertas Especiales</p>
+        </div>
+
+    <div class="caja_conejitas_vip">
+    {{ #each conejitas }}
+        {{ > conejitaItemCategory }}
+        {{ else }}
+            <div class="caja_control">
+                <div class="contenido_control">
+                    <div class="caja_cont_proximo">
+                        <div class="titulo_proximo"><p>Actualmente no hay ofertas</p></div>
+                        <div class="logo_proximo"><img src="/img/logo-proxima.png"></div>
+
+                    </div>
+                </div>
+            </div>
+    {{ /each }}
+    </div>
+    </main>
+</template>

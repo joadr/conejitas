@@ -8,7 +8,7 @@ Router.map(function () {
 		layoutTemplate: 'adminLayout',
 		loadingTemplate: 'adminLoading',
 		waitOn: function () {
-			return orion.admin.adminSubscriptions;
+			return orion.admin.getAdminSubscriptions();
 		}
 	});
 
@@ -23,7 +23,7 @@ Router.map(function () {
 			return orion.users.ensureRoutePermissions('entity.' + this.params.entity)(this);
 		},*/
 		waitOn: function () {
-			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.adminSubscriptions);
+			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.getAdminSubscriptions());
 		},
 		data: function() {
 			var entity = orion.entities.conejitas;
@@ -45,7 +45,7 @@ Router.map(function () {
 			return orion.users.ensureRoutePermissions('entity.conejitas')(this);
 		},
 		waitOn: function () {
-			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.adminSubscriptions);
+			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.getAdminSubscriptions());
 		},
 		data: function() {
 			var entity = _.findWhere(orion.entities, {name: 'conejitas'});
@@ -72,7 +72,7 @@ Router.map(function () {
 			return orion.users.ensureRoutePermissions('entity.conejitas')(this);
 		},
 		waitOn: function () {
-			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.adminSubscriptions);
+			return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.getAdminSubscriptions());
 		},
 		data: function() {
 			var entity = _.findWhere(orion.entities, {name: 'conejitas'});
@@ -91,5 +91,27 @@ Router.map(function () {
 		}
 	});
 
+    /**
+     * Ofertas especiales
+     */
+    // Lista de ofertas sin aprobar
+    this.route('unapprovedPrices', {
+        path: '/admin/unapprovedPrices',
+        layoutTemplate: 'adminLayout',
+        loadingTemplate: 'adminLoading',
+        waitOn: function () {
+            return orion.admin.getAdminSubscriptions();
+        }
+    });
+
+    // Aprobar Ofertas. (Detalle)
+    this.route('approvePrices', {
+        path: '/admin/approvePrices/:_id',
+        layoutTemplate: 'adminLayout',
+        loadingTemplate: 'adminLoading',
+        waitOn: function () {
+            return _.union(orion.subs.subscribe('entity', 'conejitas', { _id: this.params._id }), orion.admin.getAdminSubscriptions());
+        }
+    });
 
 });

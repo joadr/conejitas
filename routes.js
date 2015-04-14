@@ -5,6 +5,7 @@ Router.map(function() {
         layoutTemplate: 'layout'
     });
 
+    // filtro de país y ciudad
     this.route('filtro', {
       path: '/filtro',
       waitOn: function() {
@@ -21,6 +22,7 @@ Router.map(function() {
         }
     });
 
+    // Home del sitio
     this.route('conejitas', {
       path: '/',
       layoutTemplate: 'layout',
@@ -51,6 +53,7 @@ Router.map(function() {
         }
     });
 
+    // Ver una determinada conejita
     this.route('conejita', {
         path: '/conejita/:_id',
         layoutTemplate: 'layout',
@@ -61,6 +64,7 @@ Router.map(function() {
         }
     });
 
+    // ver conejitas de una categoría en específico
     this.route('categories', {
         path: '/categories/:name',
         layoutTemplate: 'layout',
@@ -73,6 +77,7 @@ Router.map(function() {
         }
     });
 
+    // si visitan el link categories
     this.route('categoriess', {
         path: '/categories',
         onBeforeAction: function() {
@@ -80,6 +85,7 @@ Router.map(function() {
         }
     });
 
+    // Conejitas en vivo
     this.route('vivo', {
         path: '/vivo',
         layoutTemplate: 'layout',
@@ -88,12 +94,22 @@ Router.map(function() {
         },
     });
 
+    // Aliados
     this.route('aliados', {
         path: '/aliados',
         layoutTemplate: 'layout',
         waitOn: function() {
             return [orion.subs.subscribe('dictionary'),
             orion.subs.subscribe('entity', 'aliados')]
+        }
+    });
+
+    // Ofertas especiales
+    this.route('ofertasEspeciales', {
+        path: '/ofertasespeciales',
+        layoutTemplate: 'layout',
+        waitOn: function() {
+            return [orion.subs.subscribe('dictionary'), orion.subs.subscribe('entity', 'aliados'), orion.subs.subscribe('entity', 'conejitas')]
         }
     });
 
@@ -159,7 +175,7 @@ Router.map(function() {
         path: '/usuarios/album',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas')]
+            return [Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe("getUserRole"), Meteor.subscribe("myEvaluations")]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
@@ -375,7 +391,7 @@ Router.map(function() {
         path: '/panelConejitas',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), orion.subs.subscribe('entity', 'cities'), orion.subs.subscribe('entity', 'countries')]
+            return [orion.subs.subscribe('entity', 'conejitas'), orion.subs.subscribe('entity', 'cities'), orion.subs.subscribe('entity', 'countries'), Meteor.subscribe("getUserRole")]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){

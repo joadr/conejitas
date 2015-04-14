@@ -1,4 +1,4 @@
-Meteor.methods({
+/*Meteor.methods({
 	correspondingCities: function () {
 		var cities = orion.entities.cities.collection.find({enabled: true, country: $('select[name=pais]').val()}).fetch();
 		var html = "";
@@ -7,11 +7,16 @@ Meteor.methods({
 		}
 		$('select[name=ciudad]').html(html);
 	}
-});
+});*/
 
 Template.filtro.events({
 	'change .paiss': function () {
-		Meteor.call('correspondingCities');
+        var cities = orion.entities.cities.collection.find({enabled: true, country: $('select[name=pais]').val()}).fetch();
+        var html = "";
+        for(var i=0; i< cities.length; i++){
+            html += '<option value="'+cities[i]._id+'">'+cities[i].name+'</option>';
+        }
+        $('select[name=ciudad]').html(html);
 
 	},
 	'submit .contacto': function(e){

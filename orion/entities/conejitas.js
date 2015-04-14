@@ -45,10 +45,14 @@ orion.addEntity('conejitas', {
 		type: String,
 		label: "Medidas"
 	},
-	message: orion.attribute('froala', {
+	message: {
+        type: String,
         label: 'Mensaje',
-        optional: true
-    }),
+        optional: true,
+        autoform: {
+            type: "textarea"
+        }
+    },
 	services: {
 		type: [String],
 		label: "Servicios",
@@ -268,7 +272,32 @@ orion.addEntity('conejitas', {
 	        //return orion.entities.services.collection.find()
 	      }
 	    }
-	}
+	},
+    /* This is about special offers (Ofertas especiales) */
+    tempPrice: {
+        type: Number,
+        label: "Precio temporal",
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    },
+    approvedPrice: {
+        type: Boolean,
+        label: "Oferta Aprobada",
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    },
+    offerEnd: {
+        type: Date,
+        label: "Fin Oferta",
+        optional: true,
+        autoform: {
+            omit: true
+        }
+    }
 }, {
 	icon: 'bookmark',
     sidebarName: 'Conejitas',
@@ -281,7 +310,6 @@ orion.addEntity('conejitas', {
 		{ data:'weigh', title: 'Peso' },
 		{ data:'measurements', title: 'Medidas' },
 		{ data:'category', title: 'Categoría' },
-		{ data:'aproved', title: 'Aprobado' },
-        orion.attributeColumn('froala', 'message', 'Mensaje')
+		{ data:'aproved', title: 'Aprobado' }
     ]
 });
