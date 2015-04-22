@@ -1,14 +1,18 @@
+var peer;
+
 Template.publicChat.rendered = function () {
 
-	var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id, online: true});
-	var peer = new Peer(Meteor.userId(), {key: '2eflxenknki3haor', debug:true});
+    var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id, online: true});
+    if (!peer) {
+        var peer = new Peer(Meteor.userId(), {key: '0um348nhmww2ke29', debug: true});
+    }
 
-  peer.on('call', function(call) {
-      call.answer(null);
-      call.on('stream', function(remoteStream) {
-        // Show stream in some <video> element.
-        $('.video').prop('src', URL.createObjectURL(remoteStream));
-      });
-  });
+    peer.on('call', function(call) {
+        call.answer(null);
+        call.on('stream', function(remoteStream) {
+            // Show stream in some <video> element.
+            $('.video').prop('src', URL.createObjectURL(remoteStream));
+        });
+    });
 
 };

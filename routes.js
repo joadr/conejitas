@@ -99,8 +99,7 @@ Router.map(function() {
         path: '/aliados',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'),
-            orion.subs.subscribe('entity', 'aliados')]
+            return [orion.subs.subscribe('entity', 'aliados')]
         }
     });
 
@@ -109,7 +108,7 @@ Router.map(function() {
         path: '/ofertasespeciales',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('dictionary'), orion.subs.subscribe('entity', 'aliados'), orion.subs.subscribe('entity', 'conejitas')]
+            return [orion.subs.subscribe('entity', 'aliados'), orion.subs.subscribe('entity', 'conejitas')]
         }
     });
 
@@ -145,7 +144,7 @@ Router.map(function() {
         layoutTemplate: 'layout',
         waitOn: function() {
             return [orion.subs.subscribe('entity', 'conejitas'),
-            orion.subs.subscribe('entity', 'khipuPayments')]
+            Meteor.subscribe('khipuPayments'), Meteor.subscribe('khipuPayments'), Meteor.subscribe("pagos", this.params.transaction_id)]
         }
     });
 
@@ -175,7 +174,7 @@ Router.map(function() {
         path: '/usuarios/album',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe("getUserRole"), Meteor.subscribe("myEvaluations")]
+            return [Meteor.subscribe("visitedConejitas"), orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe("getUserRole")]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
@@ -195,13 +194,13 @@ Router.map(function() {
     });
 
     /**
-    * Chat Routes for users
+    * Public chat user and conejitas respectively
     */
     this.route('publicChat', {
         path: '/chat/public/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('getUserRole'), Meteor.subscribe('myChatsPrivados'), Meteor.subscribe('userPresence', this.params._id)]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
@@ -217,60 +216,7 @@ Router.map(function() {
             Session.set('chapp-username', Meteor.user().username);
             Session.set('chapp-docid', conejita._id);
 
-            this.next();
-        },
-        onAfterAction: function(){
-            Tracker.autorun(function () {
-                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
-                var conejita  = orion.entities.conejitas.collection.findOne({_id: Session.get('chapp-docid')});
-                var count = 0;
-                for(var i = 0; i<personas.length; i++) {
-                    if(personas[i].userId == conejita.userId){
-                        count++;
-                    }
-                }
-
-                if (count == 0){
-                    $('.video').hide();
-                    //$('.out').show();
-                } else {
-                    $('.video').show();
-                }
-
-            });
-        },
-        data: function(){
-            return {
-                roomusers: Presences.find({ "state.currentRoomId": Session.get('chapp-docid')})
-            }
-        }
-    });
-
-    this.route('privateChat', {
-        path: '/chat/private/:_id',
-        layoutTemplate: 'layout',
-        waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
-        },
-        onBeforeAction: function() {
-            if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" ){
-                Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
-            }
-
-            var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id, online: true});
-            if(!conejita){
-                Router.go('conejitas');
-            }
-
-            /** Chat related **/
-            Session.set('chapp-username', Meteor.user().username);
-            Session.set('chapp-docid', Meteor.userId() + conejita._id);
-            /*Tracker.autorun(function () {
-                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
-                if(personas.length > 2){
-                    Router.go('publicChat', {_id: this.params._id});
-                }
-            }*/
+            Session.set('private', false);
 
             this.next();
         },
@@ -298,31 +244,31 @@ Router.map(function() {
             return {
                 roomusers: Presences.find({ "state.currentRoomId": Session.get('chapp-docid')})
             }
+        },
+        unload: function(){
+            Session.set('chapp-docid', null);
         }
     });
 
-    /**
-    * Chat for conejitas
-    */
     this.route('publicChatConejitas', {
         path: '/chat/conejitas/public/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('getUserRole'), Meteor.subscribe('myChatsPrivadosConejitas')]
         },
         onBeforeAction: function() {
-            /*if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
+            if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
                 return Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
-            }*/
+            }
 
             var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id});
             if(!conejita){
                 return Router.go('conejitas');
             }
 
-            /*if(conejita.userId != Meteor.userId()){
+            if(conejita.userId != Meteor.userId()){
                 return router.go('conejitas');
-            }*/
+            }
 
             Meteor.call('onlineConejita', conejita._id);
 
@@ -331,7 +277,20 @@ Router.map(function() {
             Session.set('chapp-docid', conejita._id);
             Session.set('chapp-master', conejita.name);
 
+            Session.set('private', false);
+
             this.next();
+        },
+        onAfterAction: function(){
+            Tracker.autorun(function () {
+                var chat = chatsPrivados.findOne({conejita: Router.current().params._id, accepted: null});
+                if (!chat){
+                    return;
+                }
+                Session.set('solicitud', {solicitante: chat.usuario, chat: chat._id});
+                $('.solicitudChat').bPopup();
+                //Router.go('privateChatConejitas', {_id: chat.conejita, _uid: Meteor.userId()});
+            });
         },
         data: function(){
             return {
@@ -344,25 +303,91 @@ Router.map(function() {
         }
     });
 
+    /**
+     * Private chats users and conejitas respectively
+     */
+    this.route('privateChat', {
+        path: '/chat/private/:_id/:_uid',
+        layoutTemplate: 'layout',
+        template: 'publicChat',
+        waitOn: function() {
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('myChatsPrivados'), Meteor.subscribe('getUserRole')]
+        },
+        onBeforeAction: function() {
+            if(Meteor.user() == null || Meteor.user().registrationType != "usuarios" || this.params._uid != Meteor.userId() ){
+                Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
+            }
+
+            var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id, online: true});
+            if(!conejita){
+                Router.go('conejitas');
+            }
+
+            /** Chat related **/
+            Session.set('chapp-username', Meteor.user().username);
+            Session.set('chapp-docid', Meteor.userId() + conejita._id);
+            Session.set('private', true);
+            /*Tracker.autorun(function () {
+                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
+                if(personas.length > 2){
+                    Router.go('publicChat', {_id: this.params._id});
+                }
+            }*/
+
+            this.next();
+        },
+        onAfterAction: function(){
+            Tracker.autorun(function () {
+                var personas = Presences.find({ "state.currentRoomId": Session.get('chapp-docid')}).fetch();
+                var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id});
+                var count = 0;
+                for(var i = 0; i<personas.length; i++) {
+                    if(personas[i].userId == conejita.userId){
+                        count++;
+                    }
+                }
+
+                if (count == 0){
+                    $('.video').hide();
+                    //$('.out').show();
+                } else {
+                    $('.video').show();
+                }
+
+            });
+        },
+        data: function(){
+            return {
+                roomusers: Presences.find({ "state.currentRoomId": Session.get('chapp-docid')})
+            }
+        },
+        unload: function(){
+            Meteor.call('finChat', Session.get('chatId'), function(error, response){
+                Session.set('chatId', null);
+            });
+        }
+    });
+
     this.route('privateChatConejitas', {
         path: '/chat/conejitas/private/:_id/:_uid',
         layoutTemplate: 'layout',
+        template: 'publicChatConejitas',
         waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('userPresence', this.params._id)]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('myChatsPrivadosConejitas'), Meteor.subscribe('getUserRole')]
         },
         onBeforeAction: function() {
-            /*if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
-             return Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
-             }*/
+            if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){
+                return Router.go('loginUsuarios', {message: "Debes iniciar sesión para entrar en este lugar."});
+            }
 
             var conejita = orion.entities.conejitas.collection.findOne({_id: this.params._id});
             if(!conejita){
                 return Router.go('conejitas');
             }
 
-            /*if(conejita.userId != Meteor.userId()){
+            if(conejita.userId != Meteor.userId()){
              return router.go('conejitas');
-             }*/
+             }
 
             Meteor.call('onlineConejita', conejita._id);
 
@@ -370,6 +395,8 @@ Router.map(function() {
             Session.set('chapp-username', conejita.name);
             Session.set('chapp-docid', this.params._uid+conejita._id);
             Session.set('chapp-master', conejita.name);
+
+            Session.set('private', true);
 
             this.next();
         },
@@ -380,6 +407,9 @@ Router.map(function() {
         },
         unload: function(){
             window.localStream.stop();
+            Meteor.call('finChat', Session.get('chatId'), function(error, response){
+                Session.set('chatId', null);
+            });
             Meteor.call('offlineConejita', this.params._id);
         }
     });

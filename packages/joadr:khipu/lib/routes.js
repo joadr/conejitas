@@ -14,13 +14,24 @@ Router.map(function(){
 				notification_token: this.request.body.notification_token
 			};
 
-			var transaction_id = Meteor.call('khipu_verify_payment_notification', data);
-			if(transaction_id){
+			Meteor.call('khipu_verify_payment_notification', data, function(error, response){
+				if(!error && response != false){
+					var pago = pagos.findOne({ transaction_id: response });
+					pagos.update(pago._id, {$set: {pagado: true}});
+					if(pago.conejita){
+						orion.entities.conejitas.collection.update(pago.conejita, {$set: {aproved: true}});
+					} else {
+						Meteor.call('agregarTokens', response);
+					}
+
+				}
+			});
+			/*if(transaction_id){
 				// Do something with the transaction
 				this.response.end(transaction_id+"\n");
 			} else {
 				this.response.end("Transaction failed"+"\n");
-			}
+			}*/
 		}
 	});
 

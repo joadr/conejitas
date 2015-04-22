@@ -1,6 +1,6 @@
 Package.describe({
   name: 'joadr:khipu',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
   summary: '',
   // URL to the Git repository containing the source code for this package.
@@ -29,13 +29,13 @@ Package.onUse(function(api) {
                 'lib/views/banks.html',
                 'lib/views/banks.js',
                 'lib/js/atmosphere-2.1.2.min.js',
-                'lib/js/khipu-1.1.js'
+                'lib/js/khipu-1.1.js',
+                'lib/khipuLoad.js'
               ], 'client');
 
   api.addFiles([
                 'lib/init.js',
-                'lib/routes.js',
-                'lib/khipuLoad.js']);
+                'lib/routes.js']);
 
   api.addFiles(['lib/methods.js', 'lib/sendNotificationUrl.js'], 'server');
 

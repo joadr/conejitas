@@ -1,4 +1,17 @@
 <template name="chapp_form">
+    <link rel="stylesheet" href="/css/chat.css" />
+    {{>terminos}}
+    {{>popupEspera}}
+    <div class="cont_espera solicitudChat" style="display: none">
+        <div class="tit_espera">
+            <p>Solicitud chat privado</p>
+        </div>
+        <div class="texto_espera">
+            <p>Un usuario desea ir a chat privado.</p>
+        </div>
+        <div class="btn_envia"><p><a href="#" class="aceptarInvitacion">Aceptar</a></p></div>
+        <div class="btn_envia"><p><a href="#" class="rechazarInvitacion">Rechazar</a></p></div>
+    </div>
     <div id="chat_chapp">
         <div id="chat" class="clearfix">
             <div id="header-chat" class="clearfix">
@@ -7,16 +20,18 @@
                     <div style="padding-left: 2em;">
                         <i class="icon-chat"></i>
                         <span class="title1">Chat</span> <span class="title2">Club Conejitas</span><br>
-                        <span class="txt-nombre">Nombre Conejita</span>
+                        <span class="txt-nombre">{{nombre}}</span>
                     </div>
                 </div>
-
+                {{#if usuario}}
                 <div class="col-lg-5">
-                    <div id="contadorminuto" class="btn-club">00:00:00</div>
-
-                    <div style="float: left;display: inline-block;margin-left: 1em;"><i class="icon-webcam"></i><a class="fancybox btn btn-club" href="condiciones.html">HABLAR EN PRIVADO</a></div>
-
+                    {{# if private}}
+                    <div id="contadorminuto" class="btn-club">{{tiempo}}</div>
+                    {{ else }}
+                    <div style="float: left;display: inline-block;margin-left: 1em;"><i class="icon-webcam"></i><a class="fancybox btn btn-club btn-private" href="">HABLAR EN PRIVADO</a></div>
+                    {{/if}}
                 </div>
+                {{/if}}
 
                 <div class="col-lg-3"><a class="btn btn-club" href="/vivo">VOLVER</a></div>
 
@@ -80,4 +95,72 @@
 <template name="webcam">
     <video class="video" width="300" height="225" autoplay style="background:#000;" src="">Sorry, Web RTC is not available in your browser</video>
     <div class="out" style="display:none">La conejita se desconectó.</div>
+</template>
+
+<template name="terminos">
+    <div class="condiciones col-xs-12" style="display: none; background-color: black; color: white;">
+        <h4 class="red">COSTO DE CHAT PRIVADO (EN CLP)</h4>
+    
+        <p><span class="red">1 SEGUNDO</span> = $6.- (Seis pesos)</p>
+        <p><span class="red">1 TOKEN</span> = $3.- (Tres pesos)</p>
+        <p class="red">Condiciones de Uso, Chat Web Cam Privado:</p>
+        <ol class="listcondiciones scroll-black">
+            <li>EL CHAT PRIVADO CON WEB CAM es exclusivamente para Mayores de 18 años y debe disponer de un medio de pago virtual para acceder al él.</li>
+            <li>EL CHA PRIVADO CON WEB CAM es una herramienta que es arrendada como plataforma virtual para oferentes y usuarios.</li>
+            <li>Club Conejitas o la empresa publicitaria no es responsable por la interacción entre ambas partes y NO reembolsará al Usuario si no hay acuerdo entre ellos.</li>
+            <li>EL CHAT PRIVADO CON WEB CAM debe ser pagado por el segundo (en tiempo) utilizado a modo de arriendo de plataforma mediante un sistema interno denominado TOKEN.</li>
+            <li>Club Conejitas no tiene ninguna injerencia en ningún tipo de relaciones que se produzca entre el usuario y la persona que este detrás de la Web CAM o las conversaciones que se produzcan entre ambas partes.</li>
+            <li>Los acuerdos entre usuario y/o visitantes y oferentes del portal, de la naturaleza que sean, son absolutamente privados entre las partes.</li>
+            <li>Nos reservamos el derecho de admisión y de expulsar usuarios en caso de ser requerido por un mal lenguaje o mal uso dela plataforma.</li>
+            <li>Detalles de pago a continuación:</li>
+        </ol>
+        <input type="checkbox" name="uso" id="uso" /><label for="uso">&nbsp;Acepto Condiciones de Uso</label>
+
+        <p>Actualmente usted tiene un total de {{tokens}} Tokens.</p>
+        {{#if hayTokens}}
+            <button class="btn btn-default usarTokens">Usar mis tokens</button>
+        {{/if}}
+
+        <h4>Compra de tokens:</h4>
+
+        <p>&nbsp;</p>
+        <p class="red">¿Cuantos Token Desea comparar? (Carga Mínima 400 TOKEN)</p>
+        <div class="col-lg-12 nopadding">
+            <input class="input-text form-control col-lg-6 row" type="number" name="token" placeholder="400"> Tokens.
+        </div>
+        <p>&nbsp;</p>
+        <label>Elige Medio de Pago</label>
+        <div>
+            <img src="/img/khipu.png" width="59" height="33" alt="khipu" class="payKhipu" />
+            <img src="/img/paypal.png" width="61" height="33" alt="paypal" class="payPaypal" />
+        </div>
+
+        <div class="bancosKhipu" style="display: none">
+            {{>banks}}
+            <button class="payKhipu2">Pagar</button>
+        </div>
+
+        <div class="khbutton" style="text-align:center;display: none;">
+            <div id="khipu-chrome-extension-div"></div>
+            <div class="col-sm-offset-4 start-khipu">
+                <img src="https://s3.amazonaws.com/static.khipu.com/buttons/200x50.png" id="pay-button">
+            </div>
+        </div>
+
+        <p>&nbsp;</p>
+        <p class="red">Una vez finalizado el Pago se activa el Chat y Web Cam Privado.-</p>
+
+    </div>
+</template>
+
+<template name="popupEspera">
+    <div class="cont_espera solicitudEnviada" style="display: none">
+        <div class="tit_espera">
+            <p>Solicitud chat privado</p>
+        </div>
+        <div class="texto_espera">
+            <p>Espere mientras se le solicita el chat privado a la conejita...</p>
+        </div>
+        <div class="btn_envia"><p><a href="#" class="cerrar">Cerrar</a></p></div>
+    </div>
 </template>

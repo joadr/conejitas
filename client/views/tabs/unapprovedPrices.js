@@ -21,7 +21,7 @@ Template.unapprovedPrices.events({
     'click tr': function(event) {
         var dataTable = $(event.target).closest('table').DataTable();
         var rowData = dataTable.row(event.currentTarget).data();
-        Router.go('approvePrice', {
+        Router.go('approvePrices', {
             _id: rowData._id
         });
     }

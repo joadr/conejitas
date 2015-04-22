@@ -81,22 +81,22 @@
                             <p>Formatos de imágenes<br>
                                 JPG - PNG</p>
                         </div>
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
-                        <input type="file" id="archivo" />
+                        <input type="file" id="archivo" name="mainImage" />
+                        <input type="file" id="archivo" name="image2" />
+                        <input type="file" id="archivo" name="image3" />
+                        <input type="file" id="archivo" name="image4" />
+                        <input type="file" id="archivo" name="image5" />
+                        <input type="file" id="archivo" name="image6" />
+                        <input type="file" id="archivo" name="image7" />
+                        <input type="file" id="archivo" name="image8" />
+                        <input type="file" id="archivo" name="image9" />
+                        <input type="file" id="archivo" name="image10" />
 
                         {{#if video}}
                         <p>Sube tu video</p>
                         <div class="formatos"><p>Formatos de video<br>
                             MP4 - AVI</p>
-                            <input type="file" id="archivo" />
+                            <input type="file" id="archivo" name="video" />
                         </div>
                         {{/if}}
                     </div>
@@ -107,7 +107,7 @@
                         <div class="tit_info"><p>Edita Información</p></div>
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Edad:</p></div>
-                            <SELECT NAME="edad" SIZE="1" style="width:85px;">
+                            <SELECT name="age" SIZE="1" style="width:85px;">
                                 {{#each ages}}
                                     <OPTION selected="{{agesSelected}}" VALUE="{{this}}">{{this}}</OPTION>
                                 {{/each}}
@@ -116,7 +116,7 @@
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Altura:</p></div>
-                            <SELECT NAME="edad" SIZE="1" style="width:85px;">
+                            <SELECT name="heigh" SIZE="1" style="width:85px;">
                                 {{#each alturas}}
                                     <OPTION selected="{{alturasSelected}}" VALUE="{{this}}">{{this}} mts.</OPTION>
                                 {{/each}}
@@ -125,7 +125,7 @@
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Peso:</p></div>
-                            <SELECT NAME="edad" SIZE="1" style="width:85px;">
+                            <SELECT name="weigh" SIZE="1" style="width:85px;">
                                 {{#each pesos}}
                                     <OPTION selected="{{pesosSelected}}" VALUE="{{this}}}">{{this}} Kg.</OPTION>
                                 {{/each}}
@@ -134,7 +134,7 @@
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Medidas:</p></div>
-                            <input id="medidas" type="text" placeholder="tus medidas" value="{{measurements}}">
+                            <input id="medidas" type="text" placeholder="tus medidas" name="measurements" value="{{measurements}}">
                         </div>
                     </div>
 
@@ -142,22 +142,22 @@
                         <div class="tit_info"><p>Edita otros datos</p></div>
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Horario:</p></div>
-                            <input id="horarios" type="text" placeholder="horarios" value="{{schedule}}">
+                            <input id="horarios" type="text" placeholder="horarios" name="schedule" value="{{schedule}}">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Lugar:</p></div>
-                            <input id="lugar" type="text" placeholder="lugar" value="{{place}}">
+                            <input id="lugar" type="text" placeholder="lugar" value="{{place}}" name="place">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Sector:</p></div>
-                            <input id="sector" type="text" placeholder="sector" value="{{sector}}">
+                            <input id="sector" type="text" placeholder="sector" value="{{sector}}" name="sector">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Teléfono:</p></div>
-                            <input id="telefono" type="text" placeholder="teléfono" value="{{phone}}">
+                            <input id="telefono" type="text" placeholder="teléfono" value="{{phone}}" name="phone">
                         </div>
                     </div>
 
@@ -165,17 +165,17 @@
                         <div class="tit_info"><p>Edita valores</p></div>
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Pesos CLP</p></div>
-                            <input id="pesos" type="text" placeholder="$" value="{{price}}">
+                            <input id="pesos" type="text" placeholder="$" value="{{price}}" name="price">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Dólares</p></div>
-                            <input id="dolares" type="text" placeholder="USD" value="{{usdPrice}}">
+                            <input id="dolares" type="text" placeholder="USD" value="{{usdPrice}}" name="usdPrice">
                         </div>
 
                         <div class="contenedor_item">
                             <div class="caja_nombre_item"><p>Categoría</p></div>
-                            <select name="edad" size="1" style="width:85px;">
+                            <select name="category" size="1" style="width:85px;">
                                 {{#each categories}}
                                     <OPTION selected="{{categoriaSelected}}" VALUE="{{this.name}}">{{this.name}}</OPTION>
                                 {{/each}}
@@ -192,21 +192,21 @@
                             <div class="tit_info_gris"><p>Configura tus valores para la oferta</p></div>
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Pesos CLP</p></div>
-                                <input id="pesos" type="text" placeholder="$">
+                                <input id="pesos" type="text" placeholder="$" name="precioCLP">
                             </div>
 
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Dólares</p></div>
-                                <input id="pesos" type="text" placeholder="USD">
+                                <input id="pesos" type="text" placeholder="USD" name="precioUSD">
                             </div>
 
                             <div class="contenedor_item_oferta">
                                 <div class="caja_nombre_item"><p>Fin oferta</p></div>
-                                <input id="pesos" type="date" placeholder="fecha">
+                                <input id="pesos" type="date" placeholder="fecha" name="finOferta">
                             </div>
 
                             <div class="caja_mensajes_oferta">
-                                <div class="btn_envia"><p><a href="#">Publicar Oferta</a></p></div>
+                                <div class="btn_envia" id="publicarOferta"><p><a href="#">Publicar Oferta</a></p></div>
                             </div>
 
                             <div class="tit_info_gris"><p>Si publicas tu oferta, tu perfil aparecerá en la sección "Ofertas Especiales"</p></div>

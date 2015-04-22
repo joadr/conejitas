@@ -24,9 +24,16 @@ Template.registro2.events({
 
 		// Aquí se manda el mail y se crea el documento.
 		Meteor.call('crearConejita', conejita, function (error, result) {
-			alert('Solicitud enviada a procesamiento.');
-			Router.go('conejitas');
-			console.log(result);
+			//$('.caja_text_conejita').html('')
+			$('.cont_espera').bPopup();
+			$('.cont_espera').on('click', '.volver', function(e){
+				e.preventDefault();
+				$('.cont_espera').bPopup().close();
+				alert('wuaaa');
+				Router.go('conejitas');
+			});
+			//Router.go('conejitas');
+			//console.log(result);
 		});
 
 		

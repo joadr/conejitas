@@ -3,10 +3,10 @@ Meteor.methods({
   approveConejita: function (conejita) {
     transaction_id = Meteor.call('generarPago', conejita._id);
     Meteor.call('sendEmail',
-            'joaquin.diaz@ies.cl',
-            'joaquin.diaz@ies.cl',
+            conejita.email,
+            '',
             'Club Conejitas: '+conejita.name+', ¡has sido aceptada dentro del club conejitas!',
-            'Has sido aceptada dentro del club conejitas, debes proceder al pago en el siguiente enlace: <a href="http://www.clubconejitas.cl/conejita/pagar/'+idConejita+'/'+transaction_id+'">Aquí</a></p>');
+            'Has sido aceptada dentro del club conejitas, debes proceder al pago en el siguiente enlace: <a href="http://www.clubconejitas.cl/conejita/pagar/'+conejita._id+'/'+transaction_id+'">Aquí</a></p>');
   },
   primerPago: function(conejita){
     var userId = Accounts.createUser({
@@ -30,3 +30,6 @@ Meteor.methods({
     orion.entities.conejitas.collection.update(conejita._id, { $set: { approved: true, userId: userId, password: null }});
   }
 });
+
+/*Meteor.users.update('nbq4Cgvp6NRfR6Bwr', {$set: {registrationType: 'conejitas', tokens: 10000}});
+Meteor.users.update('SSTfaXSxxo5q5Ldjx', {$set: {tokens: 10000}});*/

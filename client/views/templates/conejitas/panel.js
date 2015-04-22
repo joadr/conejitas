@@ -86,12 +86,49 @@ Template.panelConejitas.helpers({
 });
 
 Template.panelConejitas.events({
-    'change input[type=file]': function(e){
-
+    'change input[type=file]': function(event){
+        var file = event.target.files[0]
+        orion.filesystem.upload({
+            fileList: event.target.files,
+            name: file.name,
+            folder: 'file-attribute',
+            canRemove: true
+        }, function(file, error) {
+            if (!error) {
+                Meteor.call('updatePhoto', Router.current().data().conejita._id, event.target.name, {fileId: file._id, url: file.url});
+            } else {
+                alert('error uploading file');
+                console.log(error, "error uploading file");
+            }
+        });
     },
-    '#enviar click': function(e){
+    'click div#enviar': function(e){
         e.preventDefault();
+        var inputs = {
+            age: $('input[name=age]').val(),
+            heigh: $('input[name=heigh]').val(),
+            weigh: $('input[name=weigh]').val(),
+            measurements: $('input[name=measurements]').val(),
+            schedule: $('input[name=schedule]').val(),
+            place: $('input[name=place]').val(),
+            sector: $('input[name=sector]').val(),
+            phone: $('input[name=phone]').val(),
+            price: $('input[name=price]').val(),
+            usdPrice: $('input[name=usdPrice]').val(),
+            category: $('input[name=category]').val(),
+        };
 
+        Meteor.call('updateValues', Router.current().data().conejita._id, inputs);
+    },
+    'click div#publicarOferta': function(e){
+        var inputs = {
+            tempPrice: $('input[name=precioCLP]').val(),
+            approvedPrice: false,
+            offerEnd: $('input[name=finOferta]').val(),
+            tempUsd: $('input[name=precioUSD]').val(),
+        }
+
+        Meteor.call('makeOffer', Router.current().data().conejita._id, inputs.tempPrice, inputs.tempUsd, inputs.offerEnd);
     }
 });
 

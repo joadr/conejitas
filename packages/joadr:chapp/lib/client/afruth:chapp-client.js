@@ -30,7 +30,7 @@ Template.chapp_form.created = function() {
         Meteor.subscribe("chapps", (!Session.equals('chapp-docid',undefined))?Session.get('chapp-docid'):null, dateNow);
     })
 };
-
+/*
 Template.chapp_form.rendered = function() {
     $(document).ready(function() {
      $(".fancybox").fancybox({
@@ -45,7 +45,7 @@ Template.chapp_form.rendered = function() {
         'height':351,
       }); 
      });
-};
+};*/
 
 Template.chapp_form.helpers({
     chapp: function() {

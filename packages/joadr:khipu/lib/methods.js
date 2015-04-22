@@ -26,6 +26,7 @@ if(Meteor.isServer){
 			transaction_id = typeof transaction_id !== 'undefined' ? transaction_id : Math.random().toString(36).substring(7).toLowerCase();
 
 			if( khipu.payments.find({transaction_id: transaction_id}).fetch().length >= 1 ){
+				console.log("die at",0);
 				return false;
 			}
 
@@ -72,8 +73,10 @@ if(Meteor.isServer){
 					"ready-for-terminal": response['ready-for-terminal']
 					//"ready-for-terminal": true
 				}, transaction_id: transaction_id };
+				console.log("got here:", respuesta);
 				return respuesta;
 			} else {
+				console.log("die at",1);
 				return false;
 			}
 		},
@@ -142,6 +145,7 @@ if(Meteor.isServer){
 				return result.content;
 			} catch(e){
 				e.error = true;
+				e.date = new Date();
 				khipu.logs.insert(e);
 				return false;
 			}

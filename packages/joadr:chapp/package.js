@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   ])
   api.versionsFrom('METEOR@0.9.0');
   api.addFiles('./lib/client/chapp.html','client');
+  api.addFiles('./lib/client/chapp.js','client');
   api.addFiles('./lib/common/afruth:chapp-collections.js',['client','server']);
   api.addFiles('./lib/server/afruth:chapp-server.js','server');
   api.addFiles('./lib/client/afruth:chapp-client.js','client');

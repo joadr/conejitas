@@ -20,7 +20,9 @@ Meteor.methods({
         // Procedure to approve offer
         var oldPrice = conejita.price;
         var newPrice = conejita.tempPrice;
-        orion.entities.conejitas.collection.update(conejita._id, {$set: {price: newPrice, tempPrice: oldPrice, approvedPrice: true}});
+        var oldUsd = conejita.usdPrice;
+        var newUsd = conejita.tempUsd;
+        orion.entities.conejitas.collection.update(conejita._id, {$set: {price: newPrice, usdPrice: newUsd, tempPrice: oldPrice, tempUsd: oldUsd, approvedPrice: true}});
 
     },
     // Same thing but to unapprove an offer
@@ -45,7 +47,7 @@ Meteor.methods({
         orion.entities.conejitas.collection.update(conejita._id, {$set: {approvedPrice: null}}); //is set to null not false on prupourse
 
     },
-    makeOffer: function(idConejita, newPrice, offerEnd){
+    makeOffer: function(idConejita, newPrice, newUsd, offerEnd){
         // Must be logged in to approve
         if(!Meteor.userId()){
             return false;
@@ -63,6 +65,6 @@ Meteor.methods({
         }
 
         // Procedure to create new offer
-        orion.entities.conejitas.collection.update(conejita._id, {$set: {approvedPrice: false, tempPrice: newPrice, offerEnd: offerEnd}}); //is set to false not null on prupourse
+        orion.entities.conejitas.collection.update(conejita._id, {$set: {approvedPrice: false, tempPrice: newPrice, tempUsd: newUsd, offerEnd: offerEnd}}); //is set to false not null on prupourse
     }
 });

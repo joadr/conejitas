@@ -7,7 +7,7 @@ Meteor.methods({
             orion.dictionary.get('adminEmail', 'joaquin.diaz@ies.cl'),
             orion.dictionary.get('adminEmail', 'joaquin.diaz@ies.cl'),
             'Nueva inscripción conejita: '+conejita.name+'!',
-            'Se ha registrado una conejita.<br><p>Para visualizarla en el sistema haga click <a href="http://www.clubconejitas.cl/admin/e/conejitas/'+idConejita+'">Aquí</a></p>');
+            'Se ha registrado una conejita.<br><p>Para visualizarla en el sistema haga click <a href="http://www.clubconejitas.cl/admin/conejitas/approve/'+idConejita+'">Aquí</a></p>');
 
 		return idConejita;
 	}

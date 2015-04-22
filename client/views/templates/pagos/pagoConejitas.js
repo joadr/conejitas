@@ -2,17 +2,21 @@ Template.pagoConejitas.helpers({
 	abono: function () {
 		var abono = pagos.findOne({transaction_id: Router.current().params.transaction_id, pagado: false});
 		
-		return abono;
+		return abono.monto;
 	},
 	puedePagar: function(){
 		var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id});
-		if(conejita.aproved === false){
+		var abono = pagos.findOne({transaction_id: Router.current().params.transaction_id, pagado: false});
+		if(!abono){
 			return false;
 		}
+		/*if(conejita.aproved === true){
+			return false;
+		}*/
 		return true;
 	},
 	pagado: function(){
-		var pago = pagos.find({transaction_id: Router.current().params.transaction_id}).fetch();
+		var pago = pagos.findOne({transaction_id: Router.current().params.transaction_id});
 		if(pago.pagado){
 			return true;
 		}
@@ -25,8 +29,11 @@ Template.pagoConejitas.helpers({
 });
 
 Template.pagoConejitas.events({
-	'click .pagar': function () {
-		$('formulario').hide();
-		UI.insert(UI.render(khipuButton), document.getElementsByClassName("khbutton")[0]);
+	'click .pagar': function (e) {
+		e.preventDefault();
+		$('.formulario').hide();
+		Blaze.render(Template.khipuButton, document.getElementsByClassName("khbutton")[0]);
+		//UI.insert(UI.render(Template.khipuButton), document.getElementsByClassName("khbutton")[0]);
+		//UI.insert(UI.render(Template.khipuButton), document.getElementsByClassName("khbutton")[0]);
 	}
 });

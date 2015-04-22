@@ -1,7 +1,7 @@
 // Funciones de servidor relacionadas con el pago de las conejitas
 Meteor.methods({
 	calcularPago: function (conejita_id) {
-		var conejita = orion.entities.conejitas.collection.findOne({_id: conejita_id, aproved: true});
+		var conejita = orion.entities.conejitas.collection.findOne({_id: conejita_id});
 		var pago = 0;
 		switch(conejita.plan) {
 		    case "plan1":
@@ -57,7 +57,7 @@ Meteor.methods({
 			monto: Meteor.call('calcularPago', conejita_id),
 			pagado: false,
 			fecha_generacion: fecha
-		}
+		};
 		pagos.insert(data);
 		return transaction_id;
 	},
@@ -66,7 +66,8 @@ Meteor.methods({
 		var conejita = orion.entities.conejitas.collection.findOne({_id: pago.conejita});
 
 		var retorno = Meteor.call('khipu_get_new_payment', conejita.email, bank_id, pago.monto, "Pago suscripción conejitas", "", transaction_id);
-		Session.set("payReady", true);
-		return retorno[0];
+		//Session.set("payReady", true);
+		//console.log(retorno[0]);
+		return retorno;
 	}
 });

@@ -282,6 +282,14 @@ orion.addEntity('conejitas', {
             omit: true
         }
     },
+	tempUsd: {
+		type: Number,
+		label: "Precio temporal (USD)",
+		optional: true,
+		autoform: {
+			omit: true
+		}
+	},
     approvedPrice: {
         type: Boolean,
         label: "Oferta Aprobada",

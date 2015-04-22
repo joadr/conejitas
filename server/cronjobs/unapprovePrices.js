@@ -11,7 +11,9 @@ var expireOffers = function(){
         if(conejitas[i].offerEnd == currentDate || conejitas[i].offerEnd < currentDate){
             var oldPrice = conejita[i].price;
             var newPrice = conejita[i].tempPrice;
-            orion.entities.conejitas.collection.update(conejitas[i]._id, {$set: {approvedPrice: null, price: newPrice, tempPrice: oldPrice, offerEnd: null }});
+            var oldUsd = conejita[i].usdPrice;
+            var newUsd = conejita[i].tempUsd;
+            orion.entities.conejitas.collection.update(conejitas[i]._id, {$set: {approvedPrice: null, price: newPrice, usdPrice: newUsd, tempPrice: oldPrice, tempUsd: oldUsd, offerEnd: null }});
         }
     }
 }
