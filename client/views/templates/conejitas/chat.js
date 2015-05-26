@@ -4,7 +4,7 @@ Template.publicChatConejitas.rendered = function () {
     var conejita = orion.entities.conejitas.collection.findOne({_id: Router.current().params._id});
 
     if (!peer) {
-        peer = new Peer((new Mongo.ObjectID)._str, {key: '0um348nhmww2ke29', debug: true});
+        peer = new Peer((new Mongo.ObjectID)._str, {key: '2eflxenknki3haor', debug: true});
     }
 
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;

@@ -19,7 +19,12 @@ Router.map(function(){
 					var pago = pagos.findOne({ transaction_id: response });
 					pagos.update(pago._id, {$set: {pagado: true}});
 					if(pago.conejita){
-						orion.entities.conejitas.collection.update(pago.conejita, {$set: {aproved: true}});
+						var pagosConejita = pagos.find({conejita: pago.conejita}).fetch();
+						if(pagosConejita.length > 1){
+							orion.entities.conejitas.collection.update(pago.conejita, {$set: {aproved: true}});
+						} else {
+							Meteor.call('primerPago', pago.conejita);
+						}
 					} else {
 						Meteor.call('agregarTokens', response);
 					}

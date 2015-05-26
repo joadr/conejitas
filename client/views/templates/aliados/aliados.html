@@ -2,6 +2,16 @@
 	<main>
 		{{#each aliados}}
 			{{> aliadoItem }}
+            {{ else }}
+            <div class="caja_control">
+                <div class="contenido_control">
+                    <div class="caja_cont_proximo">
+                        <div class="titulo_proximo"><p>PRÓXIMAMENTE</p></div>
+                        <div class="logo_proximo"><img src="/img/logo-proxima.png"></div>
+
+                    </div>
+                </div>
+            </div>
 		{{/each}}
 	</main>
 </template>

@@ -1,7 +1,12 @@
 Router.map(function() {
 
-    this.route('test', {
-        path: '/test',
+    this.route('terminosycondiciones', {
+        path: '/terminosycondiciones',
+        layoutTemplate: 'layout'
+    });
+
+    this.route('politicasprivacidad', {
+        path: '/politicasprivacidad',
         layoutTemplate: 'layout'
     });
 
@@ -91,7 +96,7 @@ Router.map(function() {
         layoutTemplate: 'layout',
         waitOn: function() {
             return [orion.subs.subscribe('entity', 'conejitas')]
-        },
+        }
     });
 
     // Aliados
@@ -247,6 +252,7 @@ Router.map(function() {
         },
         unload: function(){
             Session.set('chapp-docid', null);
+            console.log('unloaded');
         }
     });
 
@@ -254,7 +260,7 @@ Router.map(function() {
         path: '/chat/conejitas/public/:_id',
         layoutTemplate: 'layout',
         waitOn: function() {
-            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('getUserRole'), Meteor.subscribe('myChatsPrivadosConejitas')]
+            return [orion.subs.subscribe('entity', 'conejitas'), Meteor.subscribe('getUserRole'), Meteor.subscribe('myChatsPrivadosConejitas'), Meteor.subscribe('userPresence', this.params._id)]
         },
         onBeforeAction: function() {
             if(Meteor.user() == null || Meteor.user().registrationType != "conejitas" ){

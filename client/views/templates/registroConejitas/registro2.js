@@ -29,7 +29,7 @@ Template.registro2.events({
 			$('.cont_espera').on('click', '.volver', function(e){
 				e.preventDefault();
 				$('.cont_espera').bPopup().close();
-				alert('wuaaa');
+				/*alert('wuaaa');*/
 				Router.go('conejitas');
 			});
 			//Router.go('conejitas');

@@ -8,6 +8,16 @@
 	    <div class="caja_conejitas_vip">
 			{{ #each conejitas }}
 			    {{ > conejitaItemCategory }}
+				{{ else }}
+				<div class="caja_control">
+					<div class="contenido_control">
+						<div class="caja_cont_proximo">
+							<div class="titulo_proximo"><p>No hay conejitas online</p></div>
+							<div class="logo_proximo"><img src="/img/logo-proxima.png"></div>
+
+						</div>
+					</div>
+				</div>
 			{{ /each }}
 	    </div>
 	</main>

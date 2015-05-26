@@ -1509,3 +1509,65 @@ input#archivo {
     color: #fff;
     text-align: center;
 }
+@charset "UTF-8";
+/* CSS Document */
+
+input[type=text], input[type=password] {
+    width: 115px;
+    border: 0px;
+    padding: 3px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #666;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+select.form-control {
+    width: 120px;
+    height: 15px;
+    border: 0px;
+    padding: 3px;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #666;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+input.form-control {
+    width: 115px;
+    height: 15px;
+    border: 0px;
+    padding: 2px;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #666;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+label {
+    display:block;
+    width:150px;
+    float:left;
+    margin-bottom:3px;
+    font-family: 'Ubuntu';
+    font-size: 0.8em;
+    color: #FFF;
+    text-align: left;
+    clear: both;
+}
+textarea.form-control {
+    height: 50px;
+    width: 60%;
+    max-width: 70%;
+}
