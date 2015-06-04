@@ -894,7 +894,7 @@ label#plan1 {
 }
 /* PRÃ“XIMAMENTE */
 .caja_cont_proximo {
-    width: 340px;
+ /*   width: 340px; */
     height: auto;
     margin-right: auto;
     margin-left: auto;
@@ -903,7 +903,7 @@ label#plan1 {
     margin-top: 10px;
 }
 .titulo_proximo {
-    width: 330px;
+ /*   width: 330px; */
     height: 60px;
     margin: 20px auto 10px;
     overflow: hidden;
@@ -1571,3 +1571,25 @@ textarea.form-control {
     width: 60%;
     max-width: 70%;
 }
+#conejita {
+  min-height: 700px;
+  }
+  
+.input-registro{
+	width: 115px;
+	border: 0px;
+	padding: 3px;
+	font-size: 12px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	font-family: 'Ubuntu', sans-serif;
+	color: #666;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.input-registro-email{
+	margin-left: 0px !important;
+	width: 115px !important;
+}
+  
